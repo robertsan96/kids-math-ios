@@ -10,6 +10,7 @@
 		461BB4A222E62DA7009EBD61 /* InitialVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461BB4A122E62DA7009EBD61 /* InitialVC.swift */; };
 		461BB4A522E62E76009EBD61 /* AppDaemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461BB4A422E62E76009EBD61 /* AppDaemon.swift */; };
 		461BB4A722E62F39009EBD61 /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461BB4A622E62F39009EBD61 /* CoreDataHelper.swift */; };
+		461BB4A922E633F5009EBD61 /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461BB4A822E633F5009EBD61 /* Storyboard.swift */; };
 		46BF7B0422E62C1D00FAA757 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BF7B0322E62C1D00FAA757 /* AppDelegate.swift */; };
 		46BF7B0622E62C1D00FAA757 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BF7B0522E62C1D00FAA757 /* ViewController.swift */; };
 		46BF7B0922E62C1D00FAA757 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46BF7B0722E62C1D00FAA757 /* Main.storyboard */; };
@@ -41,6 +42,7 @@
 		461BB4A122E62DA7009EBD61 /* InitialVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialVC.swift; sourceTree = "<group>"; };
 		461BB4A422E62E76009EBD61 /* AppDaemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDaemon.swift; sourceTree = "<group>"; };
 		461BB4A622E62F39009EBD61 /* CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
+		461BB4A822E633F5009EBD61 /* Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
 		46BF7B0022E62C1D00FAA757 /* MathGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MathGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46BF7B0322E62C1D00FAA757 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		46BF7B0522E62C1D00FAA757 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 			children = (
 				461BB4A422E62E76009EBD61 /* AppDaemon.swift */,
 				461BB4A622E62F39009EBD61 /* CoreDataHelper.swift */,
+				461BB4A822E633F5009EBD61 /* Storyboard.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 				461BB4A722E62F39009EBD61 /* CoreDataHelper.swift in Sources */,
 				46BF7B0622E62C1D00FAA757 /* ViewController.swift in Sources */,
 				461BB4A222E62DA7009EBD61 /* InitialVC.swift in Sources */,
+				461BB4A922E633F5009EBD61 /* Storyboard.swift in Sources */,
 				46BF7B0422E62C1D00FAA757 /* AppDelegate.swift in Sources */,
 				46BF7B0C22E62C1D00FAA757 /* MathGame.xcdatamodeld in Sources */,
 				461BB4A522E62E76009EBD61 /* AppDaemon.swift in Sources */,

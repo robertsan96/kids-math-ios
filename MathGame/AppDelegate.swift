@@ -17,13 +17,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        let _: AppDaemon = AppDaemon.shared
+        let appDaemon: AppDaemon = AppDaemon.shared
         let coreDataHelper = CoreDataHelper()
         
         if coreDataHelper.isFirstLaunch {
-            
+//            coreDataHelper.createOrUpdateStockValue(for: .firstLaunch, value: "false")
+            let initialVC = Storyboard.shared.getViewController(by: .initialVC)
+            appDaemon.start(with: window, root: initialVC)
         } else {
-            
+            let mainVC = Storyboard.shared.getViewController(by: .mainVC)
+            appDaemon.start(with: window, root: mainVC)
         }
         
         return true

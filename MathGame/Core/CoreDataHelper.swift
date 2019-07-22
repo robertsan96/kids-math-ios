@@ -26,7 +26,7 @@ class CoreDataHelper {
     var isFirstLaunch: Bool {
         
         if let valueRaw = getStockValue(for: CoreDataStockKeys.firstLaunch.rawValue) {
-            return (valueRaw == "false") ? true : false
+            return (valueRaw == "false") ? false : true
         } else {
             return true
         }
@@ -51,5 +51,31 @@ class CoreDataHelper {
         }
     }
     
-    
+    func createOrUpdateStockValue(for key: CoreDataStockKeys, value: String) {
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: CoreDataEntities.stock.rawValue)
+        do {
+            let dataRaw = try context.fetch(request)
+            guard let data = dataRaw as? [Stock] else {
+                return
+            }
+            
+            var shouldCreate: Bool = true
+            var updatingStock: Stock?
+            for stockData in data {
+                if stockData.key == key.rawValue {
+                    shouldCreate = false
+                    updatingStock = stockData
+                }
+            }
+            if shouldCreate {
+                let newStock = Stock(context: context)
+                newStock.key = key.rawValue
+                newStock.value = value
+                try context.save()
+            } else {
+                updatingStock?.value = value
+                try context.save()
+            }
+        } catch {}
+    }
 }

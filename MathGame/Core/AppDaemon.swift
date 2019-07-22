@@ -6,11 +6,16 @@
 //  Copyright © 2019 codecontrive. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class AppDaemon {
     
     static var shared: AppDaemon = AppDaemon()
     
     private init() {}
+    
+    func start(with window: UIWindow?, root viewController: UIViewController) {
+        window?.rootViewController = viewController
+        window?.makeKeyAndVisible()
+    }
 }
