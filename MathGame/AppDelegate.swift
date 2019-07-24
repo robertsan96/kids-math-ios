@@ -21,12 +21,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let coreDataHelper = CoreDataHelper()
         
         if coreDataHelper.isFirstLaunch {
-//            coreDataHelper.createOrUpdateStockValue(for: .firstLaunch, value: "false")
             let initialVC = Storyboard.shared.getViewController(by: .initialVC)
             appDaemon.start(with: window, root: initialVC)
         } else {
-            let mainVC = Storyboard.shared.getViewController(by: .mainVC)
-            appDaemon.start(with: window, root: mainVC)
+            let studentsNVC = Storyboard.shared.getViewController(by: .studentsNVC)
+            appDaemon.start(with: window, root: studentsNVC)
         }
         
         return true

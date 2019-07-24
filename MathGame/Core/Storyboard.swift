@@ -10,8 +10,12 @@ import UIKit
 
 enum ViewControllerIdentifiers: String {
     
-    case mainVC = "MainVC"
+    case studentsVC = "StudentsVC"
+    case studentsNVC = "StudentsNVC"
+    case studentDetailVC = "StudentDetailVC"
     case initialVC = "InitialVC"
+    
+    case settingsVC = "SettingsVC"
 }
 
 class Storyboard {

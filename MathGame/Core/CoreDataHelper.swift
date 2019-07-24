@@ -17,6 +17,7 @@ enum CoreDataEntities: String {
 
 enum CoreDataStockKeys: String {
     case firstLaunch = "FIRST_LAUNCH"
+    case masterPin = "MASTER_PIN"
 }
 
 class CoreDataHelper {
@@ -77,5 +78,30 @@ class CoreDataHelper {
                 try context.save()
             }
         } catch {}
+    }
+}
+
+extension CoreDataHelper {
+    
+    func getStudents() -> [Student] {
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: CoreDataEntities.student.rawValue)
+        do {
+            let dataRaw = try context.fetch(request)
+            guard let data = dataRaw as? [Student] else {
+                return []
+            }
+            return data
+        } catch {
+            return []
+        }
+    }
+    
+    func createOrUpdateStudent(student: Student) -> Student? {
+        do {
+            try context.save()
+            return student
+        } catch {
+            return nil
+        }
     }
 }

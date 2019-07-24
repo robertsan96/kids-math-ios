@@ -16,6 +16,12 @@ class AppDaemon {
     
     func start(with window: UIWindow?, root viewController: UIViewController) {
         window?.rootViewController = viewController
+        window?.makeKeyAndVisible()        
+    }
+    
+    func root(to vc: UIViewController) {
+        let window = (UIApplication.shared.delegate as? AppDelegate)?.window
+        window?.rootViewController = vc
         window?.makeKeyAndVisible()
     }
 }

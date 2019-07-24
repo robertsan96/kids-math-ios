@@ -9,9 +9,22 @@
 import UIKit
 import RxSwift
 
+enum PinCircleState {
+    case normal, error, success
+    
+    func getColor() -> UIColor {
+        switch self {
+        case .normal: return .black
+        case .error: return .red
+        case .success: return .green
+        }
+    }
+}
+
 class PinCircleView: UIView {
     
     var fill: BehaviorSubject<Bool> = BehaviorSubject(value: false)
+    var state: BehaviorSubject<PinCircleState> = BehaviorSubject(value: .normal)
     var disposeBag: DisposeBag = DisposeBag()
     
     private var circleSize: CGSize = CGSize(width: 15, height: 15)
@@ -57,6 +70,16 @@ class PinCircleView: UIView {
     private func unfillCircle() {
         circle?.backgroundColor = UIColor.clear
     }
+    
+    private func updateView(to state: PinCircleState) {
+        colorize(to: state.getColor())
+    }
+    
+    func colorize(to color: UIColor) {
+        circle?.backgroundColor = color
+        circle?.layer.borderColor = color.cgColor
+        
+    }
 }
 
 extension PinCircleView {
@@ -64,6 +87,10 @@ extension PinCircleView {
     func rxStart() {
         fill.subscribe(onNext: { [weak self] shouldFill in
             shouldFill ? self?.fillCircle() : self?.unfillCircle()
+        }).disposed(by: disposeBag)
+        
+        state.subscribe(onNext: { [weak self] state in
+            self?.updateView(to: state)
         }).disposed(by: disposeBag)
     }
 }
