@@ -9,12 +9,18 @@
 import Foundation
 import RxSwift
 
+enum StudentsMode {
+    case normal, delete
+}
+
 class StudentsVM {
     
     var students: BehaviorSubject<[Student]> = BehaviorSubject(value: [])
+    var mode: StudentsMode = .normal
     
-    init() {
+    init(with mode: StudentsMode = .normal) {
         students.onNext(getStudents())
+        self.mode = mode
     }
     
     func getStudents() -> [Student] {
@@ -30,5 +36,9 @@ class StudentsVM {
         } catch {
             return nil
         }
+    }
+    
+    func refreshStudents() {
+        students.onNext(getStudents())
     }
 }

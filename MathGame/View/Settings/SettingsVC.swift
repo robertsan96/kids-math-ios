@@ -44,6 +44,11 @@ class SettingsVC: UIViewController {
                 let studentDetailVM: StudentDetailVM = StudentDetailVM(with: .create, and: nil)
                 studentDetailVC.viewModel = studentDetailVM
                 vc = studentDetailVC
+            case .deleteStudent:
+                let studentsVC: StudentsVC = Storyboard.shared.getViewController(by: .studentsVC)
+                let studentsVM: StudentsVM = StudentsVM(with: .delete)
+                studentsVC.viewModel = studentsVM
+                vc = studentsVC
             default: vc = Storyboard.shared.getViewController(by: .studentDetailVC)
             }
             self?.navigationController?.pushViewController(vc, animated: true)

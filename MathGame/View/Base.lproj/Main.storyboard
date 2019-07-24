@@ -95,7 +95,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="sLj-yF-5vY"/>
                     <connections>
-                        <outlet property="settingsButton" destination="ZGB-ZZ-bC3" id="bPv-Vx-OLc"/>
+                        <outlet property="settingsButton" destination="ZGB-ZZ-bC3" id="q3V-LB-SxM"/>
                         <outlet property="studentsTableView" destination="uks-K5-HgY" id="xKU-ka-i4U"/>
                     </connections>
                 </viewController>

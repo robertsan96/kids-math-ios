@@ -15,7 +15,7 @@ class StudentsVC: UIViewController {
     @IBOutlet weak var studentsTableView: UITableView!
     @IBOutlet weak var settingsButton: RoundedButton!
     
-    let viewModel: StudentsVM = StudentsVM()
+    var viewModel: StudentsVM = StudentsVM()
     
     var disposeBag: DisposeBag = DisposeBag()
     
@@ -24,6 +24,7 @@ class StudentsVC: UIViewController {
         
         settingsButton.backgroundColor = Constants.Colors.createStudent
         settingsButton.imageView?.tintColor = UIColor.white
+        settingsButton.isHidden = viewModel.mode != .normal
         
         customizeTable()
         rxStart()
@@ -43,7 +44,8 @@ class StudentsVC: UIViewController {
             .bind(to: studentsTableView
                 .rx
                 .items(cellIdentifier: "StudentCell", cellType: StudentCellTVC.self)) { [weak self] (row, d, cell) in
-                    let student = self?.viewModel.getStudentAt(row: row)
+                    guard let `self` = self else { return }
+                    let student = self.viewModel.getStudentAt(row: row)
                     let fullName = "\(student?.firstName ?? "") \(student?.lastName ?? "")"
                     cell.studentName.text = fullName
                     if let lastActivity = student?.lastActivity {
@@ -51,14 +53,23 @@ class StudentsVC: UIViewController {
                     } else {
                         cell.lastActivity.text = "Last Activity: never"
                     }
+                    cell.mode = self.viewModel.mode
+                    cell.customizeContainer()
+                    cell.student = student
+                    cell.vcViewModel = self.viewModel
             }.disposed(by: disposeBag)
         
         studentsTableView.rx.modelSelected(Student.self).subscribe(onNext: { [weak self] model in
-            let studentDetailVC: StudentDetailVC = Storyboard.shared.getViewController(by: .studentDetailVC)
-            let studentDetailVM = StudentDetailVM(with: .edit, and: model)
-            studentDetailVC.viewModel = studentDetailVM
-            self?.navigationController?.pushViewController(studentDetailVC, animated: true)
-        }).disposed(by: disposeBag)
+            
+            guard let `self` = self else { return }
+            
+            if self.viewModel.mode == .normal {
+                let studentDetailVC: StudentDetailVC = Storyboard.shared.getViewController(by: .studentDetailVC)
+                let studentDetailVM = StudentDetailVM(with: .edit, and: model)
+                studentDetailVC.viewModel = studentDetailVM
+                self.navigationController?.pushViewController(studentDetailVC, animated: true)
+            }
+            }).disposed(by: disposeBag)
     }
     
     @IBAction func onCreateStudent(_ sender: Any) {

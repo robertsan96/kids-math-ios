@@ -104,4 +104,8 @@ extension CoreDataHelper {
             return nil
         }
     }
+    
+    func deleteStudent(student: Student) {
+        context.delete(student)
+    }
 }

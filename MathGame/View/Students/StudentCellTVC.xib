@@ -37,12 +37,26 @@
                                 <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kp0-wk-UAP" customClass="RoundedButton" customModule="MathGame" customModuleProvider="target">
+                                <rect key="frame" x="228" y="7" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="rWy-5L-xpp"/>
+                                    <constraint firstAttribute="width" constant="44" id="wrJ-LA-AI2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="15"/>
+                                <state key="normal" title="-"/>
+                                <connections>
+                                    <action selector="onDelete:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="aKG-JG-31B"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.29043406249999998" green="0.64238673449999995" blue="0.35289120670000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="npe-wC-Rae" secondAttribute="bottom" constant="5" id="8nC-2F-93U"/>
                             <constraint firstItem="npe-wC-Rae" firstAttribute="leading" secondItem="nMo-ki-JDs" secondAttribute="leading" constant="18" id="Ez2-Ls-L8d"/>
                             <constraint firstAttribute="trailing" secondItem="npe-wC-Rae" secondAttribute="trailing" constant="8" id="I8h-kq-VQF"/>
+                            <constraint firstItem="kp0-wk-UAP" firstAttribute="top" secondItem="nMo-ki-JDs" secondAttribute="top" constant="7" id="JdY-5e-giH"/>
+                            <constraint firstAttribute="trailing" secondItem="kp0-wk-UAP" secondAttribute="trailing" constant="8" id="Tmf-5j-tW5"/>
                             <constraint firstItem="npe-wC-Rae" firstAttribute="top" secondItem="oNN-bV-ypP" secondAttribute="bottom" id="c19-ZU-7GS"/>
                             <constraint firstItem="oNN-bV-ypP" firstAttribute="top" secondItem="nMo-ki-JDs" secondAttribute="top" constant="5" id="iEv-DP-rcP"/>
                             <constraint firstItem="oNN-bV-ypP" firstAttribute="leading" secondItem="nMo-ki-JDs" secondAttribute="leading" constant="18" id="nAY-T7-wFb"/>
@@ -62,6 +76,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="container" destination="nMo-ki-JDs" id="T4O-Mm-6l5"/>
+                <outlet property="deleteButton" destination="kp0-wk-UAP" id="bQC-on-e9h"/>
                 <outlet property="lastActivity" destination="npe-wC-Rae" id="Y1x-Ti-izs"/>
                 <outlet property="studentName" destination="oNN-bV-ypP" id="1qM-1C-rSZ"/>
             </connections>
