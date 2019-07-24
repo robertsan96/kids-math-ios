@@ -49,7 +49,56 @@ class SettingsVC: UIViewController {
                 let studentsVM: StudentsVM = StudentsVM(with: .delete)
                 studentsVC.viewModel = studentsVM
                 vc = studentsVC
-            default: vc = Storyboard.shared.getViewController(by: .studentDetailVC)
+            case .resetStudent:
+                let studentsVC: StudentsVC = Storyboard.shared.getViewController(by: .studentsVC)
+                let studentsVM: StudentsVM = StudentsVM(with: .reset)
+                studentsVC.viewModel = studentsVM
+                vc = studentsVC
+            default:
+                vc = Storyboard.shared.getViewController(by: .studentDetailVC)
+                let alert = UIAlertController(title: "Update",
+                                              message: "You're going to update your masterpin. Insert a new pin.",
+                                              preferredStyle: .alert)
+                alert.addTextField(configurationHandler: { (oldPin) in
+                    oldPin.isSecureTextEntry = true
+                    oldPin.placeholder = "Old Pin"
+                    oldPin.keyboardType = .numberPad
+                })
+                alert.addTextField(configurationHandler: { (new) in
+                    new.isSecureTextEntry = true
+                    new.placeholder = "New Pin"
+                    new.keyboardType = .numberPad
+                })
+                alert.addTextField(configurationHandler: { (confirm) in
+                    confirm.isSecureTextEntry = true
+                    confirm.placeholder = "Old Pin"
+                    confirm.keyboardType = .numberPad
+                })
+                
+                let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+                let change = UIAlertAction(title: "Change", style: .destructive, handler: { (action) in
+                    let old = alert.textFields?[0]
+                    let new = alert.textFields?[1]
+                    let confirm = alert.textFields?[2]
+                    
+                    guard let oldPin = old?.text, let newPin = new?.text, let confirmPin = confirm?.text else { return }
+                    
+                    let cdh = CoreDataHelper()
+                    
+                    guard let savedOldPin = cdh.getStockValue(for: CoreDataStockKeys.masterPin.rawValue) else { return }
+                    
+                    if savedOldPin == oldPin {
+                        if newPin == confirmPin {
+                            cdh.createOrUpdateStockValue(for: .masterPin, value: newPin)
+                        }
+                    }
+                    
+                })
+                
+                alert.addAction(cancel)
+                alert.addAction(change)
+                self?.present(alert, animated: true, completion: nil)
+                return
             }
             self?.navigationController?.pushViewController(vc, animated: true)
         }).disposed(by: disposeBag)

@@ -14,7 +14,7 @@ class StudentCellTVC: UITableViewCell {
     @IBOutlet weak var studentName: UILabel!
     @IBOutlet weak var lastActivity: UILabel!
     @IBOutlet weak var container: UIView!
-    @IBOutlet weak var deleteButton: RoundedButton!
+    @IBOutlet weak var extraButton: RoundedButton!
     
     var vcViewModel: StudentsVM?
     
@@ -40,18 +40,26 @@ class StudentCellTVC: UITableViewCell {
     func customizeContainer() {
         
         container.layer.cornerRadius = 15
-        deleteButton.isHidden = mode != .delete
+        extraButton.isHidden = mode == .normal
         
         if mode == .delete {
-            deleteButton.backgroundColor = UIColor.red
+            extraButton.backgroundColor = UIColor.red
+            extraButton.setTitle("-", for: .normal)
+        } else if mode == .reset {
+            extraButton.backgroundColor = Constants.Colors.tableRowStudentSelected
+            extraButton.setTitle("🔄", for: .normal)
         }
     }
     
-    @IBAction func onDelete(_ sender: Any) {
-        let cdh = CoreDataHelper()
-        guard let student = student else { return }
-        cdh.deleteStudent(student: student)
-        
+    @IBAction func onExtraButton(_ sender: Any) {
+        if mode == .delete {
+            let cdh = CoreDataHelper()
+            guard let student = student else { return }
+            cdh.deleteStudent(student: student)
+        }
+        if mode == .reset {
+            
+        }
         vcViewModel?.refreshStudents()
     }
 }

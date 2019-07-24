@@ -46,7 +46,7 @@
                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="15"/>
                                 <state key="normal" title="-"/>
                                 <connections>
-                                    <action selector="onDelete:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="aKG-JG-31B"/>
+                                    <action selector="onExtraButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="bit-Hk-A3G"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -76,7 +76,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="container" destination="nMo-ki-JDs" id="T4O-Mm-6l5"/>
-                <outlet property="deleteButton" destination="kp0-wk-UAP" id="bQC-on-e9h"/>
+                <outlet property="extraButton" destination="kp0-wk-UAP" id="5yt-0s-41L"/>
                 <outlet property="lastActivity" destination="npe-wC-Rae" id="Y1x-Ti-izs"/>
                 <outlet property="studentName" destination="oNN-bV-ypP" id="1qM-1C-rSZ"/>
             </connections>

@@ -10,7 +10,7 @@ import Foundation
 import RxSwift
 
 enum StudentsMode {
-    case normal, delete
+    case normal, delete, reset
 }
 
 class StudentsVM {
