@@ -18,6 +18,7 @@ class NumbersBondVC: UIViewController {
     @IBOutlet weak var timerView: TimerView!
     @IBOutlet weak var keyboard: NumberKeyboard!
     
+    var answerTimer: Timer?
     var viewModel: NumbersBondVM?
     var disposeBag: DisposeBag = DisposeBag()
     
@@ -67,30 +68,43 @@ extension NumbersBondVC: NumberKeyboardDelegate {
                 let floatEnteredNumber = Float(number)
                 
                 if setNumberOne + floatEnteredNumber == setNumberTwo {
-                    print("correct")
-                    viewModel?.currentSet.onNext(viewModel?.getSet())
+                    view.backgroundColor = UIColor.green
                 } else {
-                    print("Incorrect")
+                    view.backgroundColor = UIColor.red
                 }
+                keyboard.isUserInteractionEnabled = false
+                timerView.disableTimer()
+                answerTimer = Timer.scheduledTimer(timeInterval: 0.3, target: self, selector: #selector(answerCorrect), userInfo: nil, repeats: false)
             }
             if let five = set.gameTypeFive {
                 let setNumberOne = Float(five.numberOne)
                 let setNumberTwo = Float(five.numberTwo)
                 let floatEnteredNumber = Float(number)
                 if setNumberOne + floatEnteredNumber == setNumberTwo {
-                    print("Correct")
-                    viewModel?.currentSet.onNext(viewModel?.getSet())
+                    view.backgroundColor = UIColor.green
                 } else {
-                    print("Incorrect")
+                    view.backgroundColor = UIColor.red
                 }
+                keyboard.isUserInteractionEnabled = false
+                timerView.disableTimer()
+                answerTimer = Timer.scheduledTimer(timeInterval: 0.3, target: self, selector: #selector(answerCorrect), userInfo: nil, repeats: false)
             }
         }
+    }
+    
+    @objc func answerCorrect() {
+        
+        view.backgroundColor = UIColor.white
+        viewModel?.currentSet.onNext(viewModel?.getSet())
+        answerTimer?.invalidate()
+        timerView.startTimer()
+        keyboard.isUserInteractionEnabled = true
     }
 }
 
 extension NumbersBondVC: TimerViewDelegate {
     
     func timerDidEnd() {
-        
+        view.isUserInteractionEnabled = false
     }
 }

@@ -20,7 +20,7 @@ class TimerView: UIView {
     
     weak var delegate: TimerViewDelegate?
     
-    var seconds: Int = 60
+    var seconds: Int = 2
     var timer: Timer?
     
     required init?(coder aDecoder: NSCoder) {
@@ -41,7 +41,7 @@ class TimerView: UIView {
         container.layer.cornerRadius = frame.width / 2
         
         secondsLabel.text = "\(seconds)"
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerDecrease), userInfo: nil, repeats: true)
+        startTimer()
     }
     
     @objc func timerDecrease() {
@@ -54,8 +54,17 @@ class TimerView: UIView {
             container.backgroundColor = UIColor.red
         } else if seconds == 0 {
             timer?.invalidate()
+            delegate?.timerDidEnd()
         }
         secondsLabel.text = "\(seconds)"
+    }
+    
+    func disableTimer() {
+        timer?.invalidate()
+    }
+    
+    func startTimer() {
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerDecrease), userInfo: nil, repeats: true)
     }
 
 }

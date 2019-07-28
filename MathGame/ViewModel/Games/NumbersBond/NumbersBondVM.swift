@@ -11,6 +11,13 @@ import RxSwift
 
 enum NumbersBondMode {
     case ten, twenty
+    
+    func getMaxNumber() -> Float {
+        switch self {
+        case .ten: return 10
+        case .twenty: return 20
+        }
+    }
 }
 
 class NumbersBondVM {
@@ -36,26 +43,26 @@ class NumbersBondVM {
     }
     
     func getSet() -> GameTypeSix {
-        let setType = Int.random(in: 1 ..< 2)
+        let setType = Int.random(in: 0 ..< 2)
         
         if setType == 0 {
-            var numberOne = Int.random(in: 1 ..< 10)
-            var gameTypeFour: GameTypeFour = (numberOne: Float(numberOne), operator: "+", unknown: Constants.UnknownDefault, numberTwo: 10)
+            var numberOne = Int.random(in: 0 ..< Int(numbersBondMode.getMaxNumber()))
+            var gameTypeFour: GameTypeFour = (numberOne: Float(numberOne), operator: "+", unknown: Constants.UnknownDefault, numberTwo: numbersBondMode.getMaxNumber())
 
             while gameWasGeneratedBeforeOne(game: (gameTypeFour: gameTypeFour, nil)) {
-                numberOne = Int.random(in: 1 ..< 10)
-                gameTypeFour = (numberOne: Float(numberOne), operator: "+", unknown: Constants.UnknownDefault, numberTwo: 10)
+                numberOne = Int.random(in: 0 ..< Int(numbersBondMode.getMaxNumber()))
+                gameTypeFour = (numberOne: Float(numberOne), operator: "+", unknown: Constants.UnknownDefault, numberTwo: numbersBondMode.getMaxNumber())
             }
             let gameType = GameTypeSix(gameTypeFour: gameTypeFour, nil)
             gamesGenerated.append(gameType)
             return gameType
         } else {
-            var numberOne = Int.random(in: 1 ..< 10)
-            var gameTypeFive: GameTypeFive = (numberOne: Float(numberOne), operator: "+", unknown: Constants.UnknownDefault, numberTwo: 10)
+            var numberOne = Int.random(in: 0 ..< Int(numbersBondMode.getMaxNumber()))
+            var gameTypeFive: GameTypeFive = (numberOne: Float(numberOne), operator: "+", unknown: Constants.UnknownDefault, numberTwo: numbersBondMode.getMaxNumber())
             
             while gameWasGeneratedBeforeOne(game: (gameTypeFour: nil, gameTypeFive: gameTypeFive)) {
-                numberOne = Int.random(in: 1 ..< 10)
-                gameTypeFive = (unknown: Constants.UnknownDefault, operator: "+", numberOne: Float(numberOne), numberTwo: 10)
+                numberOne = Int.random(in: 0 ..< Int(numbersBondMode.getMaxNumber()))
+                gameTypeFive = (unknown: Constants.UnknownDefault, operator: "+", numberOne: Float(numberOne), numberTwo: numbersBondMode.getMaxNumber())
             }
             let gameType = GameTypeSix(gameTypeFour: nil, gameTypeFive: gameTypeFive)
             gamesGenerated.append(gameType)
@@ -65,15 +72,22 @@ class NumbersBondVM {
     }
     
     func gameWasGeneratedBeforeOne(game: GameTypeSix) -> Bool {
+        var numberOne: Float = Constants.UnknownDefault
+        if let gameFour = game.gameTypeFour?.numberOne {
+            numberOne = gameFour
+        }
+        if let gameFive = game.gameTypeFive?.numberOne {
+            numberOne = gameFive
+        }
         if let lastGame = gamesGenerated.last {
             if let beforeGameTypeFour = lastGame.gameTypeFour {
-                if beforeGameTypeFour.numberOne == game.gameTypeFour?.numberOne {
+                if beforeGameTypeFour.numberOne == numberOne {
                     return true
                 }
                 return false
             }
             if let beforeGameTypeFive = lastGame.gameTypeFive {
-                if beforeGameTypeFive.numberOne == game.gameTypeFive?.numberOne {
+                if beforeGameTypeFive.numberOne == numberOne {
                     return true
                 }
                 return false
