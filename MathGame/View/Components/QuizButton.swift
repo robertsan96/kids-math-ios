@@ -1,0 +1,29 @@
+//
+//  QuizButton.swift
+//  MathGame
+//
+//  Created by Robert Sandru on 7/28/19.
+//  Copyright © 2019 codecontrive. All rights reserved.
+//
+
+import UIKit
+
+class QuizButton: UIButton {
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        customizeButton()
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        customizeButton()
+    }
+    
+    func customizeButton() {
+        setTitle("Quiz", for: .normal)
+        backgroundColor = UIColor.green.withAlphaComponent(0.5)
+        layer.borderWidth = 3
+        layer.borderColor = UIColor.black.cgColor
+    }
+}

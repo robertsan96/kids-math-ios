@@ -15,6 +15,9 @@ enum ViewControllerIdentifiers: String {
     case studentDetailVC = "StudentDetailVC"
     case initialVC = "InitialVC"
     
+    case gamesVC = "GamesVC"
+    case numbersBondVC = "NumbersBondVC"
+    
     case settingsVC = "SettingsVC"
 }
 

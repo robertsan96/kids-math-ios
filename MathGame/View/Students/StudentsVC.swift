@@ -64,10 +64,8 @@ class StudentsVC: UIViewController {
             guard let `self` = self else { return }
             
             if self.viewModel.mode == .normal {
-                let studentDetailVC: StudentDetailVC = Storyboard.shared.getViewController(by: .studentDetailVC)
-                let studentDetailVM = StudentDetailVM(with: .edit, and: model)
-                studentDetailVC.viewModel = studentDetailVM
-                self.navigationController?.pushViewController(studentDetailVC, animated: true)
+                
+                self.promptForPin(for: model)
             }
             }).disposed(by: disposeBag)
     }
@@ -110,6 +108,39 @@ class StudentsVC: UIViewController {
         alertController.addAction(cancel)
         
         present(alertController, animated: true, completion: nil)
+    }
+    
+    func promptForPin(for student: Student) {
+        let alertVC = UIAlertController(title: "Student's PIN",
+                                        message: "In order to access this student, you must provide either a master pin or student pin.",
+                                        preferredStyle: .alert)
+        
+        alertVC.addTextField { (pinTextField) in
+            pinTextField.isSecureTextEntry = true
+            pinTextField.keyboardType = .numberPad
+        }
+        
+        let login = UIAlertAction(title: "Login", style: .default) { [weak self] (action) in
+            if let pinTextField = alertVC.textFields?[0] {
+                let cdh = CoreDataHelper()
+                let enteredPin = pinTextField.text
+                let masterPin = cdh.getStockValue(for: CoreDataStockKeys.masterPin.rawValue)
+                let studentPin = "\(Int(student.pin))"
+                if enteredPin == studentPin || enteredPin == masterPin {
+                    let gamesVC: GamesVC = Storyboard.shared.getViewController(by: .gamesVC)
+                    let gamesVM: GamesVM = GamesVM(with: student)
+                    gamesVC.viewModel = gamesVM
+                    self?.navigationController?.pushViewController(gamesVC, animated: true)
+                } else { }
+            }
+            
+        }
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        alertVC.addAction(login)
+        alertVC.addAction(cancel)
+        
+        present(alertVC, animated: true, completion: nil)
     }
 }
 

@@ -22,6 +22,18 @@
 		4635277022E8B83600ACFA5A /* StudentDetailVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4635276F22E8B83600ACFA5A /* StudentDetailVM.swift */; };
 		4635277222E8BA3900ACFA5A /* StudentsNVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4635277122E8BA3900ACFA5A /* StudentsNVC.swift */; };
 		469189B922E7358B0083B092 /* InitialVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469189B822E7358B0083B092 /* InitialVM.swift */; };
+		4697FC1322ED9FB5007EBAA6 /* GamesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4697FC1222ED9FB5007EBAA6 /* GamesVC.swift */; };
+		4697FC1622EDA090007EBAA6 /* GamesVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4697FC1522EDA090007EBAA6 /* GamesVM.swift */; };
+		4697FC1922EDA28D007EBAA6 /* GameTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4697FC1722EDA28D007EBAA6 /* GameTVC.swift */; };
+		4697FC1A22EDA28D007EBAA6 /* GameTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4697FC1822EDA28D007EBAA6 /* GameTVC.xib */; };
+		4697FC1C22EDA32B007EBAA6 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4697FC1B22EDA32B007EBAA6 /* Game.swift */; };
+		4697FC1E22EDAA81007EBAA6 /* SelectModeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4697FC1D22EDAA81007EBAA6 /* SelectModeView.swift */; };
+		4697FC2022EDAB04007EBAA6 /* SelectModeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4697FC1F22EDAB04007EBAA6 /* SelectModeView.xib */; };
+		4697FC2222EDAECF007EBAA6 /* LearningButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4697FC2122EDAECF007EBAA6 /* LearningButton.swift */; };
+		4697FC2422EDAEE5007EBAA6 /* TrainingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4697FC2322EDAEE5007EBAA6 /* TrainingButton.swift */; };
+		4697FC2622EDAEEE007EBAA6 /* QuizButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4697FC2522EDAEEE007EBAA6 /* QuizButton.swift */; };
+		4697FC2922EDB7C5007EBAA6 /* NumbersBondVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4697FC2822EDB7C5007EBAA6 /* NumbersBondVC.swift */; };
+		4697FC2C22EDB7F1007EBAA6 /* NumbersBondVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4697FC2B22EDB7F1007EBAA6 /* NumbersBondVM.swift */; };
 		46A5D10222E8DA90008F86C7 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A5D10122E8DA90008F86C7 /* SettingsVC.swift */; };
 		46A5D10522E8DB16008F86C7 /* SettingsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A5D10422E8DB16008F86C7 /* SettingsVM.swift */; };
 		46A5D10822E8DC49008F86C7 /* SettingsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A5D10622E8DC49008F86C7 /* SettingsTVC.swift */; };
@@ -77,6 +89,18 @@
 		4635276F22E8B83600ACFA5A /* StudentDetailVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentDetailVM.swift; sourceTree = "<group>"; };
 		4635277122E8BA3900ACFA5A /* StudentsNVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsNVC.swift; sourceTree = "<group>"; };
 		469189B822E7358B0083B092 /* InitialVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialVM.swift; sourceTree = "<group>"; };
+		4697FC1222ED9FB5007EBAA6 /* GamesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesVC.swift; sourceTree = "<group>"; };
+		4697FC1522EDA090007EBAA6 /* GamesVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesVM.swift; sourceTree = "<group>"; };
+		4697FC1722EDA28D007EBAA6 /* GameTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTVC.swift; sourceTree = "<group>"; };
+		4697FC1822EDA28D007EBAA6 /* GameTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameTVC.xib; sourceTree = "<group>"; };
+		4697FC1B22EDA32B007EBAA6 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		4697FC1D22EDAA81007EBAA6 /* SelectModeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectModeView.swift; sourceTree = "<group>"; };
+		4697FC1F22EDAB04007EBAA6 /* SelectModeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectModeView.xib; sourceTree = "<group>"; };
+		4697FC2122EDAECF007EBAA6 /* LearningButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningButton.swift; sourceTree = "<group>"; };
+		4697FC2322EDAEE5007EBAA6 /* TrainingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingButton.swift; sourceTree = "<group>"; };
+		4697FC2522EDAEEE007EBAA6 /* QuizButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizButton.swift; sourceTree = "<group>"; };
+		4697FC2822EDB7C5007EBAA6 /* NumbersBondVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersBondVC.swift; sourceTree = "<group>"; };
+		4697FC2B22EDB7F1007EBAA6 /* NumbersBondVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersBondVM.swift; sourceTree = "<group>"; };
 		46A5D10122E8DA90008F86C7 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		46A5D10422E8DB16008F86C7 /* SettingsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVM.swift; sourceTree = "<group>"; };
 		46A5D10622E8DC49008F86C7 /* SettingsTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTVC.swift; sourceTree = "<group>"; };
@@ -130,6 +154,7 @@
 		461BB49D22E62C62009EBD61 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4697FC1B22EDA32B007EBAA6 /* Game.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -137,6 +162,7 @@
 		461BB49E22E62C66009EBD61 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4697FC1122ED9F9E007EBAA6 /* Games */,
 				4635277322E8D47400ACFA5A /* Settings */,
 				461BB4AA22E6366B009EBD61 /* Components */,
 				4635276822E8AEB600ACFA5A /* Students */,
@@ -150,6 +176,7 @@
 		461BB49F22E62C6B009EBD61 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				4697FC1422EDA086007EBAA6 /* Games */,
 				46A5D10322E8DB0D008F86C7 /* Settings */,
 				469189B622E7357A0083B092 /* Initial */,
 				4635276722E8AEAF00ACFA5A /* Students */,
@@ -181,6 +208,9 @@
 			children = (
 				461BB4AB22E6367F009EBD61 /* PinCircleView.swift */,
 				4635276322E8AC6100ACFA5A /* RoundedButton.swift */,
+				4697FC2122EDAECF007EBAA6 /* LearningButton.swift */,
+				4697FC2322EDAEE5007EBAA6 /* TrainingButton.swift */,
+				4697FC2522EDAEEE007EBAA6 /* QuizButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -222,6 +252,44 @@
 				469189B822E7358B0083B092 /* InitialVM.swift */,
 			);
 			path = Initial;
+			sourceTree = "<group>";
+		};
+		4697FC1122ED9F9E007EBAA6 /* Games */ = {
+			isa = PBXGroup;
+			children = (
+				4697FC2722EDB7A0007EBAA6 /* NumbersBond */,
+				4697FC1222ED9FB5007EBAA6 /* GamesVC.swift */,
+				4697FC1722EDA28D007EBAA6 /* GameTVC.swift */,
+				4697FC1822EDA28D007EBAA6 /* GameTVC.xib */,
+				4697FC1D22EDAA81007EBAA6 /* SelectModeView.swift */,
+				4697FC1F22EDAB04007EBAA6 /* SelectModeView.xib */,
+			);
+			path = Games;
+			sourceTree = "<group>";
+		};
+		4697FC1422EDA086007EBAA6 /* Games */ = {
+			isa = PBXGroup;
+			children = (
+				4697FC2A22EDB7E4007EBAA6 /* NumbersBond */,
+				4697FC1522EDA090007EBAA6 /* GamesVM.swift */,
+			);
+			path = Games;
+			sourceTree = "<group>";
+		};
+		4697FC2722EDB7A0007EBAA6 /* NumbersBond */ = {
+			isa = PBXGroup;
+			children = (
+				4697FC2822EDB7C5007EBAA6 /* NumbersBondVC.swift */,
+			);
+			path = NumbersBond;
+			sourceTree = "<group>";
+		};
+		4697FC2A22EDB7E4007EBAA6 /* NumbersBond */ = {
+			isa = PBXGroup;
+			children = (
+				4697FC2B22EDB7F1007EBAA6 /* NumbersBondVM.swift */,
+			);
+			path = NumbersBond;
 			sourceTree = "<group>";
 		};
 		46A5D10322E8DB0D008F86C7 /* Settings */ = {
@@ -419,10 +487,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				46A5D10922E8DC49008F86C7 /* SettingsTVC.xib in Resources */,
+				4697FC1A22EDA28D007EBAA6 /* GameTVC.xib in Resources */,
 				46BF7B1122E62C1D00FAA757 /* LaunchScreen.storyboard in Resources */,
 				46BF7B0E22E62C1D00FAA757 /* Assets.xcassets in Resources */,
 				46BF7B0922E62C1D00FAA757 /* Main.storyboard in Resources */,
 				4635276C22E8B1CE00ACFA5A /* StudentCellTVC.xib in Resources */,
+				4697FC2022EDAB04007EBAA6 /* SelectModeView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -534,6 +604,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				46A5D10222E8DA90008F86C7 /* SettingsVC.swift in Sources */,
+				4697FC2622EDAEEE007EBAA6 /* QuizButton.swift in Sources */,
+				4697FC2922EDB7C5007EBAA6 /* NumbersBondVC.swift in Sources */,
 				461BB4A722E62F39009EBD61 /* CoreDataHelper.swift in Sources */,
 				46BF7B0622E62C1D00FAA757 /* StudentsVC.swift in Sources */,
 				461BB4AC22E6367F009EBD61 /* PinCircleView.swift in Sources */,
@@ -543,15 +615,23 @@
 				4635276422E8AC6100ACFA5A /* RoundedButton.swift in Sources */,
 				4635276B22E8B1CE00ACFA5A /* StudentCellTVC.swift in Sources */,
 				469189B922E7358B0083B092 /* InitialVM.swift in Sources */,
+				4697FC1622EDA090007EBAA6 /* GamesVM.swift in Sources */,
 				46BF7B0422E62C1D00FAA757 /* AppDelegate.swift in Sources */,
 				4635276622E8AEAB00ACFA5A /* StudentsVM.swift in Sources */,
+				4697FC1922EDA28D007EBAA6 /* GameTVC.swift in Sources */,
 				46BF7B0C22E62C1D00FAA757 /* MathGame.xcdatamodeld in Sources */,
 				461BB4A522E62E76009EBD61 /* AppDaemon.swift in Sources */,
+				4697FC1322ED9FB5007EBAA6 /* GamesVC.swift in Sources */,
 				4635277222E8BA3900ACFA5A /* StudentsNVC.swift in Sources */,
 				4630296622E63ADF00FB8C18 /* Constants.swift in Sources */,
+				4697FC2C22EDB7F1007EBAA6 /* NumbersBondVM.swift in Sources */,
+				4697FC2422EDAEE5007EBAA6 /* TrainingButton.swift in Sources */,
 				4635276E22E8B81B00ACFA5A /* StudentDetailVC.swift in Sources */,
 				46A5D10522E8DB16008F86C7 /* SettingsVM.swift in Sources */,
 				46A5D10822E8DC49008F86C7 /* SettingsTVC.swift in Sources */,
+				4697FC1C22EDA32B007EBAA6 /* Game.swift in Sources */,
+				4697FC1E22EDAA81007EBAA6 /* SelectModeView.swift in Sources */,
+				4697FC2222EDAECF007EBAA6 /* LearningButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

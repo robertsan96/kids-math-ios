@@ -31,4 +31,8 @@ struct Constants {
                                          blue: 113/255,
                                          alpha: 1)
     }
+    
+    enum GameModes {
+        case learning, quiz, training
+    }
 }
