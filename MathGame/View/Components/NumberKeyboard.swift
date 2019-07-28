@@ -13,7 +13,8 @@ protocol NumberKeyboardDelegate:class {
 }
 
 class NumberKeyboard: UIView {
-
+    
+    @IBOutlet weak var numberLabel: UILabel!
     @IBOutlet var containerView: UIView!
     weak var delegate: NumberKeyboardDelegate?
     
@@ -26,7 +27,7 @@ class NumberKeyboard: UIView {
         super.init(frame: frame)
         customizeContainer()
     }
-
+    
     func customizeContainer() {
         Bundle.main.loadNibNamed("NumberKeyboard", owner: self, options: nil)
         containerView.frame = bounds
@@ -35,8 +36,23 @@ class NumberKeyboard: UIView {
     }
     
     @IBAction func onNumber(_ sender: NumberButton) {
-        if let number = Int(sender.accessibilityIdentifier ?? "0") {
-            delegate?.didPress(number: number)
-        }
+        
+        var numbers = numberLabel.text ?? ""
+        let pressedNumber = sender.accessibilityIdentifier ?? ""
+        numbers = "\(numbers)\(pressedNumber)"
+        numberLabel.text = numbers
+        
+    }
+    
+    @IBAction func onDelete(_ sender: Any) {
+        let text = String(numberLabel.text?.dropLast() ?? "")
+        numberLabel.text = text
+        
+    }
+    
+    @IBAction func onEnter(_ sender: Any) {
+        let number = Int(numberLabel.text ?? "0") ?? 0
+        delegate?.didPress(number: number)
+        numberLabel.text = ""
     }
 }

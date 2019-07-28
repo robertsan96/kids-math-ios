@@ -647,6 +647,7 @@
                         <outlet property="keyboard" destination="xLg-vn-vKH" id="RNp-D9-fVN"/>
                         <outlet property="mathLabel" destination="5cf-K3-ztF" id="oBs-cO-fgo"/>
                         <outlet property="studentName" destination="M9z-04-9L2" id="cjy-em-eNh"/>
+                        <outlet property="timerView" destination="l2J-ms-MUq" id="IyV-Ky-0i1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A1n-Hb-xYH" userLabel="First Responder" sceneMemberID="firstResponder"/>

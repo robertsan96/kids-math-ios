@@ -39,6 +39,8 @@
 		4697FC3222EDC06C007EBAA6 /* NumberKeyboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4697FC3122EDC06C007EBAA6 /* NumberKeyboard.xib */; };
 		4697FC3422EDC079007EBAA6 /* NumberKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4697FC3322EDC079007EBAA6 /* NumberKeyboard.swift */; };
 		4697FC3622EDE288007EBAA6 /* NumberButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4697FC3522EDE288007EBAA6 /* NumberButton.swift */; };
+		4697FC3822EDEDDD007EBAA6 /* DeleteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4697FC3722EDEDDD007EBAA6 /* DeleteButton.swift */; };
+		4697FC3A22EDEE16007EBAA6 /* EnterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4697FC3922EDEE16007EBAA6 /* EnterButton.swift */; };
 		46A5D10222E8DA90008F86C7 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A5D10122E8DA90008F86C7 /* SettingsVC.swift */; };
 		46A5D10522E8DB16008F86C7 /* SettingsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A5D10422E8DB16008F86C7 /* SettingsVM.swift */; };
 		46A5D10822E8DC49008F86C7 /* SettingsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A5D10622E8DC49008F86C7 /* SettingsTVC.swift */; };
@@ -111,6 +113,8 @@
 		4697FC3122EDC06C007EBAA6 /* NumberKeyboard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NumberKeyboard.xib; sourceTree = "<group>"; };
 		4697FC3322EDC079007EBAA6 /* NumberKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberKeyboard.swift; sourceTree = "<group>"; };
 		4697FC3522EDE288007EBAA6 /* NumberButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberButton.swift; sourceTree = "<group>"; };
+		4697FC3722EDEDDD007EBAA6 /* DeleteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteButton.swift; sourceTree = "<group>"; };
+		4697FC3922EDEE16007EBAA6 /* EnterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterButton.swift; sourceTree = "<group>"; };
 		46A5D10122E8DA90008F86C7 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		46A5D10422E8DB16008F86C7 /* SettingsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVM.swift; sourceTree = "<group>"; };
 		46A5D10622E8DC49008F86C7 /* SettingsTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTVC.swift; sourceTree = "<group>"; };
@@ -226,6 +230,8 @@
 				4697FC3322EDC079007EBAA6 /* NumberKeyboard.swift */,
 				4697FC3122EDC06C007EBAA6 /* NumberKeyboard.xib */,
 				4697FC3522EDE288007EBAA6 /* NumberButton.swift */,
+				4697FC3722EDEDDD007EBAA6 /* DeleteButton.swift */,
+				4697FC3922EDEE16007EBAA6 /* EnterButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -626,6 +632,7 @@
 				4697FC2922EDB7C5007EBAA6 /* NumbersBondVC.swift in Sources */,
 				461BB4A722E62F39009EBD61 /* CoreDataHelper.swift in Sources */,
 				4697FC3422EDC079007EBAA6 /* NumberKeyboard.swift in Sources */,
+				4697FC3A22EDEE16007EBAA6 /* EnterButton.swift in Sources */,
 				46BF7B0622E62C1D00FAA757 /* StudentsVC.swift in Sources */,
 				461BB4AC22E6367F009EBD61 /* PinCircleView.swift in Sources */,
 				461BB4A222E62DA7009EBD61 /* InitialVC.swift in Sources */,
@@ -634,6 +641,7 @@
 				4635276422E8AC6100ACFA5A /* RoundedButton.swift in Sources */,
 				4635276B22E8B1CE00ACFA5A /* StudentCellTVC.swift in Sources */,
 				469189B922E7358B0083B092 /* InitialVM.swift in Sources */,
+				4697FC3822EDEDDD007EBAA6 /* DeleteButton.swift in Sources */,
 				4697FC1622EDA090007EBAA6 /* GamesVM.swift in Sources */,
 				46BF7B0422E62C1D00FAA757 /* AppDelegate.swift in Sources */,
 				4635276622E8AEAB00ACFA5A /* StudentsVM.swift in Sources */,

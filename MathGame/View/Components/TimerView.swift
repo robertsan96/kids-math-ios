@@ -8,10 +8,17 @@
 
 import UIKit
 
+protocol TimerViewDelegate: class {
+    
+    func timerDidEnd()
+}
+
 class TimerView: UIView {
 
     @IBOutlet var container: UIView!
     @IBOutlet weak var secondsLabel: UILabel!
+    
+    weak var delegate: TimerViewDelegate?
     
     var seconds: Int = 60
     var timer: Timer?

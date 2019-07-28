@@ -15,6 +15,7 @@ class NumbersBondVC: UIViewController {
     @IBOutlet weak var studentName: UILabel!
     @IBOutlet weak var mathLabel: UILabel!
     
+    @IBOutlet weak var timerView: TimerView!
     @IBOutlet weak var keyboard: NumberKeyboard!
     
     var viewModel: NumbersBondVM?
@@ -23,6 +24,7 @@ class NumbersBondVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         keyboard.delegate = self
+        timerView.delegate = self
         rxStart()
     }
     
@@ -60,7 +62,11 @@ extension NumbersBondVC: NumberKeyboardDelegate {
     func didPress(number: Int) {
         if let set = viewModel?.getCurrentSet() {
             if let four = set.gameTypeFour {
-                if Float(four.numberOne) + Float(number) == Float(four.numberTwo) {
+                let setNumberOne = Float(four.numberOne)
+                let setNumberTwo = Float(four.numberTwo)
+                let floatEnteredNumber = Float(number)
+                
+                if setNumberOne + floatEnteredNumber == setNumberTwo {
                     print("correct")
                     viewModel?.currentSet.onNext(viewModel?.getSet())
                 } else {
@@ -68,7 +74,10 @@ extension NumbersBondVC: NumberKeyboardDelegate {
                 }
             }
             if let five = set.gameTypeFive {
-                if Float(five.numberOne) + Float(number) == Float(five.numberTwo) {
+                let setNumberOne = Float(five.numberOne)
+                let setNumberTwo = Float(five.numberTwo)
+                let floatEnteredNumber = Float(number)
+                if setNumberOne + floatEnteredNumber == setNumberTwo {
                     print("Correct")
                     viewModel?.currentSet.onNext(viewModel?.getSet())
                 } else {
@@ -76,5 +85,12 @@ extension NumbersBondVC: NumberKeyboardDelegate {
                 }
             }
         }
+    }
+}
+
+extension NumbersBondVC: TimerViewDelegate {
+    
+    func timerDidEnd() {
+        
     }
 }
