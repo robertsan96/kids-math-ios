@@ -8,6 +8,14 @@
 
 import Foundation
 
+typealias GameTypeOne = (numberOne: Float, operator: String, numberTwo: Float, unknown: Float)
+typealias GameTypeTwo = (numberTwo: Float, operator: String, numberOne: Float, unknown: Float)
+typealias GameTypeThree = (gameTypeOne: GameTypeOne, gameTypeTwo: GameTypeTwo)
+
+typealias GameTypeFour = (numberOne: Float, operator: String, unknown: Float, numberTwo: Float)
+typealias GameTypeFive = (unknown: Float, operator: String, numberOne: Float, numberTwo: Float)
+typealias GameTypeSix = (gameTypeFour: GameTypeFour?, gameTypeFive: GameTypeFive?)
+
 enum Game {
 
     case numbersBond10

@@ -36,6 +36,9 @@
 		4697FC2C22EDB7F1007EBAA6 /* NumbersBondVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4697FC2B22EDB7F1007EBAA6 /* NumbersBondVM.swift */; };
 		4697FC2E22EDBD14007EBAA6 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4697FC2D22EDBD14007EBAA6 /* TimerView.swift */; };
 		4697FC3022EDBD6F007EBAA6 /* TimerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4697FC2F22EDBD6F007EBAA6 /* TimerView.xib */; };
+		4697FC3222EDC06C007EBAA6 /* NumberKeyboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4697FC3122EDC06C007EBAA6 /* NumberKeyboard.xib */; };
+		4697FC3422EDC079007EBAA6 /* NumberKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4697FC3322EDC079007EBAA6 /* NumberKeyboard.swift */; };
+		4697FC3622EDE288007EBAA6 /* NumberButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4697FC3522EDE288007EBAA6 /* NumberButton.swift */; };
 		46A5D10222E8DA90008F86C7 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A5D10122E8DA90008F86C7 /* SettingsVC.swift */; };
 		46A5D10522E8DB16008F86C7 /* SettingsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A5D10422E8DB16008F86C7 /* SettingsVM.swift */; };
 		46A5D10822E8DC49008F86C7 /* SettingsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A5D10622E8DC49008F86C7 /* SettingsTVC.swift */; };
@@ -105,6 +108,9 @@
 		4697FC2B22EDB7F1007EBAA6 /* NumbersBondVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersBondVM.swift; sourceTree = "<group>"; };
 		4697FC2D22EDBD14007EBAA6 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		4697FC2F22EDBD6F007EBAA6 /* TimerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimerView.xib; sourceTree = "<group>"; };
+		4697FC3122EDC06C007EBAA6 /* NumberKeyboard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NumberKeyboard.xib; sourceTree = "<group>"; };
+		4697FC3322EDC079007EBAA6 /* NumberKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberKeyboard.swift; sourceTree = "<group>"; };
+		4697FC3522EDE288007EBAA6 /* NumberButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberButton.swift; sourceTree = "<group>"; };
 		46A5D10122E8DA90008F86C7 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		46A5D10422E8DB16008F86C7 /* SettingsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVM.swift; sourceTree = "<group>"; };
 		46A5D10622E8DC49008F86C7 /* SettingsTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTVC.swift; sourceTree = "<group>"; };
@@ -217,6 +223,9 @@
 				4697FC2522EDAEEE007EBAA6 /* QuizButton.swift */,
 				4697FC2D22EDBD14007EBAA6 /* TimerView.swift */,
 				4697FC2F22EDBD6F007EBAA6 /* TimerView.xib */,
+				4697FC3322EDC079007EBAA6 /* NumberKeyboard.swift */,
+				4697FC3122EDC06C007EBAA6 /* NumberKeyboard.xib */,
+				4697FC3522EDE288007EBAA6 /* NumberButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -492,6 +501,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4697FC3222EDC06C007EBAA6 /* NumberKeyboard.xib in Resources */,
 				46A5D10922E8DC49008F86C7 /* SettingsTVC.xib in Resources */,
 				4697FC1A22EDA28D007EBAA6 /* GameTVC.xib in Resources */,
 				4697FC3022EDBD6F007EBAA6 /* TimerView.xib in Resources */,
@@ -615,6 +625,7 @@
 				4697FC2622EDAEEE007EBAA6 /* QuizButton.swift in Sources */,
 				4697FC2922EDB7C5007EBAA6 /* NumbersBondVC.swift in Sources */,
 				461BB4A722E62F39009EBD61 /* CoreDataHelper.swift in Sources */,
+				4697FC3422EDC079007EBAA6 /* NumberKeyboard.swift in Sources */,
 				46BF7B0622E62C1D00FAA757 /* StudentsVC.swift in Sources */,
 				461BB4AC22E6367F009EBD61 /* PinCircleView.swift in Sources */,
 				461BB4A222E62DA7009EBD61 /* InitialVC.swift in Sources */,
@@ -627,6 +638,7 @@
 				46BF7B0422E62C1D00FAA757 /* AppDelegate.swift in Sources */,
 				4635276622E8AEAB00ACFA5A /* StudentsVM.swift in Sources */,
 				4697FC1922EDA28D007EBAA6 /* GameTVC.swift in Sources */,
+				4697FC3622EDE288007EBAA6 /* NumberButton.swift in Sources */,
 				46BF7B0C22E62C1D00FAA757 /* MathGame.xcdatamodeld in Sources */,
 				461BB4A522E62E76009EBD61 /* AppDaemon.swift in Sources */,
 				4697FC1322ED9FB5007EBAA6 /* GamesVC.swift in Sources */,

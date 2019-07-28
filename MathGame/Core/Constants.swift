@@ -35,4 +35,10 @@ struct Constants {
     enum GameModes {
         case learning, quiz, training
     }
+    
+    enum GameLevels {
+        case beginner, medium, advanced
+    }
+    
+    static let UnknownDefault: Float = -13212
 }

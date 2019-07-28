@@ -96,7 +96,10 @@ extension GamesVC: SelectModeViewDelegate {
         case .numbersBond10:
             if mode == .quiz {
                 let numbersBondVC: NumbersBondVC = Storyboard.shared.getViewController(by: .numbersBondVC)
-                let numbersBondVM: NumbersBondVM = NumbersBondVM(with: game, and: .ten, and: student)
+                let numbersBondVM: NumbersBondVM = NumbersBondVM(with: game,
+                                                                 and: .ten,
+                                                                 and: student,
+                                                                 and: .beginner)
                 numbersBondVC.viewModel = numbersBondVM
                 present(numbersBondVC, animated: true, completion: {
                     numbersBondVC.reloadViews()

@@ -611,25 +611,47 @@
                                     <constraint firstAttribute="width" constant="100" id="hOB-F0-99p"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xLg-vn-vKH" customClass="NumberKeyboard" customModule="MathGame" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="596" width="414" height="300"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="pB5-JK-Aae"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5cf-K3-ztF">
+                                <rect key="frame" x="0.0" y="334" width="414" height="262"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="xLg-vn-vKH" firstAttribute="top" secondItem="5cf-K3-ztF" secondAttribute="bottom" id="AaO-mv-9XM"/>
+                            <constraint firstItem="xLg-vn-vKH" firstAttribute="trailing" secondItem="InC-NH-Mto" secondAttribute="trailing" id="Fev-Ip-wcg"/>
+                            <constraint firstItem="xLg-vn-vKH" firstAttribute="leading" secondItem="InC-NH-Mto" secondAttribute="leading" id="KuY-iS-Ghn"/>
+                            <constraint firstItem="InC-NH-Mto" firstAttribute="trailing" secondItem="5cf-K3-ztF" secondAttribute="trailing" id="OD9-Rj-yP8"/>
                             <constraint firstItem="9DB-xD-b1R" firstAttribute="leading" secondItem="InC-NH-Mto" secondAttribute="leading" id="RZo-D4-FfV"/>
+                            <constraint firstItem="5cf-K3-ztF" firstAttribute="top" secondItem="l2J-ms-MUq" secondAttribute="bottom" id="S8f-dw-VhP"/>
                             <constraint firstItem="9DB-xD-b1R" firstAttribute="top" secondItem="Ou8-v6-Lgq" secondAttribute="top" id="bo7-M8-cjv"/>
                             <constraint firstItem="9DB-xD-b1R" firstAttribute="trailing" secondItem="InC-NH-Mto" secondAttribute="trailing" id="nLS-tv-Itl"/>
                             <constraint firstItem="l2J-ms-MUq" firstAttribute="centerX" secondItem="InC-NH-Mto" secondAttribute="centerX" id="qNE-od-bFN"/>
                             <constraint firstItem="l2J-ms-MUq" firstAttribute="top" secondItem="9DB-xD-b1R" secondAttribute="bottom" constant="14" id="vzp-Fv-EfB"/>
+                            <constraint firstAttribute="bottom" secondItem="xLg-vn-vKH" secondAttribute="bottom" id="w9V-xA-Vsa"/>
+                            <constraint firstItem="5cf-K3-ztF" firstAttribute="leading" secondItem="InC-NH-Mto" secondAttribute="leading" id="zpa-3F-TNm"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="InC-NH-Mto"/>
                     </view>
                     <connections>
                         <outlet property="gameName" destination="8ab-yt-WTE" id="lnV-VM-9rQ"/>
+                        <outlet property="keyboard" destination="xLg-vn-vKH" id="RNp-D9-fVN"/>
+                        <outlet property="mathLabel" destination="5cf-K3-ztF" id="oBs-cO-fgo"/>
                         <outlet property="studentName" destination="M9z-04-9L2" id="cjy-em-eNh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A1n-Hb-xYH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1741" y="-583"/>
+            <point key="canvasLocation" x="1740.5797101449277" y="-583.25892857142856"/>
         </scene>
     </scenes>
     <resources>
