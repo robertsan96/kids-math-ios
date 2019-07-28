@@ -27,4 +27,13 @@ class GamesVM {
     init(with student: Student) {
         self.student = BehaviorSubject(value: student)
     }
+    
+    func getStudent() -> Student? {
+        do {
+            let student = try self.student.value()
+            return student
+        } catch {
+            return nil
+        }
+    }
 }

@@ -34,6 +34,8 @@
 		4697FC2622EDAEEE007EBAA6 /* QuizButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4697FC2522EDAEEE007EBAA6 /* QuizButton.swift */; };
 		4697FC2922EDB7C5007EBAA6 /* NumbersBondVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4697FC2822EDB7C5007EBAA6 /* NumbersBondVC.swift */; };
 		4697FC2C22EDB7F1007EBAA6 /* NumbersBondVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4697FC2B22EDB7F1007EBAA6 /* NumbersBondVM.swift */; };
+		4697FC2E22EDBD14007EBAA6 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4697FC2D22EDBD14007EBAA6 /* TimerView.swift */; };
+		4697FC3022EDBD6F007EBAA6 /* TimerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4697FC2F22EDBD6F007EBAA6 /* TimerView.xib */; };
 		46A5D10222E8DA90008F86C7 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A5D10122E8DA90008F86C7 /* SettingsVC.swift */; };
 		46A5D10522E8DB16008F86C7 /* SettingsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A5D10422E8DB16008F86C7 /* SettingsVM.swift */; };
 		46A5D10822E8DC49008F86C7 /* SettingsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A5D10622E8DC49008F86C7 /* SettingsTVC.swift */; };
@@ -101,6 +103,8 @@
 		4697FC2522EDAEEE007EBAA6 /* QuizButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizButton.swift; sourceTree = "<group>"; };
 		4697FC2822EDB7C5007EBAA6 /* NumbersBondVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersBondVC.swift; sourceTree = "<group>"; };
 		4697FC2B22EDB7F1007EBAA6 /* NumbersBondVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersBondVM.swift; sourceTree = "<group>"; };
+		4697FC2D22EDBD14007EBAA6 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		4697FC2F22EDBD6F007EBAA6 /* TimerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimerView.xib; sourceTree = "<group>"; };
 		46A5D10122E8DA90008F86C7 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		46A5D10422E8DB16008F86C7 /* SettingsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVM.swift; sourceTree = "<group>"; };
 		46A5D10622E8DC49008F86C7 /* SettingsTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTVC.swift; sourceTree = "<group>"; };
@@ -211,6 +215,8 @@
 				4697FC2122EDAECF007EBAA6 /* LearningButton.swift */,
 				4697FC2322EDAEE5007EBAA6 /* TrainingButton.swift */,
 				4697FC2522EDAEEE007EBAA6 /* QuizButton.swift */,
+				4697FC2D22EDBD14007EBAA6 /* TimerView.swift */,
+				4697FC2F22EDBD6F007EBAA6 /* TimerView.xib */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -488,6 +494,7 @@
 			files = (
 				46A5D10922E8DC49008F86C7 /* SettingsTVC.xib in Resources */,
 				4697FC1A22EDA28D007EBAA6 /* GameTVC.xib in Resources */,
+				4697FC3022EDBD6F007EBAA6 /* TimerView.xib in Resources */,
 				46BF7B1122E62C1D00FAA757 /* LaunchScreen.storyboard in Resources */,
 				46BF7B0E22E62C1D00FAA757 /* Assets.xcassets in Resources */,
 				46BF7B0922E62C1D00FAA757 /* Main.storyboard in Resources */,
@@ -603,6 +610,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4697FC2E22EDBD14007EBAA6 /* TimerView.swift in Sources */,
 				46A5D10222E8DA90008F86C7 /* SettingsVC.swift in Sources */,
 				4697FC2622EDAEEE007EBAA6 /* QuizButton.swift in Sources */,
 				4697FC2922EDB7C5007EBAA6 /* NumbersBondVC.swift in Sources */,

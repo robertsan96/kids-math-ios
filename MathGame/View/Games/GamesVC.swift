@@ -91,11 +91,18 @@ extension GamesVC {
 extension GamesVC: SelectModeViewDelegate {
     
     func didSelect(mode: Constants.GameModes, for game: Game) {
-        switch mode {
-        case .quiz:
-            break
-        case .learning: break
-        case .training: break
+        guard let student = viewModel?.getStudent() else { return }
+        switch game {
+        case .numbersBond10:
+            if mode == .quiz {
+                let numbersBondVC: NumbersBondVC = Storyboard.shared.getViewController(by: .numbersBondVC)
+                let numbersBondVM: NumbersBondVM = NumbersBondVM(with: game, and: .ten, and: student)
+                numbersBondVC.viewModel = numbersBondVM
+                present(numbersBondVC, animated: true, completion: {
+                    numbersBondVC.reloadViews()
+                })
+            }
+        default: break
         }
     }
 }
