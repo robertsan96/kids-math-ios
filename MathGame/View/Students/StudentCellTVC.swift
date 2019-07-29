@@ -8,14 +8,20 @@
 
 import UIKit
 
-class StudentCellTVC: UITableViewCell {
+protocol StudentCellTVCDelegate: class {
+    func didPressInfo(on cell: StudentCellTVC, with student: Student)
+}
 
+class StudentCellTVC: UITableViewCell {
+    
     var student: Student?
     @IBOutlet weak var studentName: UILabel!
     @IBOutlet weak var lastActivity: UILabel!
     @IBOutlet weak var container: UIView!
     @IBOutlet weak var extraButton: RoundedButton!
+    @IBOutlet weak var extraButtonTwo: RoundedButton!
     
+    weak var delegate: StudentCellTVCDelegate?
     var vcViewModel: StudentsVM?
     
     var mode: StudentsMode = .normal
@@ -25,7 +31,7 @@ class StudentCellTVC: UITableViewCell {
         
         customizeContainer()
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         
@@ -41,13 +47,15 @@ class StudentCellTVC: UITableViewCell {
         
         container.layer.cornerRadius = 15
         extraButton.isHidden = mode == .normal
-        
+        extraButtonTwo.isHidden = mode != .reset
         if mode == .delete {
             extraButton.backgroundColor = UIColor.red
             extraButton.setTitle("-", for: .normal)
         } else if mode == .reset {
             extraButton.backgroundColor = Constants.Colors.tableRowStudentSelected
             extraButton.setTitle("🔄", for: .normal)
+            extraButtonTwo.backgroundColor = Constants.Colors.tableRowStudentSelected
+            extraButtonTwo.setTitle("ℹ️", for: .normal)
         }
     }
     
@@ -61,5 +69,12 @@ class StudentCellTVC: UITableViewCell {
             
         }
         vcViewModel?.refreshStudents()
+    }
+    
+    @IBAction func onExtraButtonTwo(_ sender: Any) {
+        if mode == .reset {
+            guard let student = student else { return }
+            delegate?.didPressInfo(on: self, with: student)
+        }
     }
 }

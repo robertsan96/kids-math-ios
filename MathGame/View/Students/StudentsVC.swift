@@ -47,6 +47,7 @@ class StudentsVC: UIViewController {
                     guard let `self` = self else { return }
                     let student = self.viewModel.getStudentAt(row: row)
                     let fullName = "\(student?.firstName ?? "") \(student?.lastName ?? "")"
+                    cell.delegate = self
                     cell.studentName.text = fullName
                     if let lastActivity = student?.lastActivity {
                         cell.lastActivity.text = "Last Activity: \(lastActivity.humanized)"
@@ -141,6 +142,16 @@ class StudentsVC: UIViewController {
         alertVC.addAction(cancel)
         
         present(alertVC, animated: true, completion: nil)
+    }
+}
+
+extension StudentsVC: StudentCellTVCDelegate {
+    
+    func didPressInfo(on cell: StudentCellTVC, with student: Student) {
+        let studentDataVC: StudentDataVC = Storyboard.shared.getViewController(by: .studentDataVC)
+        let studentDataVM: StudentDataVM = StudentDataVM(with: student)
+        studentDataVC.viewModel = studentDataVM
+        navigationController?.pushViewController(studentDataVC, animated: true)
     }
 }
 

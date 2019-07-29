@@ -21,7 +21,7 @@ enum SettingsOptions {
         switch self {
         case .addStudent: return "Add Student"
         case .deleteStudent: return "Delete Student"
-        case .resetStudent: return "Reset Student"
+        case .resetStudent: return "Student Data"
         case .changePin: return "Change PIN"
         }
     }
