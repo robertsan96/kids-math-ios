@@ -9,6 +9,10 @@
 import UIKit
 import RxSwift
 
+protocol NumbersBondVCDelegate: class {
+    func didDismiss(on vc: NumbersBondVC)
+}
+
 class NumbersBondVC: UIViewController {
 
     @IBOutlet weak var gameName: UILabel!
@@ -17,6 +21,8 @@ class NumbersBondVC: UIViewController {
     
     @IBOutlet weak var timerView: TimerView!
     @IBOutlet weak var keyboard: NumberKeyboard!
+    
+    weak var delegate: NumbersBondVCDelegate?
     
     var answerTimer: Timer?
     var viewModel: NumbersBondVM?
@@ -62,7 +68,7 @@ extension NumbersBondVC {
 extension NumbersBondVC: NumberKeyboardDelegate {
     func didPress(number: Int) {
         if let set = viewModel?.getCurrentSet() {
-            if let four = set.gameTypeFour {
+            if var four = set.gameTypeFour {
                 let setNumberOne = Float(four.numberOne)
                 let setNumberTwo = Float(four.numberTwo)
                 let floatEnteredNumber = Float(number)
@@ -72,11 +78,12 @@ extension NumbersBondVC: NumberKeyboardDelegate {
                 } else {
                     view.backgroundColor = UIColor.red
                 }
+                four.unknown = Float(number)
+                viewModel?.updateLastSet(with: (gameTypeFour: four, nil))
                 keyboard.isUserInteractionEnabled = false
-                timerView.disableTimer()
-                answerTimer = Timer.scheduledTimer(timeInterval: 0.3, target: self, selector: #selector(answerCorrect), userInfo: nil, repeats: false)
+                answerTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(answerCorrect), userInfo: nil, repeats: false)
             }
-            if let five = set.gameTypeFive {
+            if var five = set.gameTypeFive {
                 let setNumberOne = Float(five.numberOne)
                 let setNumberTwo = Float(five.numberTwo)
                 let floatEnteredNumber = Float(number)
@@ -85,9 +92,10 @@ extension NumbersBondVC: NumberKeyboardDelegate {
                 } else {
                     view.backgroundColor = UIColor.red
                 }
+                five.unknown = Float(number)
+                viewModel?.updateLastSet(with: (gameTypeFour: nil, five))
                 keyboard.isUserInteractionEnabled = false
-                timerView.disableTimer()
-                answerTimer = Timer.scheduledTimer(timeInterval: 0.3, target: self, selector: #selector(answerCorrect), userInfo: nil, repeats: false)
+                answerTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(answerCorrect), userInfo: nil, repeats: false)
             }
         }
     }
@@ -97,7 +105,6 @@ extension NumbersBondVC: NumberKeyboardDelegate {
         view.backgroundColor = UIColor.white
         viewModel?.currentSet.onNext(viewModel?.getSet())
         answerTimer?.invalidate()
-        timerView.startTimer()
         keyboard.isUserInteractionEnabled = true
     }
 }
@@ -106,5 +113,23 @@ extension NumbersBondVC: TimerViewDelegate {
     
     func timerDidEnd() {
         view.isUserInteractionEnabled = false
+        guard let vm = viewModel else { return }
+        let numberBondsResultsVC: NumberBondResultsVC = Storyboard.shared.getViewController(by: .numberBondResultsVC)
+        let numberBondsResultsVM = NumberBondsResultsVM(with: vm.game, with: vm.student, with: vm.gamesGenerated)
+        numberBondsResultsVC.viewModel = numberBondsResultsVM
+        numberBondsResultsVC.delegate = self
+        present(numberBondsResultsVC, animated: true, completion: {
+            numberBondsResultsVC.reloadViews()
+        })
+    }
+}
+
+extension NumbersBondVC: NumberBondResultsVCDelegate {
+    
+    func didDismiss(on vc: NumberBondResultsVC) {
+        self.dismiss(animated: false, completion: { [weak self] in
+            guard let `self` = self else { return }
+            self.delegate?.didDismiss(on: self)
+        })
     }
 }

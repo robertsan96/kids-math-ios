@@ -104,4 +104,10 @@ class NumbersBondVM {
             return nil
         }
     }
+    
+    func updateLastSet(with set: GameTypeSix) {
+        let allButLast = Array(gamesGenerated.dropLast())
+        gamesGenerated = allButLast
+        gamesGenerated.append(set)
+    }
 }

@@ -101,11 +101,19 @@ extension GamesVC: SelectModeViewDelegate {
                                                                  and: student,
                                                                  and: .beginner)
                 numbersBondVC.viewModel = numbersBondVM
+                numbersBondVC.delegate = self
                 present(numbersBondVC, animated: true, completion: {
                     numbersBondVC.reloadViews()
                 })
             }
         default: break
         }
+    }
+}
+
+extension GamesVC: NumbersBondVCDelegate {
+    
+    func didDismiss(on vc: NumbersBondVC) {
+        didCloseModeSelector()
     }
 }

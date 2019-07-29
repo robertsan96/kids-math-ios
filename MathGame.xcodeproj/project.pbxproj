@@ -41,6 +41,10 @@
 		4697FC3622EDE288007EBAA6 /* NumberButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4697FC3522EDE288007EBAA6 /* NumberButton.swift */; };
 		4697FC3822EDEDDD007EBAA6 /* DeleteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4697FC3722EDEDDD007EBAA6 /* DeleteButton.swift */; };
 		4697FC3A22EDEE16007EBAA6 /* EnterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4697FC3922EDEE16007EBAA6 /* EnterButton.swift */; };
+		4697FC3C22EDF60D007EBAA6 /* NumberBondResultsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4697FC3B22EDF60D007EBAA6 /* NumberBondResultsVC.swift */; };
+		4697FC3E22EDF715007EBAA6 /* NumberBondsResultsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4697FC3D22EDF715007EBAA6 /* NumberBondsResultsVM.swift */; };
+		4697FC4322EDF831007EBAA6 /* NumberBondsResultTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4697FC4122EDF831007EBAA6 /* NumberBondsResultTVC.swift */; };
+		4697FC4422EDF831007EBAA6 /* NumberBondsResultTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4697FC4222EDF831007EBAA6 /* NumberBondsResultTVC.xib */; };
 		46A5D10222E8DA90008F86C7 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A5D10122E8DA90008F86C7 /* SettingsVC.swift */; };
 		46A5D10522E8DB16008F86C7 /* SettingsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A5D10422E8DB16008F86C7 /* SettingsVM.swift */; };
 		46A5D10822E8DC49008F86C7 /* SettingsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A5D10622E8DC49008F86C7 /* SettingsTVC.swift */; };
@@ -115,6 +119,10 @@
 		4697FC3522EDE288007EBAA6 /* NumberButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberButton.swift; sourceTree = "<group>"; };
 		4697FC3722EDEDDD007EBAA6 /* DeleteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteButton.swift; sourceTree = "<group>"; };
 		4697FC3922EDEE16007EBAA6 /* EnterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterButton.swift; sourceTree = "<group>"; };
+		4697FC3B22EDF60D007EBAA6 /* NumberBondResultsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberBondResultsVC.swift; sourceTree = "<group>"; };
+		4697FC3D22EDF715007EBAA6 /* NumberBondsResultsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberBondsResultsVM.swift; sourceTree = "<group>"; };
+		4697FC4122EDF831007EBAA6 /* NumberBondsResultTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberBondsResultTVC.swift; sourceTree = "<group>"; };
+		4697FC4222EDF831007EBAA6 /* NumberBondsResultTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NumberBondsResultTVC.xib; sourceTree = "<group>"; };
 		46A5D10122E8DA90008F86C7 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		46A5D10422E8DB16008F86C7 /* SettingsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVM.swift; sourceTree = "<group>"; };
 		46A5D10622E8DC49008F86C7 /* SettingsTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTVC.swift; sourceTree = "<group>"; };
@@ -301,6 +309,9 @@
 			isa = PBXGroup;
 			children = (
 				4697FC2822EDB7C5007EBAA6 /* NumbersBondVC.swift */,
+				4697FC3B22EDF60D007EBAA6 /* NumberBondResultsVC.swift */,
+				4697FC4122EDF831007EBAA6 /* NumberBondsResultTVC.swift */,
+				4697FC4222EDF831007EBAA6 /* NumberBondsResultTVC.xib */,
 			);
 			path = NumbersBond;
 			sourceTree = "<group>";
@@ -309,6 +320,7 @@
 			isa = PBXGroup;
 			children = (
 				4697FC2B22EDB7F1007EBAA6 /* NumbersBondVM.swift */,
+				4697FC3D22EDF715007EBAA6 /* NumberBondsResultsVM.swift */,
 			);
 			path = NumbersBond;
 			sourceTree = "<group>";
@@ -507,6 +519,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4697FC4422EDF831007EBAA6 /* NumberBondsResultTVC.xib in Resources */,
 				4697FC3222EDC06C007EBAA6 /* NumberKeyboard.xib in Resources */,
 				46A5D10922E8DC49008F86C7 /* SettingsTVC.xib in Resources */,
 				4697FC1A22EDA28D007EBAA6 /* GameTVC.xib in Resources */,
@@ -634,6 +647,7 @@
 				4697FC3422EDC079007EBAA6 /* NumberKeyboard.swift in Sources */,
 				4697FC3A22EDEE16007EBAA6 /* EnterButton.swift in Sources */,
 				46BF7B0622E62C1D00FAA757 /* StudentsVC.swift in Sources */,
+				4697FC4322EDF831007EBAA6 /* NumberBondsResultTVC.swift in Sources */,
 				461BB4AC22E6367F009EBD61 /* PinCircleView.swift in Sources */,
 				461BB4A222E62DA7009EBD61 /* InitialVC.swift in Sources */,
 				461BB4A922E633F5009EBD61 /* Storyboard.swift in Sources */,
@@ -643,6 +657,7 @@
 				469189B922E7358B0083B092 /* InitialVM.swift in Sources */,
 				4697FC3822EDEDDD007EBAA6 /* DeleteButton.swift in Sources */,
 				4697FC1622EDA090007EBAA6 /* GamesVM.swift in Sources */,
+				4697FC3E22EDF715007EBAA6 /* NumberBondsResultsVM.swift in Sources */,
 				46BF7B0422E62C1D00FAA757 /* AppDelegate.swift in Sources */,
 				4635276622E8AEAB00ACFA5A /* StudentsVM.swift in Sources */,
 				4697FC1922EDA28D007EBAA6 /* GameTVC.swift in Sources */,
@@ -660,6 +675,7 @@
 				4697FC1C22EDA32B007EBAA6 /* Game.swift in Sources */,
 				4697FC1E22EDAA81007EBAA6 /* SelectModeView.swift in Sources */,
 				4697FC2222EDAECF007EBAA6 /* LearningButton.swift in Sources */,
+				4697FC3C22EDF60D007EBAA6 /* NumberBondResultsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
