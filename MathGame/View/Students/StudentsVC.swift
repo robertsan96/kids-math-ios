@@ -49,7 +49,7 @@ class StudentsVC: UIViewController {
                     let fullName = "\(student?.firstName ?? "") \(student?.lastName ?? "")"
                     cell.studentName.text = fullName
                     if let lastActivity = student?.lastActivity {
-                        cell.lastActivity.text = "Last Activity: \(lastActivity)"
+                        cell.lastActivity.text = "Last Activity: \(lastActivity.humanized)"
                     } else {
                         cell.lastActivity.text = "Last Activity: never"
                     }

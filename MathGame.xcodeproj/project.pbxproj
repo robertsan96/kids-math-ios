@@ -57,6 +57,7 @@
 		46BF7B1122E62C1D00FAA757 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46BF7B0F22E62C1D00FAA757 /* LaunchScreen.storyboard */; };
 		46BF7B1C22E62C1D00FAA757 /* MathGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BF7B1B22E62C1D00FAA757 /* MathGameTests.swift */; };
 		46BF7B2722E62C1D00FAA757 /* MathGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BF7B2622E62C1D00FAA757 /* MathGameUITests.swift */; };
+		46EEEE7222EF659D006F0AFE /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EEEE7122EF659D006F0AFE /* Date.swift */; };
 		A2D301E646383676B7266658 /* Pods_MathGameUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 459D68600409B37CDBEE6FE9 /* Pods_MathGameUITests.framework */; };
 		E3BE199230DC48397A4AA640 /* Pods_MathGame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25F5E987095EF90336FB1499 /* Pods_MathGame.framework */; };
 /* End PBXBuildFile section */
@@ -141,6 +142,7 @@
 		46BF7B2222E62C1D00FAA757 /* MathGameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MathGameUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		46BF7B2622E62C1D00FAA757 /* MathGameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathGameUITests.swift; sourceTree = "<group>"; };
 		46BF7B2822E62C1D00FAA757 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		46EEEE7122EF659D006F0AFE /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		6CB835ACC583769AD1E77E16 /* Pods-MathGame.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MathGame.debug.xcconfig"; path = "Target Support Files/Pods-MathGame/Pods-MathGame.debug.xcconfig"; sourceTree = "<group>"; };
 		D091CA94C7C55D1641C9791F /* Pods-MathGameTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MathGameTests.release.xcconfig"; path = "Target Support Files/Pods-MathGameTests/Pods-MathGameTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -221,6 +223,7 @@
 				4630296522E63ADF00FB8C18 /* Constants.swift */,
 				461BB4A622E62F39009EBD61 /* CoreDataHelper.swift */,
 				461BB4A822E633F5009EBD61 /* Storyboard.swift */,
+				46EEEE7322EF65A1006F0AFE /* Extensions */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -386,6 +389,14 @@
 				46BF7B2822E62C1D00FAA757 /* Info.plist */,
 			);
 			path = MathGameUITests;
+			sourceTree = "<group>";
+		};
+		46EEEE7322EF65A1006F0AFE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				46EEEE7122EF659D006F0AFE /* Date.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		890AFFBFBB48225C94D62531 /* Frameworks */ = {
@@ -674,6 +685,7 @@
 				46A5D10822E8DC49008F86C7 /* SettingsTVC.swift in Sources */,
 				4697FC1C22EDA32B007EBAA6 /* Game.swift in Sources */,
 				4697FC1E22EDAA81007EBAA6 /* SelectModeView.swift in Sources */,
+				46EEEE7222EF659D006F0AFE /* Date.swift in Sources */,
 				4697FC2222EDAECF007EBAA6 /* LearningButton.swift in Sources */,
 				4697FC3C22EDF60D007EBAA6 /* NumberBondResultsVC.swift in Sources */,
 			);

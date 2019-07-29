@@ -106,6 +106,19 @@ extension GamesVC: SelectModeViewDelegate {
                     numbersBondVC.reloadViews()
                 })
             }
+        case .numbersBond20:
+            if mode == .quiz {
+                let numbersBondVC: NumbersBondVC = Storyboard.shared.getViewController(by: .numbersBondVC)
+                let numbersBondVM: NumbersBondVM = NumbersBondVM(with: game,
+                                                                 and: .twenty,
+                                                                 and: student,
+                                                                 and: .beginner)
+                numbersBondVC.viewModel = numbersBondVM
+                numbersBondVC.delegate = self
+                present(numbersBondVC, animated: true, completion: {
+                    numbersBondVC.reloadViews()
+                })
+            }
         default: break
         }
     }

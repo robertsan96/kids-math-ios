@@ -47,10 +47,10 @@ class NumbersBondVC: UIViewController {
     
     func updateView(with set: GameTypeSix) {
         if let four = set.gameTypeFour {
-            mathLabel.text = "How much add \(Int(four.numberOne)) is 10?"
+            mathLabel.text = "How much add \(Int(four.numberOne)) is \(Int(viewModel?.numbersBondMode.getMaxNumber() ?? 0))?"
         }
         if let five = set.gameTypeFive {
-            mathLabel.text = "How much add \(Int(five.numberOne)) is 10?"
+            mathLabel.text = "How much add \(Int(five.numberOne)) is \(Int(viewModel?.numbersBondMode.getMaxNumber() ?? 0))?"
         }
     }
 }

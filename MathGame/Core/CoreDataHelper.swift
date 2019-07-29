@@ -20,6 +20,13 @@ enum CoreDataStockKeys: String {
     case masterPin = "MASTER_PIN"
 }
 
+typealias GameSessionLogFields = (
+    answer: Float,
+    correct: Bool,
+    date: Date,
+    question: String
+)
+
 class CoreDataHelper {
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -107,5 +114,34 @@ extension CoreDataHelper {
     
     func deleteStudent(student: Student) {
         context.delete(student)
+    }
+    
+    func createGameSession(for student: Student, and game: Game) -> GameSession? {
+        let gameSession = GameSession(context: context)
+        gameSession.date = Date()
+        gameSession.game = game.getName()
+        student.addToGameSessions(gameSession)
+        student.lastActivity = Date()
+        do {
+            try context.save()
+            return gameSession
+        } catch {
+            return nil
+        }
+    }
+    
+    func createGameLog(for gameSession: GameSession, and log: GameSessionLogFields) -> GameLog? {
+        let gameLog = GameLog(context: context)
+        gameLog.answer = log.answer
+        gameLog.correct = log.correct
+        gameLog.date = log.date
+        gameLog.question = log.question
+        gameSession.addToLogs(gameLog)
+        do {
+            try context.save()
+            return gameLog
+        } catch {
+            return nil
+        }
     }
 }

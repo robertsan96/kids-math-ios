@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14490.99" systemVersion="18E226" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="GameLog" representedClassName="GameLog" syncable="YES" codeGenerationType="class"/>
+    <entity name="GameLog" representedClassName="GameLog" syncable="YES" codeGenerationType="class">
+        <attribute name="answer" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="correct" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="question" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="gameSession" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="GameSession" inverseName="logs" inverseEntity="GameSession" syncable="YES"/>
+    </entity>
+    <entity name="GameSession" representedClassName="GameSession" syncable="YES" codeGenerationType="class">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="game" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="logs" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="GameLog" inverseName="gameSession" inverseEntity="GameLog" syncable="YES"/>
+        <relationship name="student" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Student" inverseName="gameSessions" inverseEntity="Student" syncable="YES"/>
+    </entity>
     <entity name="Stock" representedClassName="Stock" syncable="YES" codeGenerationType="class">
         <attribute name="key" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="value" optional="YES" attributeType="String" syncable="YES"/>
@@ -10,10 +22,12 @@
         <attribute name="lastActivity" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="pin" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="gameSessions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="GameSession" inverseName="student" inverseEntity="GameSession" syncable="YES"/>
     </entity>
     <elements>
-        <element name="GameLog" positionX="-36" positionY="36" width="128" height="45"/>
-        <element name="Stock" positionX="-54" positionY="18" width="128" height="75"/>
-        <element name="Student" positionX="-63" positionY="-18" width="128" height="105"/>
+        <element name="GameLog" positionX="-21.27734375" positionY="-61.51953125" width="128" height="118"/>
+        <element name="Stock" positionX="-188.77734375" positionY="121.64453125" width="128" height="75"/>
+        <element name="Student" positionX="-180.10546875" positionY="-69.6640625" width="128" height="118"/>
+        <element name="GameSession" positionX="-108" positionY="45" width="128" height="105"/>
     </elements>
 </model>
