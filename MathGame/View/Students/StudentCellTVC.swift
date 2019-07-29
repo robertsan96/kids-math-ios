@@ -66,7 +66,9 @@ class StudentCellTVC: UITableViewCell {
             cdh.deleteStudent(student: student)
         }
         if mode == .reset {
-            
+            guard let student = student else { return }
+            let cdh = CoreDataHelper()
+            cdh.deleteGameSessions(for: student)
         }
         vcViewModel?.refreshStudents()
     }

@@ -144,4 +144,14 @@ extension CoreDataHelper {
             return nil
         }
     }
+    
+    func deleteGameSessions(for student: Student) {
+        for gameSession in student.gameSessions?.allObjects as? [GameSession] ?? [] {
+            context.delete(gameSession)
+            
+        }
+        do {
+            try context.save()
+        } catch { }
+    }
 }
