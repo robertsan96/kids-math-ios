@@ -73,6 +73,16 @@ class HalvesResultTVC: UITableViewCell {
                 questionLabel.text = "\(Int(setNumberOne)) - \(Int(setUnknown)) is not \(Int(setNumberTwo))"
                 answerLabel.text = "Your answer: \(Int(setUnknown)) | Correct answer: \(Int(correctAnswer))"
             }
+        case .timesTable:
+            questionLabel.text = "\(Int(setNumberOne)) * \(Int(setNumberTwo)) = \(Int(setUnknown))"
+            answerLabel.text = "Your answer: \(Int(setUnknown))"
+            if setNumberOne * setNumberTwo == setUnknown {
+                correct = true
+            } else {
+                let correctAnswer = setNumberOne * setNumberTwo
+                questionLabel.text = "\(Int(setNumberOne)) * \(Int(setNumberTwo)) is not \(Int(setUnknown))"
+                answerLabel.text = "Your answer: \(Int(setUnknown)) | Correct answer: \(Int(correctAnswer))"
+            }
         default:
             questionLabel.text = "\(Int(setNumberOne)) * \(Int(setNumberTwo)) = \(Int(setUnknown))"
             answerLabel.text = "Your answer: \(Int(setUnknown))"

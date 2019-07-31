@@ -96,6 +96,19 @@ class HalvesVM {
             }
             gamesGenerated.append(gameTypeOne)
             return gameTypeOne
+        case .timesTable:
+            var numberOne = Int.random(in: gameLevel.getTimesTableInterval().min ..< gameLevel.getTimesTableInterval().max)
+            let numberTwo = Int.random(in: gameLevel.getTimesTableInterval().min ..< gameLevel.getTimesTableInterval().max)
+            
+            var gameTypeOne: GameTypeOne = (numberOne: Float(numberOne), operator: "-", numberTwo: Float(numberTwo), unknown: Constants.UnknownDefault)
+            
+            while gameWasGeneratedBeforeOne(game: gameTypeOne) {
+                numberOne = Int.random(in: gameLevel.getTimesTableInterval().min ..< gameLevel.getTimesTableInterval().max)
+                let numberTwo = Int.random(in: gameLevel.getTimesTableInterval().min ..< gameLevel.getTimesTableInterval().max)
+                gameTypeOne = (numberOne: Float(numberOne), operator: "-", unknown: Constants.UnknownDefault, numberTwo: Float(numberTwo))
+            }
+            gamesGenerated.append(gameTypeOne)
+            return gameTypeOne
         default:
             var numberOne = Int.random(in: gameLevel.getAddingInterval().min ..< gameLevel.getAddingInterval().max)
             var numberTwo = Int.random(in: gameLevel.getAddingInterval().min ..< gameLevel.getAddingInterval().max)
