@@ -78,6 +78,14 @@ struct Constants {
             case .advanced: return (20,50)
             }
         }
+        
+        func getDividingInterval() -> (min: Int, max: Int) {
+            switch self {
+            case .beginner: return (1, 10)
+            case .medium: return (10, 20)
+            case .advanced: return (20,50)
+            }
+        }
     }
     
     static let UnknownDefault: Float = -13212
