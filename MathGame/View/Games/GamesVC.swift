@@ -119,6 +119,45 @@ extension GamesVC: SelectModeViewDelegate {
                     numbersBondVC.reloadViews()
                 })
             }
+        case .halves:
+            if mode == .quiz {
+                let halvesVC: GenericGameOne = Storyboard.shared.getViewController(by: .genericGameOne)
+                let halvesVM: HalvesVM = HalvesVM(with: game,
+                                                  and: 20,
+                                                  and: student,
+                                                  and: .advanced)
+                halvesVC.viewModel = halvesVM
+                halvesVC.delegate = self
+                present(halvesVC, animated: true, completion: {
+                    halvesVC.reloadViews()
+                })
+            }
+        case .doubles:
+            if mode == .quiz {
+                let halvesVC: GenericGameOne = Storyboard.shared.getViewController(by: .genericGameOne)
+                let halvesVM: HalvesVM = HalvesVM(with: game,
+                                                  and: 20,
+                                                  and: student,
+                                                  and: .advanced)
+                halvesVC.viewModel = halvesVM
+                halvesVC.delegate = self
+                present(halvesVC, animated: true, completion: {
+                    halvesVC.reloadViews()
+                })
+            }
+        case .adding:
+            if mode == .quiz {
+                let halvesVC: GenericGameOne = Storyboard.shared.getViewController(by: .genericGameOne)
+                let halvesVM: HalvesVM = HalvesVM(with: game,
+                                                  and: 20,
+                                                  and: student,
+                                                  and: .beginner)
+                halvesVC.viewModel = halvesVM
+                halvesVC.delegate = self
+                present(halvesVC, animated: true, completion: {
+                    halvesVC.reloadViews()
+                })
+            }
         default: break
         }
     }
@@ -128,5 +167,12 @@ extension GamesVC: NumbersBondVCDelegate {
     
     func didDismiss(on vc: NumbersBondVC) {
         didCloseModeSelector()
+    }
+}
+
+extension GamesVC: HalvesVCDelegate {
+    
+    func didDismiss(on vc: GameTypeOne) {
+        
     }
 }

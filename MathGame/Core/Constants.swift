@@ -38,6 +38,30 @@ struct Constants {
     
     enum GameLevels {
         case beginner, medium, advanced
+        
+        func getHalvesInterval() -> (min: Int, max: Int) {
+            switch self {
+            case .beginner: return (0, 20)
+            case .medium: return (20, 50)
+            case .advanced: return (50,100)
+            }
+        }
+        
+        func getDoublesInterval() -> (min: Int, max: Int) {
+            switch self {
+            case .beginner: return (0, 20)
+            case .medium: return (20, 50)
+            case .advanced: return (50,100)
+            }
+        }
+        
+        func getAddingInterval() -> (min: Int, max: Int) {
+            switch self {
+            case .beginner: return (0, 20)
+            case .medium: return (20, 50)
+            case .advanced: return (50,100)
+            }
+        }
     }
     
     static let UnknownDefault: Float = -13212

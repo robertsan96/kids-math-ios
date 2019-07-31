@@ -21,6 +21,10 @@
 		4635276E22E8B81B00ACFA5A /* StudentDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4635276D22E8B81B00ACFA5A /* StudentDetailVC.swift */; };
 		4635277022E8B83600ACFA5A /* StudentDetailVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4635276F22E8B83600ACFA5A /* StudentDetailVM.swift */; };
 		4635277222E8BA3900ACFA5A /* StudentsNVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4635277122E8BA3900ACFA5A /* StudentsNVC.swift */; };
+		466355E722F1281D0020FDEA /* GenericGameOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466355E622F1281D0020FDEA /* GenericGameOne.swift */; };
+		466355EA22F128F80020FDEA /* HalvesVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466355E922F128F80020FDEA /* HalvesVM.swift */; };
+		466355EC22F132BA0020FDEA /* HalvesResultsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466355EB22F132BA0020FDEA /* HalvesResultsVC.swift */; };
+		466355EE22F136000020FDEA /* HalvesResultsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466355ED22F136000020FDEA /* HalvesResultsVM.swift */; };
 		469189B922E7358B0083B092 /* InitialVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469189B822E7358B0083B092 /* InitialVM.swift */; };
 		4697FC1322ED9FB5007EBAA6 /* GamesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4697FC1222ED9FB5007EBAA6 /* GamesVC.swift */; };
 		4697FC1622EDA090007EBAA6 /* GamesVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4697FC1522EDA090007EBAA6 /* GamesVM.swift */; };
@@ -57,6 +61,8 @@
 		46BF7B1122E62C1D00FAA757 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46BF7B0F22E62C1D00FAA757 /* LaunchScreen.storyboard */; };
 		46BF7B1C22E62C1D00FAA757 /* MathGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BF7B1B22E62C1D00FAA757 /* MathGameTests.swift */; };
 		46BF7B2722E62C1D00FAA757 /* MathGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BF7B2622E62C1D00FAA757 /* MathGameUITests.swift */; };
+		46D3A95022F2079D00D16E11 /* HalvesResultTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D3A94E22F2079D00D16E11 /* HalvesResultTVC.swift */; };
+		46D3A95122F2079D00D16E11 /* HalvesResultTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46D3A94F22F2079D00D16E11 /* HalvesResultTVC.xib */; };
 		46EEEE7222EF659D006F0AFE /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EEEE7122EF659D006F0AFE /* Date.swift */; };
 		46EEEE7622EF69A5006F0AFE /* StudentDataVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EEEE7522EF69A5006F0AFE /* StudentDataVC.swift */; };
 		46EEEE7922EF6A96006F0AFE /* StudentDataVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EEEE7822EF6A96006F0AFE /* StudentDataVM.swift */; };
@@ -104,6 +110,10 @@
 		4635276D22E8B81B00ACFA5A /* StudentDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentDetailVC.swift; sourceTree = "<group>"; };
 		4635276F22E8B83600ACFA5A /* StudentDetailVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentDetailVM.swift; sourceTree = "<group>"; };
 		4635277122E8BA3900ACFA5A /* StudentsNVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsNVC.swift; sourceTree = "<group>"; };
+		466355E622F1281D0020FDEA /* GenericGameOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericGameOne.swift; sourceTree = "<group>"; };
+		466355E922F128F80020FDEA /* HalvesVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalvesVM.swift; sourceTree = "<group>"; };
+		466355EB22F132BA0020FDEA /* HalvesResultsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalvesResultsVC.swift; sourceTree = "<group>"; };
+		466355ED22F136000020FDEA /* HalvesResultsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalvesResultsVM.swift; sourceTree = "<group>"; };
 		469189B822E7358B0083B092 /* InitialVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialVM.swift; sourceTree = "<group>"; };
 		4697FC1222ED9FB5007EBAA6 /* GamesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesVC.swift; sourceTree = "<group>"; };
 		4697FC1522EDA090007EBAA6 /* GamesVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesVM.swift; sourceTree = "<group>"; };
@@ -146,6 +156,8 @@
 		46BF7B2222E62C1D00FAA757 /* MathGameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MathGameUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		46BF7B2622E62C1D00FAA757 /* MathGameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathGameUITests.swift; sourceTree = "<group>"; };
 		46BF7B2822E62C1D00FAA757 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		46D3A94E22F2079D00D16E11 /* HalvesResultTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalvesResultTVC.swift; sourceTree = "<group>"; };
+		46D3A94F22F2079D00D16E11 /* HalvesResultTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HalvesResultTVC.xib; sourceTree = "<group>"; };
 		46EEEE7122EF659D006F0AFE /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		46EEEE7522EF69A5006F0AFE /* StudentDataVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentDataVC.swift; sourceTree = "<group>"; };
 		46EEEE7822EF6A96006F0AFE /* StudentDataVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentDataVM.swift; sourceTree = "<group>"; };
@@ -287,6 +299,26 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
+		466355E522F127F80020FDEA /* Halves */ = {
+			isa = PBXGroup;
+			children = (
+				466355E622F1281D0020FDEA /* GenericGameOne.swift */,
+				466355EB22F132BA0020FDEA /* HalvesResultsVC.swift */,
+				46D3A94E22F2079D00D16E11 /* HalvesResultTVC.swift */,
+				46D3A94F22F2079D00D16E11 /* HalvesResultTVC.xib */,
+			);
+			path = Halves;
+			sourceTree = "<group>";
+		};
+		466355E822F128EE0020FDEA /* Halves */ = {
+			isa = PBXGroup;
+			children = (
+				466355E922F128F80020FDEA /* HalvesVM.swift */,
+				466355ED22F136000020FDEA /* HalvesResultsVM.swift */,
+			);
+			path = Halves;
+			sourceTree = "<group>";
+		};
 		469189B622E7357A0083B092 /* Initial */ = {
 			isa = PBXGroup;
 			children = (
@@ -298,6 +330,8 @@
 		4697FC1122ED9F9E007EBAA6 /* Games */ = {
 			isa = PBXGroup;
 			children = (
+				46D3A95222F20A8E00D16E11 /* Doubles */,
+				466355E522F127F80020FDEA /* Halves */,
 				4697FC2722EDB7A0007EBAA6 /* NumbersBond */,
 				4697FC1222ED9FB5007EBAA6 /* GamesVC.swift */,
 				4697FC1722EDA28D007EBAA6 /* GameTVC.swift */,
@@ -311,6 +345,7 @@
 		4697FC1422EDA086007EBAA6 /* Games */ = {
 			isa = PBXGroup;
 			children = (
+				466355E822F128EE0020FDEA /* Halves */,
 				4697FC2A22EDB7E4007EBAA6 /* NumbersBond */,
 				4697FC1522EDA090007EBAA6 /* GamesVM.swift */,
 			);
@@ -399,6 +434,13 @@
 				46BF7B2822E62C1D00FAA757 /* Info.plist */,
 			);
 			path = MathGameUITests;
+			sourceTree = "<group>";
+		};
+		46D3A95222F20A8E00D16E11 /* Doubles */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Doubles;
 			sourceTree = "<group>";
 		};
 		46EEEE7322EF65A1006F0AFE /* Extensions */ = {
@@ -569,6 +611,7 @@
 				46BF7B0922E62C1D00FAA757 /* Main.storyboard in Resources */,
 				4635276C22E8B1CE00ACFA5A /* StudentCellTVC.xib in Resources */,
 				4697FC2022EDAB04007EBAA6 /* SelectModeView.xib in Resources */,
+				46D3A95122F2079D00D16E11 /* HalvesResultTVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -682,8 +725,11 @@
 				4697FC2E22EDBD14007EBAA6 /* TimerView.swift in Sources */,
 				46EEEE7C22EF6C56006F0AFE /* GameSessionTVC.swift in Sources */,
 				46A5D10222E8DA90008F86C7 /* SettingsVC.swift in Sources */,
+				466355E722F1281D0020FDEA /* GenericGameOne.swift in Sources */,
 				4697FC2622EDAEEE007EBAA6 /* QuizButton.swift in Sources */,
 				4697FC2922EDB7C5007EBAA6 /* NumbersBondVC.swift in Sources */,
+				466355EE22F136000020FDEA /* HalvesResultsVM.swift in Sources */,
+				466355EC22F132BA0020FDEA /* HalvesResultsVC.swift in Sources */,
 				461BB4A722E62F39009EBD61 /* CoreDataHelper.swift in Sources */,
 				4697FC3422EDC079007EBAA6 /* NumberKeyboard.swift in Sources */,
 				4697FC3A22EDEE16007EBAA6 /* EnterButton.swift in Sources */,
@@ -700,6 +746,7 @@
 				4697FC1622EDA090007EBAA6 /* GamesVM.swift in Sources */,
 				4697FC3E22EDF715007EBAA6 /* NumberBondsResultsVM.swift in Sources */,
 				46BF7B0422E62C1D00FAA757 /* AppDelegate.swift in Sources */,
+				466355EA22F128F80020FDEA /* HalvesVM.swift in Sources */,
 				4635276622E8AEAB00ACFA5A /* StudentsVM.swift in Sources */,
 				4697FC1922EDA28D007EBAA6 /* GameTVC.swift in Sources */,
 				4697FC3622EDE288007EBAA6 /* NumberButton.swift in Sources */,
@@ -718,6 +765,7 @@
 				4697FC1C22EDA32B007EBAA6 /* Game.swift in Sources */,
 				4697FC1E22EDAA81007EBAA6 /* SelectModeView.swift in Sources */,
 				46EEEE7222EF659D006F0AFE /* Date.swift in Sources */,
+				46D3A95022F2079D00D16E11 /* HalvesResultTVC.swift in Sources */,
 				4697FC2222EDAECF007EBAA6 /* LearningButton.swift in Sources */,
 				4697FC3C22EDF60D007EBAA6 /* NumberBondResultsVC.swift in Sources */,
 			);
