@@ -58,13 +58,51 @@ class HalvesVM {
             }
             gamesGenerated.append(gameTypeOne)
             return gameTypeOne
+        case .adding:
+            var numberOne = Int.random(in: gameLevel.getAddingInterval().min ..< gameLevel.getAddingInterval().max)
+            var numberTwo = Int.random(in: gameLevel.getAddingInterval().min ..< gameLevel.getAddingInterval().max)
+            while numberTwo < numberOne {
+                numberTwo = Int.random(in: gameLevel.getAddingInterval().min ..< gameLevel.getAddingInterval().max)
+            }
+            
+            var gameTypeOne: GameTypeOne = (numberOne: Float(numberOne), operator: "*", numberTwo: Float(numberTwo), unknown: Constants.UnknownDefault)
+            
+            while gameWasGeneratedBeforeOne(game: gameTypeOne) {
+                numberOne = Int.random(in: gameLevel.getAddingInterval().min ..< gameLevel.getAddingInterval().max)
+                var numberTwo = Int.random(in: gameLevel.getAddingInterval().min ..< gameLevel.getAddingInterval().max)
+                while numberTwo < numberOne {
+                    numberTwo = Int.random(in: gameLevel.getAddingInterval().min ..< gameLevel.getAddingInterval().max)
+                }
+                gameTypeOne = (numberOne: Float(numberOne), operator: "+", unknown: Constants.UnknownDefault, numberTwo: Float(numberTwo))
+            }
+            gamesGenerated.append(gameTypeOne)
+            return gameTypeOne
+        case .takeAways:
+            var numberOne = Int.random(in: gameLevel.getTakeAwaysInterval().min ..< gameLevel.getTakeAwaysInterval().max)
+            var numberTwo = Int.random(in: gameLevel.getTakeAwaysInterval().min ..< gameLevel.getTakeAwaysInterval().max)
+            while numberTwo > numberOne {
+                numberTwo = Int.random(in: gameLevel.getTakeAwaysInterval().min ..< gameLevel.getTakeAwaysInterval().max)
+            }
+            
+            var gameTypeOne: GameTypeOne = (numberOne: Float(numberOne), operator: "-", numberTwo: Float(numberTwo), unknown: Constants.UnknownDefault)
+            
+            while gameWasGeneratedBeforeOne(game: gameTypeOne) {
+                numberOne = Int.random(in: gameLevel.getTakeAwaysInterval().min ..< gameLevel.getTakeAwaysInterval().max)
+                var numberTwo = Int.random(in: gameLevel.getTakeAwaysInterval().min ..< gameLevel.getTakeAwaysInterval().max)
+                while numberTwo > numberOne {
+                    numberTwo = Int.random(in: gameLevel.getTakeAwaysInterval().min ..< gameLevel.getTakeAwaysInterval().max)
+                }
+                gameTypeOne = (numberOne: Float(numberOne), operator: "-", unknown: Constants.UnknownDefault, numberTwo: Float(numberTwo))
+            }
+            gamesGenerated.append(gameTypeOne)
+            return gameTypeOne
         default:
             var numberOne = Int.random(in: gameLevel.getAddingInterval().min ..< gameLevel.getAddingInterval().max)
             var numberTwo = Int.random(in: gameLevel.getAddingInterval().min ..< gameLevel.getAddingInterval().max)
             while numberTwo < numberOne {
                 numberTwo = Int.random(in: gameLevel.getAddingInterval().min ..< gameLevel.getAddingInterval().max)
             }
- 
+            
             var gameTypeOne: GameTypeOne = (numberOne: Float(numberOne), operator: "*", numberTwo: Float(numberTwo), unknown: Constants.UnknownDefault)
             
             while gameWasGeneratedBeforeOne(game: gameTypeOne) {

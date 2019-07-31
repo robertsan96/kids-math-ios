@@ -62,6 +62,14 @@ struct Constants {
             case .advanced: return (50,100)
             }
         }
+        
+        func getTakeAwaysInterval() -> (min: Int, max: Int) {
+            switch self {
+            case .beginner: return (0, 20)
+            case .medium: return (20, 50)
+            case .advanced: return (50,100)
+            }
+        }
     }
     
     static let UnknownDefault: Float = -13212

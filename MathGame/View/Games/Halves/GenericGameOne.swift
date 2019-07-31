@@ -55,6 +55,8 @@ class GenericGameOne: UIViewController {
             mathLabel.text = "How much is the half of \(Int(set.numberOne))?"
         case .adding:
             mathLabel.text = "What's the number? \(Int(set.numberOne)) + X = \(Int(set.numberTwo))?"
+        case .takeAways:
+            mathLabel.text = "What's the number? \(Int(set.numberOne)) - X = \(Int(set.numberTwo))?"
             
         default: break
         }
@@ -114,6 +116,20 @@ extension GenericGameOne: NumberKeyboardDelegate {
                 let floatEnteredNumber = Float(number)
                 
                 if setNumberOne + floatEnteredNumber == setNumberTwo {
+                    view.backgroundColor = UIColor.green
+                } else {
+                    view.backgroundColor = UIColor.red
+                }
+                set.unknown = Float(number)
+                viewModel?.updateLastSet(with: set)
+                keyboard.isUserInteractionEnabled = false
+                answerTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(answerCorrect), userInfo: nil, repeats: false)
+            case .takeAways:
+                let setNumberOne = Float(set.numberOne)
+                let setNumberTwo = Float(set.numberTwo)
+                let floatEnteredNumber = Float(number)
+                
+                if setNumberOne - floatEnteredNumber == setNumberTwo {
                     view.backgroundColor = UIColor.green
                 } else {
                     view.backgroundColor = UIColor.red

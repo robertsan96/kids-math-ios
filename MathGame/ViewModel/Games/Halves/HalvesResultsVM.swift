@@ -67,6 +67,8 @@ class HalvesResultsVM {
             return numberOne * numberTwo == unknown
         case .adding:
             return numberOne + unknown == numberTwo
+        case .takeAways:
+            return numberOne - unknown == numberTwo
         default:
             return numberOne * numberTwo == unknown
         }
@@ -80,6 +82,8 @@ class HalvesResultsVM {
             return "\(game.numberOne) * \(game.numberTwo) = \(game.unknown)"
         case .adding:
             return "\(game.numberOne) + \(game.unknown) = \(game.numberTwo)"
+        case .takeAways:
+            return "\(game.numberOne) - \(game.unknown) = \(game.numberTwo)"
         default:
             return "\(game.numberOne) * \(game.numberTwo) = \(game.unknown)"
             
