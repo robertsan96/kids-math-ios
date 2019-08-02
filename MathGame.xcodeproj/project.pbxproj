@@ -65,6 +65,7 @@
 		46D3A95122F2079D00D16E11 /* HalvesResultTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46D3A94F22F2079D00D16E11 /* HalvesResultTVC.xib */; };
 		46D3A95422F3E2ED00D16E11 /* BasicMathLogo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46D3A95322F3E2ED00D16E11 /* BasicMathLogo.xib */; };
 		46D3A95622F3E2F600D16E11 /* BasicMathLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D3A95522F3E2F600D16E11 /* BasicMathLogo.swift */; };
+		46E3599222F4693E004B378D /* RectangleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E3599122F4693E004B378D /* RectangleButton.swift */; };
 		46EEEE7222EF659D006F0AFE /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EEEE7122EF659D006F0AFE /* Date.swift */; };
 		46EEEE7622EF69A5006F0AFE /* StudentDataVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EEEE7522EF69A5006F0AFE /* StudentDataVC.swift */; };
 		46EEEE7922EF6A96006F0AFE /* StudentDataVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EEEE7822EF6A96006F0AFE /* StudentDataVM.swift */; };
@@ -162,6 +163,7 @@
 		46D3A94F22F2079D00D16E11 /* HalvesResultTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HalvesResultTVC.xib; sourceTree = "<group>"; };
 		46D3A95322F3E2ED00D16E11 /* BasicMathLogo.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BasicMathLogo.xib; sourceTree = "<group>"; };
 		46D3A95522F3E2F600D16E11 /* BasicMathLogo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicMathLogo.swift; sourceTree = "<group>"; };
+		46E3599122F4693E004B378D /* RectangleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleButton.swift; sourceTree = "<group>"; };
 		46EEEE7122EF659D006F0AFE /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		46EEEE7522EF69A5006F0AFE /* StudentDataVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentDataVC.swift; sourceTree = "<group>"; };
 		46EEEE7822EF6A96006F0AFE /* StudentDataVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentDataVM.swift; sourceTree = "<group>"; };
@@ -269,6 +271,7 @@
 				4697FC3922EDEE16007EBAA6 /* EnterButton.swift */,
 				46D3A95322F3E2ED00D16E11 /* BasicMathLogo.xib */,
 				46D3A95522F3E2F600D16E11 /* BasicMathLogo.swift */,
+				46E3599122F4693E004B378D /* RectangleButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -730,6 +733,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4697FC2E22EDBD14007EBAA6 /* TimerView.swift in Sources */,
+				46E3599222F4693E004B378D /* RectangleButton.swift in Sources */,
 				46EEEE7C22EF6C56006F0AFE /* GameSessionTVC.swift in Sources */,
 				46A5D10222E8DA90008F86C7 /* SettingsVC.swift in Sources */,
 				466355E722F1281D0020FDEA /* GenericGameOne.swift in Sources */,

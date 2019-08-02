@@ -40,5 +40,9 @@ class SettingsVM {
     
     init(mode: SettingsVCMode) {
         self.mode = mode
+        
+        if mode == .firstLaunch {
+            options.onNext([.addStudent])
+        }
     }
 }

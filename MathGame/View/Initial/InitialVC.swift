@@ -78,8 +78,8 @@ extension InitialVC {
             for pinCircle in pinStackViewCircleView {
                 pinCircle.state.onNext(.error)
             }
-            pinHintLabel.text = "Oops! Please try again. 😞"
-            pinRedirectTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(resetPinInputs), userInfo: nil, repeats: false)
+            pinHintLabel.text = "Oops! Please try again and add the initial PIN."
+            pinRedirectTimer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(resetPinInputs), userInfo: nil, repeats: false)
         }
     }
     
