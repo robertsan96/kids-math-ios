@@ -13,7 +13,8 @@ import RxCocoa
 class SettingsVC: UIViewController {
 
     @IBOutlet weak var optionsTableView: UITableView!
-    @IBOutlet weak var closeButton: RoundedButton!
+    @IBOutlet weak var closeButton: UIButton!
+    @IBOutlet weak var backButton: UIButton!
     var viewModel: SettingsVM = SettingsVM(mode: .normal)
     var disposeBag: DisposeBag = DisposeBag()
     
@@ -21,6 +22,7 @@ class SettingsVC: UIViewController {
         super.viewDidLoad()
         
         closeButton.isHidden = viewModel.mode == .normal
+        backButton.isHidden = viewModel.mode == .firstLaunch
         
         customizeTable()
     }
@@ -107,5 +109,9 @@ class SettingsVC: UIViewController {
     @IBAction func onClose(_ sender: Any) {
         let studentsNVC: StudentsNVC = Storyboard.shared.getViewController(by: .studentsNVC)
         AppDaemon.shared.root(to: studentsNVC)
+    }
+    
+    @IBAction func onBack(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
     }
 }
