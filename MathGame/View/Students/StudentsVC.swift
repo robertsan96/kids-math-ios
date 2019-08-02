@@ -14,6 +14,7 @@ class StudentsVC: UIViewController {
     
     @IBOutlet weak var studentsTableView: UITableView!
     @IBOutlet weak var settingsButton: RoundedButton!
+    @IBOutlet weak var backButton: UIButton!
     
     var viewModel: StudentsVM = StudentsVM()
     
@@ -32,6 +33,7 @@ class StudentsVC: UIViewController {
         settingsButton.setImage(UIImage(named: "settings_white"), for: .normal)
         settingsButton.setImage(UIImage(named: "settings"), for: .highlighted)
         
+        backButton.isHidden = viewModel.mode == .normal
         customizeTable()
         rxStart()
     }
@@ -40,6 +42,10 @@ class StudentsVC: UIViewController {
         super.viewDidAppear(animated)
         
         viewModel.students.onNext(viewModel.getStudents())
+    }
+    
+    @IBAction func onBack(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
     }
     
     func customizeTable() {

@@ -39,6 +39,27 @@
                                             <constraint firstAttribute="height" constant="98" id="DkQ-i5-9cd"/>
                                         </constraints>
                                     </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="6JK-jX-TCU">
+                                        <rect key="frame" x="0.0" y="54" width="44" height="44"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m2u-Cr-StL">
+                                                <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="qDj-Ax-gfn"/>
+                                                </constraints>
+                                                <inset key="imageEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                                <state key="normal" image="arrow_left"/>
+                                                <connections>
+                                                    <action selector="onBack:" destination="63O-we-tx3" eventType="touchUpInside" id="Dgk-gA-GaK"/>
+                                                    <action selector="onBack:" destination="AKl-Jd-9pn" eventType="touchUpInside" id="ZTN-6U-2fT"/>
+                                                    <action selector="onBack:" destination="px0-un-dO4" eventType="touchUpInside" id="ba1-ad-FQr"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44" id="tkn-V7-Ujx"/>
+                                        </constraints>
+                                    </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="h9a-Gz-Oj7">
                                         <rect key="frame" x="370" y="48" width="44" height="50"/>
                                         <subviews>
@@ -64,9 +85,11 @@
                                     <constraint firstAttribute="height" constant="98" id="EjN-gE-jk8"/>
                                     <constraint firstItem="h9a-Gz-Oj7" firstAttribute="top" secondItem="lYd-Uq-x7w" secondAttribute="bottom" constant="-50" id="SoX-tc-r0L"/>
                                     <constraint firstItem="lYd-Uq-x7w" firstAttribute="leading" secondItem="njt-UT-mF0" secondAttribute="leading" id="WbA-7c-WrM"/>
+                                    <constraint firstAttribute="bottom" secondItem="6JK-jX-TCU" secondAttribute="bottom" id="Y2r-g6-RK8"/>
                                     <constraint firstAttribute="trailing" secondItem="lYd-Uq-x7w" secondAttribute="trailing" id="fD8-nE-Qqm"/>
                                     <constraint firstAttribute="bottom" secondItem="h9a-Gz-Oj7" secondAttribute="bottom" id="fnV-i4-ESQ"/>
                                     <constraint firstItem="lYd-Uq-x7w" firstAttribute="top" secondItem="njt-UT-mF0" secondAttribute="top" id="goh-ze-E9d"/>
+                                    <constraint firstItem="6JK-jX-TCU" firstAttribute="leading" secondItem="njt-UT-mF0" secondAttribute="leading" id="kT2-xI-4bm"/>
                                     <constraint firstAttribute="trailing" secondItem="h9a-Gz-Oj7" secondAttribute="trailing" id="wgf-Dd-rWU"/>
                                 </constraints>
                             </view>
@@ -100,6 +123,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="sLj-yF-5vY"/>
                     <connections>
+                        <outlet property="backButton" destination="m2u-Cr-StL" id="F8n-Ul-Eoj"/>
                         <outlet property="settingsButton" destination="ZGB-ZZ-bC3" id="q3V-LB-SxM"/>
                         <outlet property="studentsTableView" destination="uks-K5-HgY" id="xKU-ka-i4U"/>
                     </connections>

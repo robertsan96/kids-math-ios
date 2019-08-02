@@ -38,10 +38,11 @@ class NumberKeyboard: UIView {
     @IBAction func onNumber(_ sender: NumberButton) {
         
         var numbers = numberLabel.text ?? ""
-        let pressedNumber = sender.accessibilityIdentifier ?? ""
-        numbers = "\(numbers)\(pressedNumber)"
-        numberLabel.text = numbers
-        
+        if numbers.count < 3 {
+            let pressedNumber = sender.accessibilityIdentifier ?? ""
+            numbers = "\(numbers)\(pressedNumber)"
+            numberLabel.text = numbers
+        }
     }
     
     @IBAction func onDelete(_ sender: Any) {

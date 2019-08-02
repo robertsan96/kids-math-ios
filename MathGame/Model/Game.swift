@@ -36,8 +36,8 @@ enum Game {
     
     func getName() -> String {
         switch self {
-        case .numbersBond10: return "Number bonds 10"
-        case .numbersBond20: return "Number bonds 20"
+        case .numbersBond10: return "Number bonds to 10"
+        case .numbersBond20: return "Number bonds to 20"
         case .halves: return "Halves"
         case .doubles: return "Doubles"
         case .adding: return "Adding"

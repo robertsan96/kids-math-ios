@@ -69,29 +69,12 @@ extension NumbersBondVC: NumberKeyboardDelegate {
     func didPress(number: Int) {
         if let set = viewModel?.getCurrentSet() {
             if var four = set.gameTypeFour {
-                let setNumberOne = Float(four.numberOne)
-                let setNumberTwo = Float(four.numberTwo)
-                let floatEnteredNumber = Float(number)
-                
-                if setNumberOne + floatEnteredNumber == setNumberTwo {
-                    view.backgroundColor = UIColor.green
-                } else {
-                    view.backgroundColor = UIColor.red
-                }
                 four.unknown = Float(number)
                 viewModel?.updateLastSet(with: (gameTypeFour: four, nil))
                 keyboard.isUserInteractionEnabled = false
                 answerTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(answerCorrect), userInfo: nil, repeats: false)
             }
             if var five = set.gameTypeFive {
-                let setNumberOne = Float(five.numberOne)
-                let setNumberTwo = Float(five.numberTwo)
-                let floatEnteredNumber = Float(number)
-                if setNumberOne + floatEnteredNumber == setNumberTwo {
-                    view.backgroundColor = UIColor.green
-                } else {
-                    view.backgroundColor = UIColor.red
-                }
                 five.unknown = Float(number)
                 viewModel?.updateLastSet(with: (gameTypeFour: nil, five))
                 keyboard.isUserInteractionEnabled = false
@@ -102,7 +85,6 @@ extension NumbersBondVC: NumberKeyboardDelegate {
     
     @objc func answerCorrect() {
         
-        view.backgroundColor = UIColor.white
         viewModel?.currentSet.onNext(viewModel?.getSet())
         answerTimer?.invalidate()
         keyboard.isUserInteractionEnabled = true
