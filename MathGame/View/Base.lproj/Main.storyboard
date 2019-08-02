@@ -447,26 +447,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BASIC MATHEMATICS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Qe-bU-sbV">
-                                <rect key="frame" x="10" y="194" width="394" height="50"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The highest form of pure thought is in mathematics." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mWe-cV-6us">
+                                <rect key="frame" x="10" y="189" width="394" height="60"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="IZ9-cr-Vnw"/>
+                                    <constraint firstAttribute="height" constant="60" id="Cdm-OI-DfZ"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="32"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The highest form of pure thought is in mathematics." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mWe-cV-6us">
-                                <rect key="frame" x="10" y="252" width="394" height="16"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="16" id="Cdm-OI-DfZ"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="13"/>
-                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="22"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="9er-03-woA">
-                                <rect key="frame" x="20" y="327" width="374" height="110"/>
+                                <rect key="frame" x="20" y="347" width="374" height="110"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="110" id="FXg-JI-ckX"/>
                                 </constraints>
@@ -480,31 +471,38 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First things first. Let's set up a master pin." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7DH-Kw-x42">
-                                <rect key="frame" x="20" y="298" width="374" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First things first. Let's set up a master pin." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7DH-Kw-x42">
+                                <rect key="frame" x="20" y="279" width="374" height="60"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="VLI-dJ-VAM"/>
+                                    <constraint firstAttribute="height" constant="60" id="VLI-dJ-VAM"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
-                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qE3-he-o7i" customClass="BasicMathLogo" customModule="MathGame" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44" width="414" height="125"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="125" id="puS-fG-fZe"/>
+                                </constraints>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.19050157070000001" green="0.40765014290000001" blue="0.79885995389999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="5UQ-BC-dcA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="57j-8j-wsS"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mWe-cV-6us" secondAttribute="trailing" constant="10" id="9jn-4i-EdM"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4Qe-bU-sbV" secondAttribute="trailing" constant="10" id="CNH-oL-uxg"/>
                             <constraint firstItem="7DH-Kw-x42" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="G0h-g6-nB1"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5UQ-BC-dcA" secondAttribute="trailing" id="Isv-2F-J5y"/>
                             <constraint firstItem="mWe-cV-6us" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="MaD-r7-dJz"/>
                             <constraint firstItem="9er-03-woA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="QgP-Qg-zlP"/>
                             <constraint firstItem="5UQ-BC-dcA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="adf-7l-5UZ"/>
-                            <constraint firstItem="4Qe-bU-sbV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="150" id="jVg-bv-EBw"/>
+                            <constraint firstItem="mWe-cV-6us" firstAttribute="top" secondItem="qE3-he-o7i" secondAttribute="bottom" constant="20" id="chN-vw-8Qe"/>
+                            <constraint firstItem="qE3-he-o7i" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="htE-sr-uO0"/>
                             <constraint firstItem="7DH-Kw-x42" firstAttribute="top" secondItem="mWe-cV-6us" secondAttribute="bottom" constant="30" id="k51-Vf-qO5"/>
-                            <constraint firstItem="mWe-cV-6us" firstAttribute="top" secondItem="4Qe-bU-sbV" secondAttribute="bottom" constant="8" id="l9h-Xq-dRf"/>
+                            <constraint firstItem="qE3-he-o7i" firstAttribute="top" secondItem="5UQ-BC-dcA" secondAttribute="bottom" id="mvk-rX-fkd"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7DH-Kw-x42" secondAttribute="trailing" constant="20" id="n0d-bB-9eS"/>
-                            <constraint firstItem="4Qe-bU-sbV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="qyK-4O-wfE"/>
+                            <constraint firstItem="qE3-he-o7i" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="tBt-md-gUz"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9er-03-woA" secondAttribute="trailing" constant="20" id="vMs-aC-vOg"/>
                             <constraint firstItem="9er-03-woA" firstAttribute="top" secondItem="7DH-Kw-x42" secondAttribute="bottom" constant="8" id="zV4-th-tUC"/>
                         </constraints>
@@ -518,7 +516,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1449" y="138"/>
+            <point key="canvasLocation" x="-1449.2753623188407" y="137.94642857142856"/>
         </scene>
         <!--StudentsNVC-->
         <scene sceneID="NTj-Cm-yZa">

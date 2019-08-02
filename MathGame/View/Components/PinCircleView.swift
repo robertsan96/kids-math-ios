@@ -14,7 +14,7 @@ enum PinCircleState {
     
     func getColor() -> UIColor {
         switch self {
-        case .normal: return .black
+        case .normal: return .white
         case .error: return .red
         case .success: return .green
         }
@@ -28,7 +28,7 @@ class PinCircleView: UIView {
     var disposeBag: DisposeBag = DisposeBag()
     
     private var circleSize: CGSize = CGSize(width: 15, height: 15)
-    private var circleBorder: CGFloat = 3
+    private var circleBorder: CGFloat = 1.6
     private var circle: UIView?
     
     override init(frame: CGRect) {
@@ -50,7 +50,7 @@ class PinCircleView: UIView {
     func customize() {
         circle = UIView(frame: getCircleFrame())
         circle?.layer.borderWidth = circleBorder
-        circle?.layer.borderColor = UIColor.black.cgColor
+        circle?.layer.borderColor = UIColor.white.cgColor
         circle?.layer.cornerRadius = circleSize.width / 2
         addSubview(circle!)
         rxStart()
@@ -64,7 +64,7 @@ class PinCircleView: UIView {
     }
     
     private func fillCircle() {
-        circle?.backgroundColor = UIColor.black
+        circle?.backgroundColor = UIColor.white
     }
     
     private func unfillCircle() {

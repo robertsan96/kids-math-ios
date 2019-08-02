@@ -151,7 +151,7 @@ extension GamesVC: SelectModeViewDelegate {
                 let halvesVM: HalvesVM = HalvesVM(with: game,
                                                   and: 20,
                                                   and: student,
-                                                  and: .beginner)
+                                                  and: .advanced)
                 halvesVC.viewModel = halvesVM
                 halvesVC.delegate = self
                 present(halvesVC, animated: true, completion: {
@@ -177,7 +177,7 @@ extension GamesVC: SelectModeViewDelegate {
                 let halvesVM: HalvesVM = HalvesVM(with: game,
                                                   and: 20,
                                                   and: student,
-                                                  and: .beginner)
+                                                  and: .advanced)
                 halvesVC.viewModel = halvesVM
                 halvesVC.delegate = self
                 present(halvesVC, animated: true, completion: {
@@ -190,7 +190,7 @@ extension GamesVC: SelectModeViewDelegate {
                 let halvesVM: HalvesVM = HalvesVM(with: game,
                                                   and: 20,
                                                   and: student,
-                                                  and: .beginner)
+                                                  and: .advanced)
                 halvesVC.viewModel = halvesVM
                 halvesVC.delegate = self
                 present(halvesVC, animated: true, completion: {
