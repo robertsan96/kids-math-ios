@@ -18,9 +18,9 @@ struct Constants {
                                            blue: 219/255,
                                            alpha: 1)
         static let createStudentLabel = UIColor.white
-        static let tableRowStudent = UIColor(red: 52/255,
-                                             green: 152/255,
-                                             blue: 219/255,
+        static let tableRowStudent = UIColor(red: 49/255,
+                                             green: 104/255,
+                                             blue: 204/255,
                                              alpha: 1)
         static let tableRowStudentSelected = UIColor(red: 41/255,
                                                      green: 128/255,

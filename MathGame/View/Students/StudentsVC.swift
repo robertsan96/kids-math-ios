@@ -19,12 +19,18 @@ class StudentsVC: UIViewController {
     
     var disposeBag: DisposeBag = DisposeBag()
     
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        settingsButton.backgroundColor = Constants.Colors.createStudent
-        settingsButton.imageView?.tintColor = UIColor.white
-        settingsButton.isHidden = viewModel.mode != .normal
+//        settingsButton.backgroundColor = Constants.Colors.createStudent
+//        settingsButton.imageView?.tintColor = UIColor.white
+//        settingsButton.isHidden = viewModel.mode != .normal
+        settingsButton.setImage(UIImage(named: "settings_white"), for: .normal)
+        settingsButton.setImage(UIImage(named: "settings"), for: .highlighted)
         
         customizeTable()
         rxStart()
@@ -38,7 +44,7 @@ class StudentsVC: UIViewController {
     
     func customizeTable() {
         studentsTableView.register(UINib(nibName: "StudentCellTVC", bundle: nil), forCellReuseIdentifier: "StudentCell")
-        studentsTableView.rowHeight = 80
+        studentsTableView.rowHeight = 165
  
         viewModel.students
             .bind(to: studentsTableView
@@ -57,6 +63,7 @@ class StudentsVC: UIViewController {
                     cell.mode = self.viewModel.mode
                     cell.customizeContainer()
                     cell.student = student
+                    cell.gamesCount.text = "\(student?.gameSessions?.count ?? 0) games"
                     cell.vcViewModel = self.viewModel
             }.disposed(by: disposeBag)
         

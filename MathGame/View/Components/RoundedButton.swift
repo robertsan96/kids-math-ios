@@ -22,8 +22,8 @@ class RoundedButton: UIButton {
     
     func customize() {
         layer.cornerRadius = frame.width / 2
-        backgroundColor = Constants.Colors.createStudent
-        setTitleColor(Constants.Colors.createStudentLabel, for: .normal)
-        setTitleColor(UIColor.white.withAlphaComponent(0.5), for: .highlighted)
+////        backgroundColor = Constants.Colors.createStudent
+//        setTitleColor(Constants.Colors.createStudentLabel, for: .normal)
+//        setTitleColor(UIColor.white.withAlphaComponent(0.5), for: .highlighted)
     }
 }

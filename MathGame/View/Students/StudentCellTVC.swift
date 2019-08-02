@@ -20,6 +20,7 @@ class StudentCellTVC: UITableViewCell {
     @IBOutlet weak var container: UIView!
     @IBOutlet weak var extraButton: RoundedButton!
     @IBOutlet weak var extraButtonTwo: RoundedButton!
+    @IBOutlet weak var gamesCount: UILabel!
     
     weak var delegate: StudentCellTVCDelegate?
     var vcViewModel: StudentsVM?
@@ -45,12 +46,12 @@ class StudentCellTVC: UITableViewCell {
     
     func customizeContainer() {
         
-        container.layer.cornerRadius = 15
+        container.layer.cornerRadius = 5
         extraButton.isHidden = mode == .normal
         extraButtonTwo.isHidden = mode != .reset
         if mode == .delete {
             extraButton.backgroundColor = UIColor.red
-            extraButton.setTitle("-", for: .normal)
+            extraButton.setTitle("𝗫", for: .normal)
         } else if mode == .reset {
             extraButton.backgroundColor = Constants.Colors.tableRowStudentSelected
             extraButton.setTitle("🔄", for: .normal)

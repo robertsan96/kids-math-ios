@@ -10,6 +10,10 @@ import UIKit
 
 class StudentsNVC: UINavigationController {
     
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

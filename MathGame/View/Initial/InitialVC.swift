@@ -22,6 +22,10 @@ class InitialVC: UIViewController {
     var pinRedirectTimer: Timer?
     var viewModel: InitialVM = InitialVM()
     
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         customizePinStackView()
