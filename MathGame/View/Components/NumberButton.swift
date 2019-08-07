@@ -22,7 +22,7 @@ class NumberButton: UIButton {
     }
     
     func customize() {
-        layer.cornerRadius = frame.width / 2
+        layer.cornerRadius = 5
         backgroundColor = UIColor.orange.withAlphaComponent(0.68)
         setTitleColor(UIColor.white, for: .normal)
     }

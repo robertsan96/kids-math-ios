@@ -21,7 +21,7 @@ class DeleteButton: UIButton {
     }
     
     func customize() {
-        layer.cornerRadius = frame.width / 2
+        layer.cornerRadius = 5
         backgroundColor = UIColor.red.withAlphaComponent(1)
         setTitleColor(UIColor.white, for: .normal)
     }

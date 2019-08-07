@@ -21,34 +21,34 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="400"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="7n3-d1-BGH">
-                    <rect key="frame" x="0.0" y="50" width="414" height="330"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7n3-d1-BGH">
+                    <rect key="frame" x="10" y="50" width="394" height="330"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="WuJ-jJ-hC1">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="82.5"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="WuJ-jJ-hC1">
+                            <rect key="frame" x="0.0" y="0.0" width="394" height="75"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hd5-lz-kBF" customClass="NumberButton" customModule="MathGame" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="138" height="82.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="128" height="75"/>
                                     <accessibility key="accessibilityConfiguration" identifier="1"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                     <state key="normal" title="1"/>
                                     <connections>
                                         <action selector="onNumber:" destination="-1" eventType="touchUpInside" id="dya-41-16T"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vwM-uP-GqD" customClass="NumberButton" customModule="MathGame" customModuleProvider="target">
-                                    <rect key="frame" x="138" y="0.0" width="138" height="82.5"/>
+                                    <rect key="frame" x="133" y="0.0" width="128" height="75"/>
                                     <accessibility key="accessibilityConfiguration" identifier="2"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                     <state key="normal" title="2"/>
                                     <connections>
                                         <action selector="onNumber:" destination="-1" eventType="touchUpInside" id="1ki-f1-JYW"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kzg-A9-Mfy" customClass="NumberButton" customModule="MathGame" customModuleProvider="target">
-                                    <rect key="frame" x="276" y="0.0" width="138" height="82.5"/>
+                                    <rect key="frame" x="266" y="0.0" width="128" height="75"/>
                                     <accessibility key="accessibilityConfiguration" identifier="3"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                     <state key="normal" title="3"/>
                                     <connections>
                                         <action selector="onNumber:" destination="-1" eventType="touchUpInside" id="iAN-a9-8if"/>
@@ -56,31 +56,31 @@
                                 </button>
                             </subviews>
                         </stackView>
-                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="VJK-a6-ZMH">
-                            <rect key="frame" x="0.0" y="82.5" width="414" height="82.5"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="VJK-a6-ZMH">
+                            <rect key="frame" x="0.0" y="85" width="394" height="75"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fjG-FN-eww" customClass="NumberButton" customModule="MathGame" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="138" height="82.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="128" height="75"/>
                                     <accessibility key="accessibilityConfiguration" identifier="4"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                     <state key="normal" title="4"/>
                                     <connections>
                                         <action selector="onNumber:" destination="-1" eventType="touchUpInside" id="uDf-WZ-qu4"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Am-tY-133" customClass="NumberButton" customModule="MathGame" customModuleProvider="target">
-                                    <rect key="frame" x="138" y="0.0" width="138" height="82.5"/>
+                                    <rect key="frame" x="133" y="0.0" width="128" height="75"/>
                                     <accessibility key="accessibilityConfiguration" identifier="5"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                     <state key="normal" title="5"/>
                                     <connections>
                                         <action selector="onNumber:" destination="-1" eventType="touchUpInside" id="ebX-0e-fsh"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4qc-VK-cOL" customClass="NumberButton" customModule="MathGame" customModuleProvider="target">
-                                    <rect key="frame" x="276" y="0.0" width="138" height="82.5"/>
+                                    <rect key="frame" x="266" y="0.0" width="128" height="75"/>
                                     <accessibility key="accessibilityConfiguration" identifier="6"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                     <state key="normal" title="6"/>
                                     <connections>
                                         <action selector="onNumber:" destination="-1" eventType="touchUpInside" id="VOF-No-fQf"/>
@@ -88,31 +88,31 @@
                                 </button>
                             </subviews>
                         </stackView>
-                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Vx7-43-dMF">
-                            <rect key="frame" x="0.0" y="165" width="414" height="82.5"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Vx7-43-dMF">
+                            <rect key="frame" x="0.0" y="170" width="394" height="75"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="say-bh-yOo" customClass="NumberButton" customModule="MathGame" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="138" height="82.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="128" height="75"/>
                                     <accessibility key="accessibilityConfiguration" identifier="7"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                     <state key="normal" title="7"/>
                                     <connections>
                                         <action selector="onNumber:" destination="-1" eventType="touchUpInside" id="sqp-T2-eZy"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PcA-Uj-S99" customClass="NumberButton" customModule="MathGame" customModuleProvider="target">
-                                    <rect key="frame" x="138" y="0.0" width="138" height="82.5"/>
+                                    <rect key="frame" x="133" y="0.0" width="128" height="75"/>
                                     <accessibility key="accessibilityConfiguration" identifier="8"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                     <state key="normal" title="8"/>
                                     <connections>
                                         <action selector="onNumber:" destination="-1" eventType="touchUpInside" id="BSy-zU-qEf"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HPf-NW-dpq" customClass="NumberButton" customModule="MathGame" customModuleProvider="target">
-                                    <rect key="frame" x="276" y="0.0" width="138" height="82.5"/>
+                                    <rect key="frame" x="266" y="0.0" width="128" height="75"/>
                                     <accessibility key="accessibilityConfiguration" identifier="9"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                     <state key="normal" title="9"/>
                                     <connections>
                                         <action selector="onNumber:" destination="-1" eventType="touchUpInside" id="w6V-as-CV9"/>
@@ -120,31 +120,31 @@
                                 </button>
                             </subviews>
                         </stackView>
-                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="PPk-xa-5dF">
-                            <rect key="frame" x="0.0" y="247.5" width="414" height="82.5"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="PPk-xa-5dF">
+                            <rect key="frame" x="0.0" y="255" width="394" height="75"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V13-2R-YYy" customClass="DeleteButton" customModule="MathGame" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="152.5" height="82.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="128" height="75"/>
                                     <accessibility key="accessibilityConfiguration" identifier="del"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                     <state key="normal" title="DEL"/>
                                     <connections>
                                         <action selector="onDelete:" destination="-1" eventType="touchUpInside" id="cz7-jj-FhO"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gX3-S6-I7r" customClass="NumberButton" customModule="MathGame" customModuleProvider="target">
-                                    <rect key="frame" x="152.5" y="0.0" width="102" height="82.5"/>
+                                    <rect key="frame" x="133" y="0.0" width="128" height="75"/>
                                     <accessibility key="accessibilityConfiguration" identifier="0"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                     <state key="normal" title="0"/>
                                     <connections>
                                         <action selector="onNumber:" destination="-1" eventType="touchUpInside" id="DqC-Y5-Uf6"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LHb-NO-8Kp" customClass="EnterButton" customModule="MathGame" customModuleProvider="target">
-                                    <rect key="frame" x="254.5" y="0.0" width="159.5" height="82.5"/>
+                                    <rect key="frame" x="266" y="0.0" width="128" height="75"/>
                                     <accessibility key="accessibilityConfiguration" identifier="ent"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                     <state key="normal" title="ENT"/>
                                     <connections>
                                         <action selector="onEnter:" destination="-1" eventType="touchUpInside" id="wBz-JZ-fWn"/>
@@ -155,7 +155,7 @@
                     </subviews>
                 </stackView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6CL-Ke-8lB">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="40"/>
                     <fontDescription key="fontDescription" type="system" weight="black" pointSize="26"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -163,10 +163,10 @@
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="7n3-d1-BGH" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="03Q-0q-NFF"/>
+                <constraint firstItem="7n3-d1-BGH" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="03Q-0q-NFF"/>
                 <constraint firstItem="7n3-d1-BGH" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="50" id="5a6-Ay-HTz"/>
-                <constraint firstItem="7n3-d1-BGH" firstAttribute="top" secondItem="6CL-Ke-8lB" secondAttribute="bottom" id="6ne-j0-D7Q"/>
-                <constraint firstItem="7n3-d1-BGH" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="c2B-mm-iwO"/>
+                <constraint firstItem="7n3-d1-BGH" firstAttribute="top" secondItem="6CL-Ke-8lB" secondAttribute="bottom" constant="10" id="6ne-j0-D7Q"/>
+                <constraint firstItem="7n3-d1-BGH" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" constant="-10" id="c2B-mm-iwO"/>
                 <constraint firstAttribute="bottom" secondItem="7n3-d1-BGH" secondAttribute="bottom" constant="20" id="cMs-CJ-YG5"/>
                 <constraint firstAttribute="trailing" secondItem="6CL-Ke-8lB" secondAttribute="trailing" id="ehL-vh-TVl"/>
                 <constraint firstItem="6CL-Ke-8lB" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="qIh-cq-ytI"/>

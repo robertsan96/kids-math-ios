@@ -1009,17 +1009,20 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jGj-Yg-0rP">
-                                <rect key="frame" x="0.0" y="566" width="414" height="30"/>
+                                <rect key="frame" x="0.0" y="320" width="414" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="30n-pK-nIY"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XFF-Yy-mOT" customClass="TimerView" customModule="MathGame" customModuleProvider="target">
-                                <rect key="frame" x="314" y="220" width="100" height="100"/>
+                                <rect key="frame" x="364" y="220" width="50" height="50"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="6uJ-RE-Hd2"/>
-                                    <constraint firstAttribute="width" constant="100" id="z4f-Ub-e5a"/>
+                                    <constraint firstAttribute="height" constant="50" id="6uJ-RE-Hd2"/>
+                                    <constraint firstAttribute="width" constant="50" id="z4f-Ub-e5a"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -1031,8 +1034,8 @@
                             <constraint firstItem="sxa-3e-c2A" firstAttribute="trailing" secondItem="jGj-Yg-0rP" secondAttribute="trailing" id="PV8-aS-AuK"/>
                             <constraint firstItem="xKd-0t-pgG" firstAttribute="leading" secondItem="sxa-3e-c2A" secondAttribute="leading" id="aZj-ri-FAr"/>
                             <constraint firstItem="xKd-0t-pgG" firstAttribute="trailing" secondItem="sxa-3e-c2A" secondAttribute="trailing" id="jyr-Po-Hwq"/>
-                            <constraint firstItem="xKd-0t-pgG" firstAttribute="top" secondItem="jGj-Yg-0rP" secondAttribute="bottom" id="miE-9X-079"/>
                             <constraint firstItem="XFF-Yy-mOT" firstAttribute="trailing" secondItem="sxa-3e-c2A" secondAttribute="trailing" id="mmZ-8o-1ZF"/>
+                            <constraint firstItem="jGj-Yg-0rP" firstAttribute="top" secondItem="XFF-Yy-mOT" secondAttribute="bottom" constant="50" id="n24-EX-Byb"/>
                             <constraint firstAttribute="bottom" secondItem="xKd-0t-pgG" secondAttribute="bottom" id="rtK-aP-bfU"/>
                             <constraint firstItem="XFF-Yy-mOT" firstAttribute="top" secondItem="SGq-Ea-mLH" secondAttribute="bottom" id="sHd-7x-7Us"/>
                             <constraint firstItem="SGq-Ea-mLH" firstAttribute="leading" secondItem="sxa-3e-c2A" secondAttribute="leading" id="wVq-WJ-A0S"/>

@@ -33,6 +33,9 @@ class NumberKeyboard: UIView {
         containerView.frame = bounds
         addSubview(containerView)
         containerView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        
+        numberLabel.layer.borderWidth = 2
+        numberLabel.layer.borderColor = UIColor.black.cgColor
     }
     
     @IBAction func onNumber(_ sender: NumberButton) {
