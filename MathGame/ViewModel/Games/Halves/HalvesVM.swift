@@ -13,6 +13,8 @@ class HalvesVM {
     
     var game: Game
     var gameLevel: Constants.GameLevels
+    var selectedCategory: Int = 1
+    
     var student: Student
     
     var currentSet: BehaviorSubject<GameTypeOne?> = BehaviorSubject(value: nil)
@@ -22,11 +24,12 @@ class HalvesVM {
     init(with game: Game,
          and maxNumber: Int,
          and student: Student,
-         and gameLevel: Constants.GameLevels) {
+         and gameLevel: Constants.GameLevels,
+         and category: Int = 1) {
         self.game = game
         self.student = student
         self.gameLevel = gameLevel
-        
+        self.selectedCategory = category
         currentSet.onNext(getSet())
     }
     
@@ -110,23 +113,11 @@ class HalvesVM {
             gamesGenerated.append(gameTypeOne)
             return gameTypeOne
         case .dividing:
-            var numberOne = Int.random(in: gameLevel.getDividingInterval().min ..< gameLevel.getDividingInterval().max)
-            var numberTwo = Int.random(in: gameLevel.getDividingInterval().min ..< gameLevel.getDividingInterval().max)
-            while numberOne%numberTwo != 0 {
-                numberOne = Int.random(in: gameLevel.getDividingInterval().min ..< gameLevel.getDividingInterval().max)
-                numberTwo = Int.random(in: gameLevel.getDividingInterval().min ..< gameLevel.getDividingInterval().max)
-            }
-            var gameTypeOne: GameTypeOne = (numberOne: Float(numberOne), operator: "/", numberTwo: Float(numberTwo), unknown: Constants.UnknownDefault)
-            
-            while gameWasGeneratedBeforeOne(game: gameTypeOne) {
-                numberOne = Int.random(in: gameLevel.getDividingInterval().min ..< gameLevel.getDividingInterval().max)
-                var numberTwo = Int.random(in: gameLevel.getDividingInterval().min ..< gameLevel.getDividingInterval().max)
-                while numberOne%numberTwo != 0 {
-                    numberOne = Int.random(in: gameLevel.getDividingInterval().min ..< gameLevel.getDividingInterval().max)
-                    numberTwo = Int.random(in: gameLevel.getDividingInterval().min ..< gameLevel.getDividingInterval().max)
-                }
-                gameTypeOne = (numberOne: Float(numberOne), operator: "/", unknown: Constants.UnknownDefault, numberTwo: Float(numberTwo))
-            }
+            let numberTwo = selectedCategory
+            let numberThree = Int.random(in: gameLevel.getDividingInterval().min ..< gameLevel.getDividingInterval().max)
+            let numberOne = numberTwo * numberThree
+            let gameTypeOne = (numberOne: Float(numberOne), operator: "/", unknown: Constants.UnknownDefault, numberTwo: Float(numberTwo))
+
             gamesGenerated.append(gameTypeOne)
             return gameTypeOne
         default:

@@ -10,6 +10,10 @@ import UIKit
 import RxSwift
 import RxCocoa
 
+enum GamesVCPickers: Int {
+    case dividingCategoryPicker
+}
+
 class GamesVC: UIViewController {
 
     @IBOutlet weak var gamesTable: UITableView!
@@ -21,6 +25,7 @@ class GamesVC: UIViewController {
     
     var selectModeOverlay: UIView?
     var selectModeView: SelectModeView?
+    var categoryVC: UIViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -186,18 +191,109 @@ extension GamesVC: SelectModeViewDelegate {
             }
         case .dividing:
             if mode == .quiz {
-                let halvesVC: GenericGameOne = Storyboard.shared.getViewController(by: .genericGameOne)
-                let halvesVM: HalvesVM = HalvesVM(with: game,
-                                                  and: 20,
-                                                  and: student,
-                                                  and: .advanced)
-                halvesVC.viewModel = halvesVM
-                halvesVC.delegate = self
-                present(halvesVC, animated: true, completion: {
-                    halvesVC.reloadViews()
-                })
+                let pickerView = UIPickerView(frame: CGRect(x: 0, y: 0, width: 250, height: 300))
+                pickerView.delegate = self
+                pickerView.dataSource = self
+                pickerView.tag = GamesVCPickers.dividingCategoryPicker.rawValue
+                
+                categoryVC = UIViewController()
+                categoryVC?.preferredContentSize = CGSize(width: 250,height: 300)
+                categoryVC?.view.addSubview(pickerView)
+                let editRadiusAlert = UIAlertController(title: "Category",
+                                                        message: "Select your desired level including division category.",
+                                                        preferredStyle: UIAlertController.Style.alert)
+                editRadiusAlert.setValue(categoryVC, forKey: "contentViewController")
+                editRadiusAlert.addAction(UIAlertAction(title: "Done", style: .default, handler: { [weak self] action in
+                    let selectedLevel = Constants.GameLevels.getLevel(by: pickerView.selectedRow(inComponent: 0))
+                    let selectedCategory = selectedLevel.getCategory(by: pickerView.selectedRow(inComponent: 1))
+                    let halvesVC: GenericGameOne = Storyboard.shared.getViewController(by: .genericGameOne)
+                    let halvesVM: HalvesVM = HalvesVM(with: game,
+                                                      and: 20,
+                                                      and: student,
+                                                      and: selectedLevel,
+                                                      and: selectedCategory)
+                    halvesVC.viewModel = halvesVM
+                    halvesVC.delegate = self
+                    self?.present(halvesVC, animated: true, completion: {
+                        halvesVC.reloadViews()
+                    })
+
+                }))
+                editRadiusAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+                self.present(editRadiusAlert, animated: true) {
+                    pickerView.selectRow(0, inComponent: 0, animated: true)
+                }
             }
         default: break
+        }
+    }
+}
+
+extension GamesVC: UIPickerViewDataSource, UIPickerViewDelegate {
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        switch pickerView.tag {
+        case GamesVCPickers.dividingCategoryPicker.rawValue: return 2
+        default: break
+        }
+        return 0
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        switch pickerView.tag {
+        case GamesVCPickers.dividingCategoryPicker.rawValue:
+            if component == 0 {
+                return 3
+            }
+            if component == 1 {
+                let selectedRow = pickerView.selectedRow(inComponent: 0)
+                switch selectedRow {
+                case Constants.GameLevels.beginner.rawValue: return Constants.GameLevels.beginner.getDividingCategory().count
+                case Constants.GameLevels.medium.rawValue: return Constants.GameLevels.medium.getDividingCategory().count
+                case Constants.GameLevels.advanced.rawValue: return Constants.GameLevels.advanced.getDividingCategory().count
+                default: return 0
+                }
+            }
+            return 0
+        default: break
+        }
+        return 0
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        switch pickerView.tag {
+        case GamesVCPickers.dividingCategoryPicker.rawValue:
+            if component == 0 {
+                switch row {
+                case Constants.GameLevels.beginner.rawValue: return "Beginner"
+                case Constants.GameLevels.medium.rawValue: return "Medium"
+                case Constants.GameLevels.advanced.rawValue: return "Advanced"
+                default: return nil
+                }
+            }
+            if component == 1 {
+                let selectedRow = pickerView.selectedRow(inComponent: 0)
+                var categories: [Int] = []
+                switch selectedRow {
+                case Constants.GameLevels.beginner.rawValue:
+                    categories = Array(Constants.GameLevels.beginner.getDividingCategory())
+                case Constants.GameLevels.medium.rawValue:
+                    categories = Array(Constants.GameLevels.medium.getDividingCategory())
+                case Constants.GameLevels.advanced.rawValue:
+                    categories = Array(Constants.GameLevels.advanced.getDividingCategory())
+                default: return ""
+                }
+                
+                return "By \(categories[row])"
+            }
+            return nil
+        default: return nil
+        }
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if component == 0 {
+            pickerView.reloadComponent(1)
         }
     }
 }

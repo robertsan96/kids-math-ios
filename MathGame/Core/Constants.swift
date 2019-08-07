@@ -36,7 +36,7 @@ struct Constants {
         case learning, quiz, training
     }
     
-    enum GameLevels {
+    enum GameLevels: Int {
         case beginner, medium, advanced
         
         func getHalvesInterval() -> (min: Int, max: Int) {
@@ -81,9 +81,40 @@ struct Constants {
         
         func getDividingInterval() -> (min: Int, max: Int) {
             switch self {
-            case .beginner: return (1, 10)
+            case .beginner: return (1, 12)
             case .medium: return (10, 20)
             case .advanced: return (20,50)
+            }
+        }
+        
+        func getDividingCategory() -> ClosedRange<Int> {
+            switch self {
+            case .beginner: return 1...12
+            case .medium: return 12...20
+            case .advanced: return 20...30
+            }
+        }
+        
+        func getCategory(by row: Int) -> Int {
+            switch self {
+            case .beginner:
+                let categories: [Int] = Array(getDividingCategory())
+                return categories[row]
+            case .medium:
+                let categories: [Int] = Array(getDividingCategory())
+                return categories[row]
+            case .advanced:
+                let categories: [Int] = Array(getDividingCategory())
+                return categories[row]
+            }
+        }
+        
+        static func getLevel(by id: Int) -> GameLevels {
+            switch id {
+            case 0: return GameLevels.beginner
+            case 1: return GameLevels.medium
+            case 2: return GameLevels.advanced
+            default: return GameLevels.beginner
             }
         }
     }
