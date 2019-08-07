@@ -38,7 +38,7 @@ class TimerView: UIView {
         container.frame = bounds
         addSubview(container)
         
-        container.layer.cornerRadius = frame.width / 2
+        container.layer.cornerRadius = 15
         
         secondsLabel.text = "\(seconds)"
         startTimer()
