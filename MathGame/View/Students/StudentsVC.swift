@@ -27,9 +27,9 @@ class StudentsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        settingsButton.backgroundColor = Constants.Colors.createStudent
-//        settingsButton.imageView?.tintColor = UIColor.white
-//        settingsButton.isHidden = viewModel.mode != .normal
+        //        settingsButton.backgroundColor = Constants.Colors.createStudent
+        //        settingsButton.imageView?.tintColor = UIColor.white
+        //        settingsButton.isHidden = viewModel.mode != .normal
         settingsButton.setImage(UIImage(named: "settings_white"), for: .normal)
         settingsButton.setImage(UIImage(named: "settings"), for: .highlighted)
         
@@ -51,7 +51,7 @@ class StudentsVC: UIViewController {
     func customizeTable() {
         studentsTableView.register(UINib(nibName: "StudentCellTVC", bundle: nil), forCellReuseIdentifier: "StudentCell")
         studentsTableView.rowHeight = 165
- 
+        
         viewModel.students
             .bind(to: studentsTableView
                 .rx
@@ -81,7 +81,7 @@ class StudentsVC: UIViewController {
                 
                 self.promptForPin(for: model)
             }
-            }).disposed(by: disposeBag)
+        }).disposed(by: disposeBag)
     }
     
     @IBAction func onCreateStudent(_ sender: Any) {
@@ -117,7 +117,7 @@ class StudentsVC: UIViewController {
         }
         
         let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-
+        
         alertController.addAction(authAction)
         alertController.addAction(cancel)
         
@@ -165,6 +165,39 @@ extension StudentsVC: StudentCellTVCDelegate {
         let studentDataVM: StudentDataVM = StudentDataVM(with: student)
         studentDataVC.viewModel = studentDataVM
         navigationController?.pushViewController(studentDataVC, animated: true)
+    }
+    
+    func didPressReset(on cell: StudentCellTVC, with student: Student) {
+        let alert = UIAlertController(title: "Warning",
+                                      message: "You're going to reset this student's game sessions. Are you ok with it?",
+                                      preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Cancel",
+                                      style: .cancel,
+                                      handler: nil))
+        alert.addAction(UIAlertAction(title: "Yes",
+                                      style: .destructive,
+                                      handler: { (action) in
+                                        let cdh = CoreDataHelper()
+                                        cdh.deleteGameSessions(for: student)
+        }))
+        present(alert, animated: true, completion: nil)
+        
+    }
+    
+    func didPressDelete(on cell: StudentCellTVC, with student: Student) {
+        let alert = UIAlertController(title: "Warning",
+                                      message: "You're going to delete this student forever. Are you ok with it?",
+                                      preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Cancel",
+                                      style: .cancel,
+                                      handler: nil))
+        alert.addAction(UIAlertAction(title: "Yes",
+                                      style: .destructive,
+                                      handler: { (action) in
+                                        let cdh = CoreDataHelper()
+                                        cdh.deleteStudent(student: student)
+        }))
+        present(alert, animated: true, completion: nil)
     }
 }
 

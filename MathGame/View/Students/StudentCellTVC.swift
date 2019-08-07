@@ -10,6 +10,8 @@ import UIKit
 
 protocol StudentCellTVCDelegate: class {
     func didPressInfo(on cell: StudentCellTVC, with student: Student)
+    func didPressDelete(on cell: StudentCellTVC, with student: Student)
+    func didPressReset(on cell: StudentCellTVC, with student: Student)
 }
 
 class StudentCellTVC: UITableViewCell {
@@ -62,20 +64,19 @@ class StudentCellTVC: UITableViewCell {
     
     @IBAction func onExtraButton(_ sender: Any) {
         if mode == .delete {
-            let cdh = CoreDataHelper()
             guard let student = student else { return }
-            cdh.deleteStudent(student: student)
+            delegate?.didPressDelete(on: self, with: student)
         }
         if mode == .reset {
             guard let student = student else { return }
-            let cdh = CoreDataHelper()
-            cdh.deleteGameSessions(for: student)
+            delegate?.didPressReset(on: self, with: student)
         }
         vcViewModel?.refreshStudents()
     }
     
     @IBAction func onExtraButtonTwo(_ sender: Any) {
         if mode == .reset {
+            
             guard let student = student else { return }
             delegate?.didPressInfo(on: self, with: student)
         }
