@@ -26,6 +26,7 @@ class GamesVM {
     
     init(with student: Student) {
         self.student = BehaviorSubject(value: student)
+        
     }
     
     func getStudent() -> Student? {
@@ -35,5 +36,20 @@ class GamesVM {
         } catch {
             return nil
         }
+    }
+    
+    func getTimedMultiplyingLevel() -> Int {
+        guard let student = getStudent() else { return 1 }
+        guard let gameSessions = student.gameSessions?.allObjects as? [GameSession] else { return 1 }
+        
+        var lastLevel: Int = 1
+        for gameSession in gameSessions {
+            if let level = Int(gameSession.timed_level ?? "1") {
+                if level > lastLevel {
+                    lastLevel = level
+                }
+            }
+        }
+        return lastLevel
     }
 }

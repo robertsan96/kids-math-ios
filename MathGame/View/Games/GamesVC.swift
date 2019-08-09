@@ -267,7 +267,6 @@ extension GamesVC: SelectModeViewDelegate {
                     pickerView.selectRow(0, inComponent: 0, animated: true)
                 }
             }
-        default: break
         }
     }
 }
@@ -299,6 +298,8 @@ extension GamesVC: UIPickerViewDataSource, UIPickerViewDelegate {
                 }
             }
             return 0
+        case GamesVCPickers.timedMultiplyingLevelPicker.rawValue:
+            return 30
         default: break
         }
         return 0
@@ -331,13 +332,45 @@ extension GamesVC: UIPickerViewDataSource, UIPickerViewDelegate {
                 return "By \(categories[row])"
             }
             return nil
+        case GamesVCPickers.timedMultiplyingLevelPicker.rawValue:
+            return "Level \(30 - row)"
         default: return nil
         }
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        if component == 0 {
-            pickerView.reloadComponent(1)
+        switch pickerView.tag {
+        case GamesVCPickers.dividingCategoryPicker.rawValue:
+            if component == 0 {
+                pickerView.reloadComponent(1)
+            }
+        case GamesVCPickers.timedMultiplyingLevelPicker.rawValue:
+            let level = viewModel?.getTimedMultiplyingLevel() ?? 1
+            
+            if level < 30-row {
+                pickerView.selectRow(30-level, inComponent: 0, animated: true)
+            }
+        default: break
+        }
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        switch pickerView.tag {
+        case GamesVCPickers.timedMultiplyingLevelPicker.rawValue:
+            
+            let level = viewModel?.getTimedMultiplyingLevel() ?? 1
+            
+            if level < 30-row {
+                let color = UIColor.gray
+                let attributes = [NSAttributedString.Key.foregroundColor: color]
+                
+                let disabledString = NSAttributedString(string: "Level \(30 - row)", attributes: attributes)
+                return disabledString
+            } else {
+                return nil
+            }
+            
+        default: return nil
         }
     }
 }

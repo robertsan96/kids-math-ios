@@ -116,10 +116,13 @@ extension CoreDataHelper {
         context.delete(student)
     }
     
-    func createGameSession(for student: Student, and game: Game) -> GameSession? {
+    func createGameSession(for student: Student,
+                           and game: Game,
+                           and timedLevel: String? = nil) -> GameSession? {
         let gameSession = GameSession(context: context)
         gameSession.date = Date()
         gameSession.game = game.getName()
+        gameSession.timed_level = timedLevel
         student.addToGameSessions(gameSession)
         student.lastActivity = Date()
         do {
