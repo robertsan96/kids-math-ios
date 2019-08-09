@@ -21,6 +21,7 @@
 		4635276E22E8B81B00ACFA5A /* StudentDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4635276D22E8B81B00ACFA5A /* StudentDetailVC.swift */; };
 		4635277022E8B83600ACFA5A /* StudentDetailVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4635276F22E8B83600ACFA5A /* StudentDetailVM.swift */; };
 		4635277222E8BA3900ACFA5A /* StudentsNVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4635277122E8BA3900ACFA5A /* StudentsNVC.swift */; };
+		46517E6622FD3D770025D665 /* TimedMultiplying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46517E6522FD3D770025D665 /* TimedMultiplying.swift */; };
 		466355E722F1281D0020FDEA /* GenericGameOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466355E622F1281D0020FDEA /* GenericGameOne.swift */; };
 		466355EA22F128F80020FDEA /* HalvesVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466355E922F128F80020FDEA /* HalvesVM.swift */; };
 		466355EC22F132BA0020FDEA /* HalvesResultsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466355EB22F132BA0020FDEA /* HalvesResultsVC.swift */; };
@@ -113,6 +114,7 @@
 		4635276D22E8B81B00ACFA5A /* StudentDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentDetailVC.swift; sourceTree = "<group>"; };
 		4635276F22E8B83600ACFA5A /* StudentDetailVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentDetailVM.swift; sourceTree = "<group>"; };
 		4635277122E8BA3900ACFA5A /* StudentsNVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsNVC.swift; sourceTree = "<group>"; };
+		46517E6522FD3D770025D665 /* TimedMultiplying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimedMultiplying.swift; sourceTree = "<group>"; };
 		466355E622F1281D0020FDEA /* GenericGameOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericGameOne.swift; sourceTree = "<group>"; };
 		466355E922F128F80020FDEA /* HalvesVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalvesVM.swift; sourceTree = "<group>"; };
 		466355EB22F132BA0020FDEA /* HalvesResultsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalvesResultsVC.swift; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				4697FC1B22EDA32B007EBAA6 /* Game.swift */,
+				46517E6522FD3D770025D665 /* TimedMultiplying.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -761,6 +764,7 @@
 				4635276622E8AEAB00ACFA5A /* StudentsVM.swift in Sources */,
 				4697FC1922EDA28D007EBAA6 /* GameTVC.swift in Sources */,
 				4697FC3622EDE288007EBAA6 /* NumberButton.swift in Sources */,
+				46517E6622FD3D770025D665 /* TimedMultiplying.swift in Sources */,
 				46BF7B0C22E62C1D00FAA757 /* MathGame.xcdatamodeld in Sources */,
 				461BB4A522E62E76009EBD61 /* AppDaemon.swift in Sources */,
 				4697FC1322ED9FB5007EBAA6 /* GamesVC.swift in Sources */,

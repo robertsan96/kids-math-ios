@@ -12,6 +12,7 @@ import RxCocoa
 
 enum GamesVCPickers: Int {
     case dividingCategoryPicker
+    case timedMultiplyingLevelPicker
 }
 
 class GamesVC: UIViewController {
@@ -45,6 +46,11 @@ class GamesVC: UIViewController {
         
         gamesTable.rx.modelSelected(Game.self).subscribe(onNext: { [weak self] game in
             guard let `self` = self else { return }
+            guard game.getName() != Game.timedMultiplying.getName() else {
+                self.didSelect(mode: .quiz, for: game)
+                return
+            }
+            
             self.selectModeView?.removeFromSuperview()
             self.selectModeOverlay?.removeFromSuperview()
             let selectMode = SelectModeView()
@@ -189,6 +195,43 @@ extension GamesVC: SelectModeViewDelegate {
                     halvesVC.reloadViews()
                 })
             }
+        case .timedMultiplying:
+            if mode == .quiz {
+                // it can only be quiz anyway
+                let pickerView = UIPickerView(frame: CGRect(x: 0, y: 0, width: 250, height: 300))
+                pickerView.delegate = self
+                pickerView.dataSource = self
+                pickerView.tag = GamesVCPickers.timedMultiplyingLevelPicker.rawValue
+                
+                categoryVC = UIViewController()
+                categoryVC?.preferredContentSize = CGSize(width: 250,height: 300)
+                categoryVC?.view.addSubview(pickerView)
+                let editRadiusAlert = UIAlertController(title: "Level",
+                                                        message: "Select your desired level.",
+                                                        preferredStyle: UIAlertController.Style.alert)
+                editRadiusAlert.setValue(categoryVC, forKey: "contentViewController")
+                editRadiusAlert.addAction(UIAlertAction(title: "Done", style: .default, handler: { [weak self] action in
+                    let selectedLevel = Constants.GameLevels.getLevel(by: pickerView.selectedRow(inComponent: 0))
+                    let selectedCategory = selectedLevel.getCategory(by: pickerView.selectedRow(inComponent: 1))
+                    let halvesVC: GenericGameOne = Storyboard.shared.getViewController(by: .genericGameOne)
+                    let halvesVM: HalvesVM = HalvesVM(with: game,
+                                                      and: 20,
+                                                      and: student,
+                                                      and: selectedLevel,
+                                                      and: selectedCategory)
+                    halvesVC.viewModel = halvesVM
+                    halvesVC.delegate = self
+                    self?.present(halvesVC, animated: true, completion: {
+                        halvesVC.reloadViews()
+                    })
+                    
+                }))
+                editRadiusAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+                self.present(editRadiusAlert, animated: true) {
+                    pickerView.selectRow(0, inComponent: 0, animated: true)
+                }
+                
+            }
         case .dividing:
             if mode == .quiz {
                 let pickerView = UIPickerView(frame: CGRect(x: 0, y: 0, width: 250, height: 300))
@@ -234,6 +277,7 @@ extension GamesVC: UIPickerViewDataSource, UIPickerViewDelegate {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         switch pickerView.tag {
         case GamesVCPickers.dividingCategoryPicker.rawValue: return 2
+        case GamesVCPickers.timedMultiplyingLevelPicker.rawValue: return 1
         default: break
         }
         return 0
