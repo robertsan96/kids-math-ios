@@ -37,6 +37,10 @@ struct TimedMultiplying {
     var right: Float
     var result: Float
     
+    var userAnswer: Int?
+    
+    var uuid = UUID().uuidString
+    
     var unknown: UnknownPosition
     
     init(left: Float,

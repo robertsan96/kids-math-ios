@@ -123,27 +123,27 @@ struct Constants {
             case 1:
                 return [
                     TimedMultiplying(left: 1, op: .tim, right: 10, result: 10, unknown: .result),
-                    TimedMultiplying(left: 2, op: .tim, right: 10, result: 10, unknown: .result),
-                    TimedMultiplying(left: 3, op: .tim, right: 10, result: 10, unknown: .result),
-                    TimedMultiplying(left: 4, op: .tim, right: 10, result: 10, unknown: .result)
+                    TimedMultiplying(left: 2, op: .tim, right: 10, result: 20, unknown: .result),
+                    TimedMultiplying(left: 3, op: .tim, right: 10, result: 30, unknown: .result),
+                    TimedMultiplying(left: 4, op: .tim, right: 10, result: 40, unknown: .result)
                 ]
             case 2:
                 return [
                     TimedMultiplying(left: 10, op: .tim, right: 1, result: 10, unknown: .result),
-                    TimedMultiplying(left: 10, op: .tim, right: 2, result: 10, unknown: .result),
-                    TimedMultiplying(left: 10, op: .tim, right: 3, result: 10, unknown: .result),
-                    TimedMultiplying(left: 10, op: .tim, right: 4, result: 10, unknown: .result)
+                    TimedMultiplying(left: 10, op: .tim, right: 2, result: 20, unknown: .result),
+                    TimedMultiplying(left: 10, op: .tim, right: 3, result: 30, unknown: .result),
+                    TimedMultiplying(left: 10, op: .tim, right: 4, result: 40, unknown: .result)
                 ]
             case 3:
                 return [
                     TimedMultiplying(left: 1, op: .tim, right: 10, result: 10, unknown: .result),
-                    TimedMultiplying(left: 2, op: .tim, right: 10, result: 10, unknown: .result),
-                    TimedMultiplying(left: 3, op: .tim, right: 10, result: 10, unknown: .result),
-                    TimedMultiplying(left: 4, op: .tim, right: 10, result: 10, unknown: .result),
+                    TimedMultiplying(left: 2, op: .tim, right: 10, result: 20, unknown: .result),
+                    TimedMultiplying(left: 3, op: .tim, right: 10, result: 30, unknown: .result),
+                    TimedMultiplying(left: 4, op: .tim, right: 10, result: 40, unknown: .result),
                     TimedMultiplying(left: 10, op: .tim, right: 1, result: 10, unknown: .result),
-                    TimedMultiplying(left: 10, op: .tim, right: 2, result: 10, unknown: .result),
-                    TimedMultiplying(left: 10, op: .tim, right: 3, result: 10, unknown: .result),
-                    TimedMultiplying(left: 10, op: .tim, right: 4, result: 10, unknown: .result)
+                    TimedMultiplying(left: 10, op: .tim, right: 2, result: 20, unknown: .result),
+                    TimedMultiplying(left: 10, op: .tim, right: 3, result: 30, unknown: .result),
+                    TimedMultiplying(left: 10, op: .tim, right: 4, result: 40, unknown: .result)
                 ]
             case 4:
                 return [

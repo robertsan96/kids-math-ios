@@ -18,19 +18,59 @@ class HalvesVM {
     var student: Student
     
     var currentSet: BehaviorSubject<GameTypeOne?> = BehaviorSubject(value: nil)
-    
     var gamesGenerated: [GameTypeOne] = []
+    
+    var timedMultiplyingGames: [TimedMultiplying] = []
+    var timedMultiplyingGamesDone: [TimedMultiplying] = []
+    var currentTimedMultiplyingGame: BehaviorSubject<TimedMultiplying?> = BehaviorSubject(value: nil)
+    
+    var timedMultiplyingLevel: Int = 0
+    var uiTimer: TimerView?
     
     init(with game: Game,
          and maxNumber: Int,
          and student: Student,
          and gameLevel: Constants.GameLevels,
-         and category: Int = 1) {
+         and category: Int = 1,
+         and timedMultiplyingLevel: Int = 0) {
+        
         self.game = game
         self.student = student
         self.gameLevel = gameLevel
         self.selectedCategory = category
+        
+        self.timedMultiplyingGames = Constants.GameLevels.beginner.getTimedMultiplyingGames(by: timedMultiplyingLevel)
+        self.timedMultiplyingLevel = timedMultiplyingLevel
+        setTimedMultiplying()
+        
         currentSet.onNext(getSet())
+    }
+    
+    func setTimedMultiplying() {
+    
+        guard let firstTimedGame = timedMultiplyingGames.first else {
+            uiTimer?.delegate?.timerDidEnd()
+            return
+        }
+        
+        self.currentTimedMultiplyingGame.onNext(firstTimedGame)
+    }
+    
+    func doneCurrentTimedMultiplyingGame(with answer: Int) {
+        let currentGame: TimedMultiplying?
+        do {
+            currentGame = try currentTimedMultiplyingGame.value()
+        } catch {
+            currentGame = nil
+        }
+        guard var currentGameUw = currentGame else { return }
+        
+        self.timedMultiplyingGames = self.timedMultiplyingGames.filter({ (game) -> Bool in
+            return game.uuid != currentGameUw.uuid
+        })
+        currentGameUw.userAnswer = answer
+        timedMultiplyingGamesDone.append(currentGameUw)
+        
     }
     
     func getSet() -> GameTypeOne {

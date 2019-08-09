@@ -34,12 +34,21 @@ class HalvesResultsVC: UIViewController {
         guard let vm = viewModel else { return }
         
         resultsTable.register(UINib(nibName: "HalvesResultTVC", bundle: nil), forCellReuseIdentifier: "ResultCell")
+        resultsTable.register(UINib(nibName: "TimedMultiplyingTVC", bundle: nil), forCellReuseIdentifier: "TimedCell")
         resultsTable.rowHeight = 100
         
-        viewModel?.gamesGenerated
-            .bind(to: resultsTable.rx.items(cellIdentifier: "ResultCell", cellType: HalvesResultTVC.self)) { row, model, cell in
-                cell.load(with: model, for: vm.game)
-            }.disposed(by: disposeBag)
+        switch vm.game {
+        case .timedMultiplying:
+            viewModel?.timedMultiplyingGames
+                .bind(to: resultsTable.rx.items(cellIdentifier: "TimedCell", cellType: TimedMultiplyingTVC.self)) { row, model, cell in
+                    cell.load(with: model, for: vm.game)
+                }.disposed(by: disposeBag)
+        default:
+            viewModel?.gamesGenerated
+                .bind(to: resultsTable.rx.items(cellIdentifier: "ResultCell", cellType: HalvesResultTVC.self)) { row, model, cell in
+                    cell.load(with: model, for: vm.game)
+                }.disposed(by: disposeBag)
+        }
     }
     
     func reloadViews() {

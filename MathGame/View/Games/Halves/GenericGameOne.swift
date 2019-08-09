@@ -33,6 +33,8 @@ class GenericGameOne: UIViewController {
         
         keyboard.delegate = self
         timerView.delegate = self
+        
+        viewModel?.uiTimer = timerView
         rxStart()
     }
     
@@ -40,10 +42,15 @@ class GenericGameOne: UIViewController {
         guard let vm = viewModel else { return }
         gameName.text = vm.game.getName()
         
-        let firstName = viewModel?.student.firstName ?? ""
-        let lastName = viewModel?.student.lastName ?? ""
-        let fullName = firstName + " " + lastName
-        studentName.text = fullName
+        switch vm.game {
+        case .timedMultiplying:
+            studentName.text = "Level \(viewModel?.timedMultiplyingLevel ?? 0)"
+        default:
+            let firstName = viewModel?.student.firstName ?? ""
+            let lastName = viewModel?.student.lastName ?? ""
+            let fullName = firstName + " " + lastName
+            studentName.text = fullName
+        }
     }
     
     func updateView(with set: GameTypeOne) {
@@ -64,17 +71,43 @@ class GenericGameOne: UIViewController {
             
         default: break
         }
-//        mathLabel.text = "How much is the half of \(Int(set.numberOne))?"
+        //        mathLabel.text = "How much is the half of \(Int(set.numberOne))?"
+    }
+    
+    func updateView(withTimed set: TimedMultiplying) {
+        let unknownPosition = set.unknown
+        let left = Int(set.left)
+        let right = Int(set.right)
+        let result = Int(set.result)
+        
+        switch unknownPosition {
+        case .left:
+            mathLabel.text = "? \(set.op.getSymbol()) \(right) = \(result)"
+        case .right:
+            mathLabel.text = "\(left) \(set.op.getSymbol()) ? = \(result)"
+        case .result:
+            mathLabel.text = "\(left) \(set.op.getSymbol()) \(right)"
+        }
     }
 }
 
 extension GenericGameOne {
     
     func rxStart() {
-        viewModel?.currentSet.subscribe(onNext: { [weak self] set in
-            guard let set = set else { return }
-            self?.updateView(with: set)
-        }).disposed(by: disposeBag)
+        
+        guard let vm = viewModel else { return }
+        
+        if vm.game != .timedMultiplying {
+            viewModel?.currentSet.subscribe(onNext: { [weak self] set in
+                guard let set = set else { return }
+                self?.updateView(with: set)
+            }).disposed(by: disposeBag)
+        } else {
+            viewModel?.currentTimedMultiplyingGame.subscribe(onNext: { [weak self] set in
+                guard let set = set else { return }
+                self?.updateView(withTimed: set)
+            }).disposed(by: disposeBag)
+        }
     }
 }
 
@@ -118,6 +151,11 @@ extension GenericGameOne: NumberKeyboardDelegate {
                 viewModel?.updateLastSet(with: set)
                 keyboard.isUserInteractionEnabled = false
                 answerTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(answerCorrect), userInfo: nil, repeats: false)
+            case .timedMultiplying:
+                viewModel?.doneCurrentTimedMultiplyingGame(with: number)
+                viewModel?.setTimedMultiplying()
+                keyboard.isUserInteractionEnabled = false
+                answerTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(answerCorrect), userInfo: nil, repeats: false)
                 
             default:
                 set.unknown = Float(number)
@@ -131,7 +169,6 @@ extension GenericGameOne: NumberKeyboardDelegate {
     }
     
     @objc func answerCorrect() {
-
         viewModel?.currentSet.onNext(viewModel?.getSet())
         answerTimer?.invalidate()
         keyboard.isUserInteractionEnabled = true
@@ -143,13 +180,25 @@ extension GenericGameOne: TimerViewDelegate {
     func timerDidEnd() {
         view.isUserInteractionEnabled = false
         guard let vm = viewModel else { return }
-        let halvesResultsVC: HalvesResultsVC = Storyboard.shared.getViewController(by: .halvesResultsVC)
-        let halvesResultsVM = HalvesResultsVM(with: vm.game, with: vm.student, with: vm.gamesGenerated)
-        halvesResultsVC.viewModel = halvesResultsVM
-        halvesResultsVC.delegate = self
-        present(halvesResultsVC, animated: true, completion: {
-            halvesResultsVC.reloadViews()
-        })
+        
+        switch vm.game {
+        case .timedMultiplying:
+            let halvesResultsVC: HalvesResultsVC = Storyboard.shared.getViewController(by: .halvesResultsVC)
+            let halvesResultsVM = HalvesResultsVM(with: vm.game, with: vm.student, with: vm.gamesGenerated, with: vm.timedMultiplyingGamesDone, with: vm.timedMultiplyingLevel)
+            halvesResultsVC.viewModel = halvesResultsVM
+            halvesResultsVC.delegate = self
+            present(halvesResultsVC, animated: true, completion: {
+                halvesResultsVC.reloadViews()
+            })
+        default:
+            let halvesResultsVC: HalvesResultsVC = Storyboard.shared.getViewController(by: .halvesResultsVC)
+            let halvesResultsVM = HalvesResultsVM(with: vm.game, with: vm.student, with: vm.gamesGenerated)
+            halvesResultsVC.viewModel = halvesResultsVM
+            halvesResultsVC.delegate = self
+            present(halvesResultsVC, animated: true, completion: {
+                halvesResultsVC.reloadViews()
+            })
+        }
     }
 }
 

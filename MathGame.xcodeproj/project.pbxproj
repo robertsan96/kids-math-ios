@@ -22,6 +22,8 @@
 		4635277022E8B83600ACFA5A /* StudentDetailVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4635276F22E8B83600ACFA5A /* StudentDetailVM.swift */; };
 		4635277222E8BA3900ACFA5A /* StudentsNVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4635277122E8BA3900ACFA5A /* StudentsNVC.swift */; };
 		46517E6622FD3D770025D665 /* TimedMultiplying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46517E6522FD3D770025D665 /* TimedMultiplying.swift */; };
+		46517E6922FD7CB80025D665 /* TimedMultiplyingTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46517E6722FD7CB80025D665 /* TimedMultiplyingTVC.swift */; };
+		46517E6A22FD7CB80025D665 /* TimedMultiplyingTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46517E6822FD7CB80025D665 /* TimedMultiplyingTVC.xib */; };
 		466355E722F1281D0020FDEA /* GenericGameOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466355E622F1281D0020FDEA /* GenericGameOne.swift */; };
 		466355EA22F128F80020FDEA /* HalvesVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466355E922F128F80020FDEA /* HalvesVM.swift */; };
 		466355EC22F132BA0020FDEA /* HalvesResultsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466355EB22F132BA0020FDEA /* HalvesResultsVC.swift */; };
@@ -115,6 +117,8 @@
 		4635276F22E8B83600ACFA5A /* StudentDetailVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentDetailVM.swift; sourceTree = "<group>"; };
 		4635277122E8BA3900ACFA5A /* StudentsNVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsNVC.swift; sourceTree = "<group>"; };
 		46517E6522FD3D770025D665 /* TimedMultiplying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimedMultiplying.swift; sourceTree = "<group>"; };
+		46517E6722FD7CB80025D665 /* TimedMultiplyingTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimedMultiplyingTVC.swift; sourceTree = "<group>"; };
+		46517E6822FD7CB80025D665 /* TimedMultiplyingTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimedMultiplyingTVC.xib; sourceTree = "<group>"; };
 		466355E622F1281D0020FDEA /* GenericGameOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericGameOne.swift; sourceTree = "<group>"; };
 		466355E922F128F80020FDEA /* HalvesVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalvesVM.swift; sourceTree = "<group>"; };
 		466355EB22F132BA0020FDEA /* HalvesResultsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalvesResultsVC.swift; sourceTree = "<group>"; };
@@ -318,6 +322,8 @@
 				466355EB22F132BA0020FDEA /* HalvesResultsVC.swift */,
 				46D3A94E22F2079D00D16E11 /* HalvesResultTVC.swift */,
 				46D3A94F22F2079D00D16E11 /* HalvesResultTVC.xib */,
+				46517E6722FD7CB80025D665 /* TimedMultiplyingTVC.swift */,
+				46517E6822FD7CB80025D665 /* TimedMultiplyingTVC.xib */,
 			);
 			path = Halves;
 			sourceTree = "<group>";
@@ -616,6 +622,7 @@
 				46D3A95422F3E2ED00D16E11 /* BasicMathLogo.xib in Resources */,
 				4697FC4422EDF831007EBAA6 /* NumberBondsResultTVC.xib in Resources */,
 				4697FC3222EDC06C007EBAA6 /* NumberKeyboard.xib in Resources */,
+				46517E6A22FD7CB80025D665 /* TimedMultiplyingTVC.xib in Resources */,
 				46A5D10922E8DC49008F86C7 /* SettingsTVC.xib in Resources */,
 				4697FC1A22EDA28D007EBAA6 /* GameTVC.xib in Resources */,
 				4697FC3022EDBD6F007EBAA6 /* TimerView.xib in Resources */,
@@ -775,6 +782,7 @@
 				4697FC2C22EDB7F1007EBAA6 /* NumbersBondVM.swift in Sources */,
 				4697FC2422EDAEE5007EBAA6 /* TrainingButton.swift in Sources */,
 				4635276E22E8B81B00ACFA5A /* StudentDetailVC.swift in Sources */,
+				46517E6922FD7CB80025D665 /* TimedMultiplyingTVC.swift in Sources */,
 				46D3A95622F3E2F600D16E11 /* BasicMathLogo.swift in Sources */,
 				46A5D10522E8DB16008F86C7 /* SettingsVM.swift in Sources */,
 				46A5D10822E8DC49008F86C7 /* SettingsTVC.swift in Sources */,

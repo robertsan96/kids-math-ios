@@ -16,7 +16,7 @@ enum GamesVCPickers: Int {
 }
 
 class GamesVC: UIViewController {
-
+    
     @IBOutlet weak var gamesTable: UITableView!
     @IBOutlet weak var studentLabel: UILabel!
     
@@ -30,7 +30,7 @@ class GamesVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         customizeTable()
         rxStart()
     }
@@ -42,7 +42,7 @@ class GamesVC: UIViewController {
         viewModel?.games.bind(to: gamesTable
             .rx.items(cellIdentifier: "GameCell", cellType: GameTVC.self)) { row, model, cell in
                 cell.gameName.text = model.getName()
-        }.disposed(by: disposeBag)
+            }.disposed(by: disposeBag)
         
         gamesTable.rx.modelSelected(Game.self).subscribe(onNext: { [weak self] game in
             guard let `self` = self else { return }
@@ -211,14 +211,14 @@ extension GamesVC: SelectModeViewDelegate {
                                                         preferredStyle: UIAlertController.Style.alert)
                 editRadiusAlert.setValue(categoryVC, forKey: "contentViewController")
                 editRadiusAlert.addAction(UIAlertAction(title: "Done", style: .default, handler: { [weak self] action in
-                    let selectedLevel = Constants.GameLevels.getLevel(by: pickerView.selectedRow(inComponent: 0))
-                    let selectedCategory = selectedLevel.getCategory(by: pickerView.selectedRow(inComponent: 1))
+                    let selectedLevel = pickerView.selectedRow(inComponent: 0) + 1
                     let halvesVC: GenericGameOne = Storyboard.shared.getViewController(by: .genericGameOne)
                     let halvesVM: HalvesVM = HalvesVM(with: game,
                                                       and: 20,
                                                       and: student,
-                                                      and: selectedLevel,
-                                                      and: selectedCategory)
+                                                      and: .beginner,
+                                                      and: 1,
+                                                      and: selectedLevel)
                     halvesVC.viewModel = halvesVM
                     halvesVC.delegate = self
                     self?.present(halvesVC, animated: true, completion: {
@@ -260,11 +260,11 @@ extension GamesVC: SelectModeViewDelegate {
                     self?.present(halvesVC, animated: true, completion: {
                         halvesVC.reloadViews()
                     })
-
+                    
                 }))
                 editRadiusAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
                 self.present(editRadiusAlert, animated: true) {
-                    pickerView.selectRow(0, inComponent: 0, animated: true)
+                    pickerView.selectRow(0, inComponent: 1, animated: true)
                 }
             }
         }
@@ -333,7 +333,7 @@ extension GamesVC: UIPickerViewDataSource, UIPickerViewDelegate {
             }
             return nil
         case GamesVCPickers.timedMultiplyingLevelPicker.rawValue:
-            return "Level \(30 - row)"
+            return "Level \(row+1)"
         default: return nil
         }
     }
@@ -347,8 +347,8 @@ extension GamesVC: UIPickerViewDataSource, UIPickerViewDelegate {
         case GamesVCPickers.timedMultiplyingLevelPicker.rawValue:
             let level = viewModel?.getTimedMultiplyingLevel() ?? 1
             
-            if level < 30-row {
-                pickerView.selectRow(30-level, inComponent: 0, animated: true)
+            if level < row {
+                pickerView.selectRow(level, inComponent: 0, animated: true)
             }
         default: break
         }
@@ -358,16 +358,27 @@ extension GamesVC: UIPickerViewDataSource, UIPickerViewDelegate {
         switch pickerView.tag {
         case GamesVCPickers.timedMultiplyingLevelPicker.rawValue:
             
-            let level = viewModel?.getTimedMultiplyingLevel() ?? 1
-            
-            if level < 30-row {
-                let color = UIColor.gray
-                let attributes = [NSAttributedString.Key.foregroundColor: color]
-                
-                let disabledString = NSAttributedString(string: "Level \(30 - row)", attributes: attributes)
-                return disabledString
+            let level = viewModel?.getTimedMultiplyingLevel() ?? 0
+            if level != 0 {
+                if level < row {
+                    let color = UIColor.gray
+                    let attributes = [NSAttributedString.Key.foregroundColor: color]
+                    
+                    let disabledString = NSAttributedString(string: "Level \(row+1)", attributes: attributes)
+                    return disabledString
+                } else {
+                    return nil
+                }
             } else {
-                return nil
+                if level < row+2 {
+                    let color = UIColor.gray
+                    let attributes = [NSAttributedString.Key.foregroundColor: color]
+                    
+                    let disabledString = NSAttributedString(string: "Level \(row+1)", attributes: attributes)
+                    return disabledString
+                } else {
+                    return nil
+                }
             }
             
         default: return nil
