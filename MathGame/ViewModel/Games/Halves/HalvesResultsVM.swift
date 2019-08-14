@@ -59,7 +59,7 @@ class HalvesResultsVM {
         let cdh = CoreDataHelper()
         let gameSession: GameSession?
         if game == .timedMultiplying {
-            if timedIsFullyCorrect() {
+            if countCorrectTimedMultiplying() == 20 {
                 gameSession = cdh.createGameSession(for: student, and: game, and: String(currentTimedMultiplyingLevel))
                 if let unwrappedGameSession = gameSession {
                     for gameGenerated in getTimedGameGenerated() {
@@ -91,6 +91,16 @@ class HalvesResultsVM {
                 }
             }
         }
+    }
+    
+    func countCorrectTimedMultiplying() -> Int {
+        var corrects = 0
+        for answer in try! timedMultiplyingGames.value() {
+            if isTimedCorrect(game: answer) {
+                corrects += 1
+            }
+        }
+        return corrects
     }
     
     func isCorrect(game: GameTypeOne) -> Bool {

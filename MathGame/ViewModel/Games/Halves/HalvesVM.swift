@@ -20,6 +20,7 @@ class HalvesVM {
     var currentSet: BehaviorSubject<GameTypeOne?> = BehaviorSubject(value: nil)
     var gamesGenerated: [GameTypeOne] = []
     
+    var lastGameIndex = 0
     var timedMultiplyingGames: [TimedMultiplying] = []
     var timedMultiplyingGamesDone: [TimedMultiplying] = []
     var currentTimedMultiplyingGame: BehaviorSubject<TimedMultiplying?> = BehaviorSubject(value: nil)
@@ -48,12 +49,13 @@ class HalvesVM {
     
     func setTimedMultiplying() {
     
-        guard let firstTimedGame = timedMultiplyingGames.first else {
-            uiTimer?.delegate?.timerDidEnd()
-            return
-        }
-        
-        self.currentTimedMultiplyingGame.onNext(firstTimedGame)
+        var random: Int = 0
+        repeat {
+            random = Int.random(in: 0 ..< timedMultiplyingGames.count)
+        } while random == lastGameIndex
+        lastGameIndex = random
+    
+        self.currentTimedMultiplyingGame.onNext(timedMultiplyingGames[random])
     }
     
     func doneCurrentTimedMultiplyingGame(with answer: Int) {
@@ -65,12 +67,46 @@ class HalvesVM {
         }
         guard var currentGameUw = currentGame else { return }
         
-        self.timedMultiplyingGames = self.timedMultiplyingGames.filter({ (game) -> Bool in
-            return game.uuid != currentGameUw.uuid
-        })
         currentGameUw.userAnswer = answer
         timedMultiplyingGamesDone.append(currentGameUw)
         
+        if countCorrectTimedMultiplying() == 20 {
+            uiTimer?.delegate?.timerDidEnd()
+        }
+    }
+    
+    func countCorrectTimedMultiplying() -> Int {
+        var corrects = 0
+        for answer in timedMultiplyingGamesDone {
+            if isTimedCorrect(game: answer) {
+                corrects += 1
+            }
+        }
+        return corrects
+    }
+    
+    func isTimedCorrect(game: TimedMultiplying) -> Bool {
+        var correct = true
+        var gameIsCorrect = false
+        let left = Int(game.left)
+        let right = Int(game.right)
+        let operationResult = Int(game.result)
+        let userInput = game.userAnswer ?? 0
+        
+        switch game.unknown {
+        case .left:
+            gameIsCorrect = left == userInput
+        case .right:
+            gameIsCorrect = right == userInput
+        case .result:
+            gameIsCorrect = operationResult == userInput
+        }
+        
+        if gameIsCorrect == false {
+            correct = false
+        }
+        
+        return correct
     }
     
     func getSet() -> GameTypeOne {

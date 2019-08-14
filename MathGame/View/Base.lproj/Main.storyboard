@@ -854,7 +854,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vOO-R4-oIW">
-                                <rect key="frame" x="0.0" y="220" width="414" height="676"/>
+                                <rect key="frame" x="0.0" y="250" width="414" height="646"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rnx-2h-ThT">
@@ -913,31 +913,49 @@
                                     <constraint firstAttribute="bottom" secondItem="jSV-0z-dK9" secondAttribute="bottom" id="yJl-tM-bTn"/>
                                 </constraints>
                             </view>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eEm-D1-svO">
+                                <rect key="frame" x="0.0" y="220" width="414" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="Rnx-2h-ThT" firstAttribute="leading" secondItem="feM-Xj-TNf" secondAttribute="leading" id="3aK-bs-tX9"/>
+                            <constraint firstItem="eEm-D1-svO" firstAttribute="top" secondItem="Rnx-2h-ThT" secondAttribute="bottom" id="6vU-Cs-Qei"/>
                             <constraint firstItem="Rnx-2h-ThT" firstAttribute="trailing" secondItem="feM-Xj-TNf" secondAttribute="trailing" id="Abb-yH-17A"/>
                             <constraint firstItem="Rnx-2h-ThT" firstAttribute="top" secondItem="9Xv-Tj-nHn" secondAttribute="top" id="DqH-jF-fqR"/>
+                            <constraint firstItem="vOO-R4-oIW" firstAttribute="top" secondItem="eEm-D1-svO" secondAttribute="bottom" id="NI1-yn-WMh"/>
                             <constraint firstItem="vOO-R4-oIW" firstAttribute="trailing" secondItem="feM-Xj-TNf" secondAttribute="trailing" id="TLl-H6-vU9"/>
                             <constraint firstAttribute="bottom" secondItem="vOO-R4-oIW" secondAttribute="bottom" id="bLp-0y-NKE"/>
                             <constraint firstItem="vOO-R4-oIW" firstAttribute="trailing" secondItem="feM-Xj-TNf" secondAttribute="trailing" id="bb5-VA-RF8"/>
-                            <constraint firstItem="vOO-R4-oIW" firstAttribute="top" secondItem="Rnx-2h-ThT" secondAttribute="bottom" id="evO-xJ-XEA"/>
                             <constraint firstItem="vOO-R4-oIW" firstAttribute="leading" secondItem="feM-Xj-TNf" secondAttribute="leading" id="g5x-Bk-beI"/>
-                            <constraint firstItem="vOO-R4-oIW" firstAttribute="top" secondItem="Rnx-2h-ThT" secondAttribute="bottom" id="h7R-Nl-4ad"/>
                             <constraint firstItem="vOO-R4-oIW" firstAttribute="leading" secondItem="feM-Xj-TNf" secondAttribute="leading" id="qCN-Ue-s6o"/>
+                            <constraint firstItem="feM-Xj-TNf" firstAttribute="trailing" secondItem="eEm-D1-svO" secondAttribute="trailing" id="xyl-T6-nMR"/>
+                            <constraint firstItem="eEm-D1-svO" firstAttribute="leading" secondItem="feM-Xj-TNf" secondAttribute="leading" id="ycG-dg-0aJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="feM-Xj-TNf"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Fo2-Wf-aK9" appends="YES" id="7UI-Qo-mhU"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="Kas-rY-K3v"/>
                     <connections>
+                        <outlet property="dateTextField" destination="eEm-D1-svO" id="dfe-mz-vPq"/>
                         <outlet property="studentGameSessionTable" destination="vOO-R4-oIW" id="LJa-qU-9rz"/>
                         <outlet property="studentName" destination="v87-ih-Kdl" id="ijp-Zj-xsJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t2g-up-FEx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Fo2-Wf-aK9">
+                    <connections>
+                        <action selector="onBackgroundTap:" destination="Ref-jo-0TK" id="Peg-7n-LxY"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1665" y="816"/>
+            <point key="canvasLocation" x="1663.7681159420292" y="815.625"/>
         </scene>
         <!--Generic Game One-->
         <scene sceneID="2Oj-We-hzU">
