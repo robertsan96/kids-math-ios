@@ -1029,10 +1029,10 @@
                                     <constraint firstAttribute="height" constant="300" id="yps-TL-TM1"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jGj-Yg-0rP">
-                                <rect key="frame" x="0.0" y="320" width="414" height="60"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jGj-Yg-0rP">
+                                <rect key="frame" x="0.0" y="320" width="414" height="100"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="30n-pK-nIY"/>
+                                    <constraint firstAttribute="height" constant="100" id="30n-pK-nIY"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <nil key="textColor"/>
