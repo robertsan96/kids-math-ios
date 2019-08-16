@@ -16,6 +16,7 @@ enum GamesVCPickers: Int {
     case takeAwaysCategoryPicker
     case halvesCategoryPicker
     case timeTablesCategoryPicker
+    case doublesCategoryPicker
     case timedMultiplyingLevelPicker
 }
 
@@ -169,23 +170,42 @@ extension GamesVC: SelectModeViewDelegate {
             }
         case .doubles:
             if mode == .quiz {
-                let halvesVC: GenericGameOne = Storyboard.shared.getViewController(by: .genericGameOne)
-                let halvesVM: HalvesVM = HalvesVM(with: game,
-                                                  and: 20,
-                                                  and: student,
-                                                  and: .advanced)
-                halvesVC.viewModel = halvesVM
-                halvesVC.delegate = self
-                present(halvesVC, animated: true, completion: {
-                    halvesVC.reloadViews()
-                })
+                let pickerView = UIPickerView(frame: CGRect(x: 0, y: 0, width: 250, height: 300))
+                pickerView.delegate = self
+                pickerView.dataSource = self
+                pickerView.tag = GamesVCPickers.doublesCategoryPicker.rawValue
+                
+                categoryVC = UIViewController()
+                categoryVC?.preferredContentSize = CGSize(width: 250,height: 300)
+                categoryVC?.view.addSubview(pickerView)
+                let editRadiusAlert = UIAlertController(title: "Category",
+                                                        message: "Select your doubles level.",
+                                                        preferredStyle: UIAlertController.Style.alert)
+                editRadiusAlert.setValue(categoryVC, forKey: "contentViewController")
+                editRadiusAlert.addAction(UIAlertAction(title: "Done", style: .default, handler: { [weak self] action in
+                    let selectedLevel = Constants.GameLevels.getLevel(by: pickerView.selectedRow(inComponent: 0))
+                    let halvesVC: GenericGameOne = Storyboard.shared.getViewController(by: .genericGameOne)
+                    let halvesVM: HalvesVM = HalvesVM(with: game,
+                                                      and: 20,
+                                                      and: student,
+                                                      and: selectedLevel)
+                    halvesVC.viewModel = halvesVM
+                    halvesVC.delegate = self
+                    self?.present(halvesVC, animated: true, completion: {
+                        halvesVC.reloadViews()
+                    })
+                }))
+                editRadiusAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+                self.present(editRadiusAlert, animated: true) {
+                    pickerView.selectRow(0, inComponent: 0, animated: true)
+                }
             }
         case .adding:
             if mode == .quiz {
                 let pickerView = UIPickerView(frame: CGRect(x: 0, y: 0, width: 250, height: 300))
                 pickerView.delegate = self
                 pickerView.dataSource = self
-                pickerView.tag = GamesVCPickers.halvesCategoryPicker.rawValue
+                pickerView.tag = GamesVCPickers.addingsCategoryPicker.rawValue
                 
                 categoryVC = UIViewController()
                 categoryVC?.preferredContentSize = CGSize(width: 250,height: 300)
@@ -218,7 +238,7 @@ extension GamesVC: SelectModeViewDelegate {
                 let pickerView = UIPickerView(frame: CGRect(x: 0, y: 0, width: 250, height: 300))
                 pickerView.delegate = self
                 pickerView.dataSource = self
-                pickerView.tag = GamesVCPickers.halvesCategoryPicker.rawValue
+                pickerView.tag = GamesVCPickers.takeAwaysCategoryPicker.rawValue
                 
                 categoryVC = UIViewController()
                 categoryVC?.preferredContentSize = CGSize(width: 250,height: 300)
@@ -250,7 +270,7 @@ extension GamesVC: SelectModeViewDelegate {
                 let pickerView = UIPickerView(frame: CGRect(x: 0, y: 0, width: 250, height: 300))
                 pickerView.delegate = self
                 pickerView.dataSource = self
-                pickerView.tag = GamesVCPickers.dividingCategoryPicker.rawValue
+                pickerView.tag = GamesVCPickers.timeTablesCategoryPicker.rawValue
                 
                 categoryVC = UIViewController()
                 categoryVC?.preferredContentSize = CGSize(width: 250,height: 300)
@@ -365,6 +385,7 @@ extension GamesVC: UIPickerViewDataSource, UIPickerViewDelegate {
         case GamesVCPickers.halvesCategoryPicker.rawValue: return 1
         case GamesVCPickers.timeTablesCategoryPicker.rawValue: return 2
         case GamesVCPickers.timedMultiplyingLevelPicker.rawValue: return 1
+        case GamesVCPickers.doublesCategoryPicker.rawValue: return 1
         default: break
         }
         return 0
@@ -402,7 +423,8 @@ extension GamesVC: UIPickerViewDataSource, UIPickerViewDelegate {
             return 0
         case GamesVCPickers.halvesCategoryPicker.rawValue,
              GamesVCPickers.addingsCategoryPicker.rawValue,
-             GamesVCPickers.takeAwaysCategoryPicker.rawValue:
+             GamesVCPickers.takeAwaysCategoryPicker.rawValue,
+             GamesVCPickers.doublesCategoryPicker.rawValue:
             return 3
         case GamesVCPickers.timedMultiplyingLevelPicker.rawValue:
             return 30
@@ -465,7 +487,8 @@ extension GamesVC: UIPickerViewDataSource, UIPickerViewDelegate {
             return nil
         case GamesVCPickers.halvesCategoryPicker.rawValue,
              GamesVCPickers.addingsCategoryPicker.rawValue,
-             GamesVCPickers.takeAwaysCategoryPicker.rawValue:
+             GamesVCPickers.takeAwaysCategoryPicker.rawValue,
+             GamesVCPickers.doublesCategoryPicker.rawValue:
             switch row {
             case Constants.GameLevels.beginner.rawValue: return "Beginner"
             case Constants.GameLevels.medium.rawValue: return "Medium"
