@@ -350,6 +350,8 @@ extension GamesVC: SelectModeViewDelegate {
                 pickerView.delegate = self
                 pickerView.dataSource = self
                 pickerView.tag = GamesVCPickers.timedMultiplyingLevelPicker.rawValue
+                let level = viewModel?.getTimedMultiplyingLevel() ?? 0
+                pickerView.selectRow(level, inComponent: 0, animated: true)
                 
                 categoryVC = UIViewController()
                 categoryVC?.preferredContentSize = CGSize(width: 250,height: 300)
@@ -376,7 +378,7 @@ extension GamesVC: SelectModeViewDelegate {
                 }))
                 editRadiusAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
                 self.present(editRadiusAlert, animated: true) {
-                    pickerView.selectRow(0, inComponent: 0, animated: true)
+//                    pickerView.selectRow(0, inComponent: 0, animated: true)
                 }
                 
             }

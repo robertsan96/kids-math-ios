@@ -60,6 +60,14 @@ class StudentDetailVC: UIViewController {
         }
     }
     
+    func updateView(to mode: SettingsVCMode) {
+        switch mode {
+        case .firstLaunch:
+            backButton.isHidden = true
+        case .normal: break
+        }
+    }
+    
     @IBAction func onSave(_ sender: Any) {
         do {
             let fields = StudentDetailVCFields(
@@ -74,9 +82,16 @@ class StudentDetailVC: UIViewController {
                 viewModel?.createStudent(with: fields)
             }
             
-            navigationController?.popViewController(animated: true)
-            let visibleVC = navigationController?.visibleViewController as? StudentsVC
-            visibleVC?.viewModel.students.onNext(visibleVC?.viewModel.getStudents() ?? [])
+            let mode = viewModel?.mode.value ?? .normal
+            switch mode {
+            case .firstLaunch:
+                let studentsNVC: StudentsNVC = Storyboard.shared.getViewController(by: .studentsNVC)
+                AppDaemon.shared.root(to: studentsNVC)
+            case .normal:
+                navigationController?.popViewController(animated: true)
+                let visibleVC = navigationController?.visibleViewController as? StudentsVC
+                visibleVC?.viewModel.students.onNext(visibleVC?.viewModel.getStudents() ?? [])
+            }
         } catch {
             return
         }
@@ -106,6 +121,10 @@ extension StudentDetailVC: UITextFieldDelegate {
 extension StudentDetailVC {
     
     func rxStart() {
+        
+        viewModel?.mode.subscribe(onNext: { [weak self] mode in
+            self?.updateView(to: mode)
+        }).disposed(by: disposeBag)
         viewModel?.type.subscribe(onNext: { [weak self] type in
             self?.updateView(to: type)
         }).disposed(by: disposeBag)

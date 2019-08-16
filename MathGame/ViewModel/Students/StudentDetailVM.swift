@@ -8,6 +8,7 @@
 
 import Foundation
 import RxSwift
+import RxCocoa
 
 enum StudentDetailVMType {
     case edit, create
@@ -17,6 +18,7 @@ class StudentDetailVM {
     
     var student: Student?
     var type: BehaviorSubject<StudentDetailVMType> = BehaviorSubject(value: .create)
+    var mode: BehaviorRelay<SettingsVCMode> = BehaviorRelay(value: .firstLaunch)
     
     init(with type: StudentDetailVMType, and student: Student?) {
         self.type.onNext(type)

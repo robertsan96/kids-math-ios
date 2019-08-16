@@ -99,11 +99,12 @@ extension InitialVC {
         let cdHelper = CoreDataHelper()
         cdHelper.createOrUpdateStockValue(for: .firstLaunch, value: "false")
         cdHelper.createOrUpdateStockValue(for: .masterPin, value: pinInputTextField.text ?? "")
-        let settingsVC: SettingsVC = Storyboard.shared.getViewController(by: .settingsVC)
-        let settingsVM: SettingsVM = SettingsVM(mode: .firstLaunch)
-        settingsVC.viewModel = settingsVM
+
+        let studentsCreate: StudentDetailVC = Storyboard.shared.getViewController(by: .studentDetailVC)
+        let studentsCreateVM = StudentDetailVM(with: .create, and: nil)
+        studentsCreate.viewModel = studentsCreateVM
         
-        let nav = UINavigationController(rootViewController: settingsVC)
+        let nav = UINavigationController(rootViewController: studentsCreate)
         nav.navigationBar.isHidden = true
         AppDaemon.shared.root(to: nav)
     }
