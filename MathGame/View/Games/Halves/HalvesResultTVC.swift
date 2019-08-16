@@ -49,7 +49,7 @@ class HalvesResultTVC: UITableViewCell {
             if setNumberOne * setNumberTwo == setUnknown {
                 correct = true
             } else {
-                let correctAnswer = setNumberOne / setNumberTwo
+                let correctAnswer = setNumberOne * setNumberTwo
                 questionLabel.text = "\(Int(setNumberOne)) * \(Int(setNumberTwo)) is not \(Int(setUnknown))"
                 answerLabel.text = "Your answer: \(Int(setUnknown)) | Correct answer: \(Int(correctAnswer))"
             }
