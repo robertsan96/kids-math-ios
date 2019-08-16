@@ -178,21 +178,8 @@ class HalvesVM {
             gamesGenerated.append(gameTypeOne)
             return gameTypeOne
         case .timesTable:
-//            var numberOne = Int.random(in: gameLevel.getTimesTableInterval().min ..< gameLevel.getTimesTableInterval().max)
-//            let numberTwo = Int.random(in: gameLevel.getTimesTableInterval().min ..< gameLevel.getTimesTableInterval().max)
-//
-//            var gameTypeOne: GameTypeOne = (numberOne: Float(numberOne), operator: "-", numberTwo: Float(numberTwo), unknown: Constants.UnknownDefault)
-//
-//            while gameWasGeneratedBeforeOne(game: gameTypeOne) {
-//                numberOne = Int.random(in: gameLevel.getTimesTableInterval().min ..< gameLevel.getTimesTableInterval().max)
-//                let numberTwo = Int.random(in: gameLevel.getTimesTableInterval().min ..< gameLevel.getTimesTableInterval().max)
-//                gameTypeOne = (numberOne: Float(numberOne), operator: "-", unknown: Constants.UnknownDefault, numberTwo: Float(numberTwo))
-//            }
-//            gamesGenerated.append(gameTypeOne)
-//            return gameTypeOne
             let numberTwo = selectedCategory
-            let numberThree = Int.random(in: gameLevel.getTimesTableInterval().min ..< gameLevel.getTimesTableInterval().max)
-            let numberOne = numberTwo * numberThree
+            let numberOne = Int.random(in: gameLevel.getTimesTableInterval().min ..< gameLevel.getTimesTableInterval().max)
             let gameTypeOne = (numberOne: Float(numberOne), operator: "*", unknown: Constants.UnknownDefault, numberTwo: Float(numberTwo))
             
             gamesGenerated.append(gameTypeOne)
