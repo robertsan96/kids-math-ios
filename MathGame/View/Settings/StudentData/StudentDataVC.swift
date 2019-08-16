@@ -16,7 +16,7 @@ class StudentDataVC: UIViewController {
     @IBOutlet weak var studentName: UILabel!
     
     @IBOutlet weak var dateTextField: UITextField!
-    
+
     var disposeBag: DisposeBag = DisposeBag()
     var viewModel: StudentDataVM?
     

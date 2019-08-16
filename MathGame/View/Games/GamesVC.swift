@@ -48,6 +48,8 @@ class GamesVC: UIViewController {
         viewModel?.games.bind(to: gamesTable
             .rx.items(cellIdentifier: "GameCell", cellType: GameTVC.self)) { row, model, cell in
                 cell.gameName.text = model.getName()
+                cell.delegate = self
+                cell.game = model
             }.disposed(by: disposeBag)
         
         gamesTable.rx.modelSelected(Game.self).subscribe(onNext: { [weak self] game in
@@ -90,6 +92,14 @@ class GamesVC: UIViewController {
         let lastName = student.lastName ?? ""
         let fullName = firstName + " " + lastName
         studentLabel.text = fullName
+    }
+    
+    @IBAction func onStats(_ sender: Any) {
+        guard let student = viewModel?.getStudent() else { return }
+        let studentDataVC: StudentDataVC = Storyboard.shared.getViewController(by: .studentDataVC)
+        let studentDataVM = StudentDataVM(with: student, and: .student)
+        studentDataVC.viewModel = studentDataVM
+        navigationController?.pushViewController(studentDataVC, animated: true)
     }
 }
 
@@ -606,5 +616,15 @@ extension GamesVC: HalvesVCDelegate {
     
     func didDismiss(on vc: GameTypeOne) {
         
+    }
+}
+
+extension GamesVC: GameTVCDelegate {
+    
+    func didPressInfo(on cell: GameTVC) {
+        let gameInfoVC: GameInfoVC = Storyboard.shared.getViewController(by: .gameInfoVC)
+        let gameInfoVM = GameInfoVM(with: cell.game)
+        gameInfoVC.viewModel = gameInfoVM
+        present(gameInfoVC, animated: true, completion: nil)
     }
 }

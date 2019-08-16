@@ -56,6 +56,8 @@
 		46A5D10522E8DB16008F86C7 /* SettingsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A5D10422E8DB16008F86C7 /* SettingsVM.swift */; };
 		46A5D10822E8DC49008F86C7 /* SettingsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A5D10622E8DC49008F86C7 /* SettingsTVC.swift */; };
 		46A5D10922E8DC49008F86C7 /* SettingsTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46A5D10722E8DC49008F86C7 /* SettingsTVC.xib */; };
+		46A8F27F23071A5300473018 /* GameInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A8F27E23071A5300473018 /* GameInfoVC.swift */; };
+		46A8F28123071B3300473018 /* GameInfoVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A8F28023071B3300473018 /* GameInfoVM.swift */; };
 		46BF7B0422E62C1D00FAA757 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BF7B0322E62C1D00FAA757 /* AppDelegate.swift */; };
 		46BF7B0622E62C1D00FAA757 /* StudentsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BF7B0522E62C1D00FAA757 /* StudentsVC.swift */; };
 		46BF7B0922E62C1D00FAA757 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46BF7B0722E62C1D00FAA757 /* Main.storyboard */; };
@@ -151,6 +153,8 @@
 		46A5D10422E8DB16008F86C7 /* SettingsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVM.swift; sourceTree = "<group>"; };
 		46A5D10622E8DC49008F86C7 /* SettingsTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTVC.swift; sourceTree = "<group>"; };
 		46A5D10722E8DC49008F86C7 /* SettingsTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsTVC.xib; sourceTree = "<group>"; };
+		46A8F27E23071A5300473018 /* GameInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameInfoVC.swift; sourceTree = "<group>"; };
+		46A8F28023071B3300473018 /* GameInfoVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameInfoVM.swift; sourceTree = "<group>"; };
 		46BF7B0022E62C1D00FAA757 /* MathGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MathGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46BF7B0322E62C1D00FAA757 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		46BF7B0522E62C1D00FAA757 /* StudentsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsVC.swift; sourceTree = "<group>"; };
@@ -237,6 +241,7 @@
 				46A5D10322E8DB0D008F86C7 /* Settings */,
 				469189B622E7357A0083B092 /* Initial */,
 				4635276722E8AEAF00ACFA5A /* Students */,
+				46A8F28023071B3300473018 /* GameInfoVM.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -356,6 +361,7 @@
 				4697FC1822EDA28D007EBAA6 /* GameTVC.xib */,
 				4697FC1D22EDAA81007EBAA6 /* SelectModeView.swift */,
 				4697FC1F22EDAB04007EBAA6 /* SelectModeView.xib */,
+				46A8F27E23071A5300473018 /* GameInfoVC.swift */,
 			);
 			path = Games;
 			sourceTree = "<group>";
@@ -753,6 +759,7 @@
 				466355EC22F132BA0020FDEA /* HalvesResultsVC.swift in Sources */,
 				461BB4A722E62F39009EBD61 /* CoreDataHelper.swift in Sources */,
 				4697FC3422EDC079007EBAA6 /* NumberKeyboard.swift in Sources */,
+				46A8F27F23071A5300473018 /* GameInfoVC.swift in Sources */,
 				4697FC3A22EDEE16007EBAA6 /* EnterButton.swift in Sources */,
 				46BF7B0622E62C1D00FAA757 /* StudentsVC.swift in Sources */,
 				4697FC4322EDF831007EBAA6 /* NumberBondsResultTVC.swift in Sources */,
@@ -777,6 +784,7 @@
 				4697FC1322ED9FB5007EBAA6 /* GamesVC.swift in Sources */,
 				46EEEE7922EF6A96006F0AFE /* StudentDataVM.swift in Sources */,
 				4635277222E8BA3900ACFA5A /* StudentsNVC.swift in Sources */,
+				46A8F28123071B3300473018 /* GameInfoVM.swift in Sources */,
 				4630296622E63ADF00FB8C18 /* Constants.swift in Sources */,
 				46EEEE7622EF69A5006F0AFE /* StudentDataVC.swift in Sources */,
 				4697FC2C22EDB7F1007EBAA6 /* NumbersBondVM.swift in Sources */,

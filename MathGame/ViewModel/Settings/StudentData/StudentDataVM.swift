@@ -10,6 +10,10 @@ import Foundation
 import RxSwift
 import RxCocoa
 
+enum StudentDataMode {
+    case admin, student
+}
+
 class StudentDataVM {
     
     var student: Student
@@ -19,13 +23,16 @@ class StudentDataVM {
     var minDate: BehaviorRelay<Date> = BehaviorRelay(value: Date())
     var maxDate: BehaviorRelay<Date> = BehaviorRelay(value: Date())
     
-    init(with student: Student) {
+    var mode: BehaviorRelay<StudentDataMode>
+    
+    init(with student: Student, and mode: StudentDataMode = .admin) {
         self.student = student
         let allGames = (student.gameSessions?.allObjects as! [GameSession]).sorted { (sessionOne, sessionTwo) -> Bool in
             guard let dateOne = sessionOne.date, let dateTwo = sessionTwo.date else { return false }
             return dateOne > dateTwo
         }
         self.games = BehaviorSubject(value: allGames)
+        self.mode = BehaviorRelay(value: mode)
     }
     
     func setGamesFor(date: Date) {

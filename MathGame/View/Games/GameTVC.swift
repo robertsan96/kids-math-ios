@@ -8,10 +8,19 @@
 
 import UIKit
 
+protocol GameTVCDelegate: class {
+    
+    func didPressInfo(on cell: GameTVC)
+}
+
 class GameTVC: UITableViewCell {
 
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var gameName: UILabel!
+    
+    var game: Game = .adding
+    
+    weak var delegate: GameTVCDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -32,6 +41,10 @@ class GameTVC: UITableViewCell {
             containerView.layer.borderWidth = 0
             containerView.layer.borderColor = UIColor.red.cgColor
         }
+    }
+    
+    @IBAction func didPressInfo(_ sender: Any) {
+        self.delegate?.didPressInfo(on: self)
     }
     
 }

@@ -49,4 +49,11 @@ enum Game {
         case .timedMultiplying: return "Timed multiplying"
         }
     }
+    
+    func getDescription() -> String {
+        switch self {
+        default:
+            return "So, in order to play \(self.getName()) you must..."
+        }
+    }
 }

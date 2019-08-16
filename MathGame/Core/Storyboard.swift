@@ -25,6 +25,8 @@ enum ViewControllerIdentifiers: String {
     
     case settingsVC = "SettingsVC"
     case studentDataVC = "StudentDataVC"
+    
+    case gameInfoVC = "GameInfoVC"
 }
 
 class Storyboard {
