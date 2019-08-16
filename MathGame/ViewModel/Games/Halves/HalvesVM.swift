@@ -71,10 +71,6 @@ class HalvesVM {
         
         currentGameUw.userAnswer = answer
         timedMultiplyingGamesDone.append(currentGameUw)
-        
-        if countCorrectTimedMultiplying() == 20 {
-            uiTimer?.delegate?.timerDidEnd()
-        }
     }
     
     func countCorrectTimedMultiplying() -> Int {
