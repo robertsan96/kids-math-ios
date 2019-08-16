@@ -79,6 +79,14 @@ struct Constants {
             }
         }
         
+        func getTimesTableCategory() -> ClosedRange<Int> {
+            switch self {
+            case .beginner: return 1...12
+            case .medium: return 12...20
+            case .advanced: return 20...30
+            }
+        }
+        
         func getDividingInterval() -> (min: Int, max: Int) {
             switch self {
             case .beginner: return (1, 12)

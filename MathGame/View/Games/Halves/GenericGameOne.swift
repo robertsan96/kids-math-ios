@@ -65,7 +65,7 @@ class GenericGameOne: UIViewController {
         case .takeAways:
             mathLabel.text = "What's the number? \(Int(set.numberOne)) - \(Int(set.numberTwo)) = ?"
         case .timesTable:
-            mathLabel.text = "What's is \(Int(set.numberOne)) * \(Int(set.numberTwo))?"
+            mathLabel.text = "What's the number? \(Int(set.numberOne)) * \(Int(set.numberTwo)) = ?"
         case .dividing:
             mathLabel.text = "What's is \(Int(set.numberOne)) / \(Int(set.numberTwo))?"
             
