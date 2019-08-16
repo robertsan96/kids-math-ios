@@ -54,13 +54,13 @@ class HalvesResultTVC: UITableViewCell {
                 answerLabel.text = "Your answer: \(Int(setUnknown)) | Correct answer: \(Int(correctAnswer))"
             }
         case .adding:
-            questionLabel.text = "\(Int(setNumberOne)) + \(Int(setUnknown)) = \(Int(setNumberTwo))"
+            questionLabel.text = "\(Int(setNumberOne)) + \(Int(setNumberTwo)) = \(Int(setUnknown))"
             answerLabel.text = "Your answer: \(Int(setUnknown))"
-            if setNumberOne + setUnknown == setNumberTwo {
+            if setNumberOne + setNumberTwo == setUnknown {
                 correct = true
             } else {
-                let correctAnswer = setNumberTwo - setNumberOne
-                questionLabel.text = "\(Int(setNumberOne)) + \(Int(setUnknown)) is not \(Int(setNumberTwo))"
+                let correctAnswer = setNumberTwo + setNumberOne
+                questionLabel.text = "\(Int(setNumberOne)) + \(Int(setNumberTwo)) is not \(Int(setUnknown))"
                 answerLabel.text = "Your answer: \(Int(setUnknown)) | Correct answer: \(Int(correctAnswer))"
             }
         case .takeAways:
