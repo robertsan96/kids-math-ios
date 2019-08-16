@@ -12,6 +12,7 @@ import RxCocoa
 
 enum GamesVCPickers: Int {
     case dividingCategoryPicker
+    case halvesCategoryPicker
     case timedMultiplyingLevelPicker
 }
 
@@ -132,16 +133,36 @@ extension GamesVC: SelectModeViewDelegate {
             }
         case .halves:
             if mode == .quiz {
-                let halvesVC: GenericGameOne = Storyboard.shared.getViewController(by: .genericGameOne)
-                let halvesVM: HalvesVM = HalvesVM(with: game,
-                                                  and: 20,
-                                                  and: student,
-                                                  and: .advanced)
-                halvesVC.viewModel = halvesVM
-                halvesVC.delegate = self
-                present(halvesVC, animated: true, completion: {
-                    halvesVC.reloadViews()
-                })
+                
+                let pickerView = UIPickerView(frame: CGRect(x: 0, y: 0, width: 250, height: 300))
+                pickerView.delegate = self
+                pickerView.dataSource = self
+                pickerView.tag = GamesVCPickers.halvesCategoryPicker.rawValue
+                
+                categoryVC = UIViewController()
+                categoryVC?.preferredContentSize = CGSize(width: 250,height: 300)
+                categoryVC?.view.addSubview(pickerView)
+                let editRadiusAlert = UIAlertController(title: "Category",
+                                                        message: "Select your halves level.",
+                                                        preferredStyle: UIAlertController.Style.alert)
+                editRadiusAlert.setValue(categoryVC, forKey: "contentViewController")
+                editRadiusAlert.addAction(UIAlertAction(title: "Done", style: .default, handler: { [weak self] action in
+                    let selectedLevel = Constants.GameLevels.getLevel(by: pickerView.selectedRow(inComponent: 0))
+                    let halvesVC: GenericGameOne = Storyboard.shared.getViewController(by: .genericGameOne)
+                    let halvesVM: HalvesVM = HalvesVM(with: game,
+                                                      and: 20,
+                                                      and: student,
+                                                      and: selectedLevel)
+                    halvesVC.viewModel = halvesVM
+                    halvesVC.delegate = self
+                    self?.present(halvesVC, animated: true, completion: {
+                        halvesVC.reloadViews()
+                    })
+                }))
+                editRadiusAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+                self.present(editRadiusAlert, animated: true) {
+                    pickerView.selectRow(0, inComponent: 0, animated: true)
+                }
             }
         case .doubles:
             if mode == .quiz {
@@ -276,6 +297,7 @@ extension GamesVC: UIPickerViewDataSource, UIPickerViewDelegate {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         switch pickerView.tag {
         case GamesVCPickers.dividingCategoryPicker.rawValue: return 2
+        case GamesVCPickers.halvesCategoryPicker.rawValue: return 1
         case GamesVCPickers.timedMultiplyingLevelPicker.rawValue: return 1
         default: break
         }
@@ -298,6 +320,8 @@ extension GamesVC: UIPickerViewDataSource, UIPickerViewDelegate {
                 }
             }
             return 0
+        case GamesVCPickers.halvesCategoryPicker.rawValue:
+            return 3
         case GamesVCPickers.timedMultiplyingLevelPicker.rawValue:
             return 30
         default: break
@@ -332,6 +356,13 @@ extension GamesVC: UIPickerViewDataSource, UIPickerViewDelegate {
                 return "By \(categories[row])"
             }
             return nil
+        case GamesVCPickers.halvesCategoryPicker.rawValue:
+            switch row {
+            case Constants.GameLevels.beginner.rawValue: return "Beginner"
+            case Constants.GameLevels.medium.rawValue: return "Medium"
+            case Constants.GameLevels.advanced.rawValue: return "Advanced"
+            default: return nil
+            }
         case GamesVCPickers.timedMultiplyingLevelPicker.rawValue:
             return "Level \(row+1)"
         default: return nil

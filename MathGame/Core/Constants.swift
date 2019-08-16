@@ -41,9 +41,9 @@ struct Constants {
         
         func getHalvesInterval() -> (min: Int, max: Int) {
             switch self {
-            case .beginner: return (0, 20)
-            case .medium: return (20, 50)
-            case .advanced: return (50,100)
+            case .beginner: return (1, 12)
+            case .medium: return (12, 20)
+            case .advanced: return (20,30)
             }
         }
         

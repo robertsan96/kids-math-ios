@@ -48,14 +48,16 @@ class HalvesVM {
     }
     
     func setTimedMultiplying() {
-    
-        var random: Int = 0
-        repeat {
-            random = Int.random(in: 0 ..< timedMultiplyingGames.count)
-        } while random == lastGameIndex
-        lastGameIndex = random
-    
-        self.currentTimedMultiplyingGame.onNext(timedMultiplyingGames[random])
+        if game == .timedMultiplying {
+         
+            var random: Int = 0
+            repeat {
+                random = Int.random(in: 0 ..< timedMultiplyingGames.count)
+            } while random == lastGameIndex
+            lastGameIndex = random
+            
+            self.currentTimedMultiplyingGame.onNext(timedMultiplyingGames[random])
+        }
     }
     
     func doneCurrentTimedMultiplyingGame(with answer: Int) {
