@@ -704,11 +704,11 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l2J-ms-MUq" customClass="TimerView" customModule="MathGame" customModuleProvider="target">
-                                <rect key="frame" x="157" y="234" width="100" height="100"/>
+                                <rect key="frame" x="364" y="220" width="50" height="50"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="TbG-Ie-kBf"/>
-                                    <constraint firstAttribute="width" constant="100" id="hOB-F0-99p"/>
+                                    <constraint firstAttribute="height" constant="50" id="TbG-Ie-kBf"/>
+                                    <constraint firstAttribute="width" constant="50" id="hOB-F0-99p"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xLg-vn-vKH" customClass="NumberKeyboard" customModule="MathGame" customModuleProvider="target">
@@ -719,7 +719,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5cf-K3-ztF">
-                                <rect key="frame" x="0.0" y="334" width="414" height="262"/>
+                                <rect key="frame" x="0.0" y="270" width="414" height="326"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -727,6 +727,8 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="InC-NH-Mto" firstAttribute="trailing" secondItem="l2J-ms-MUq" secondAttribute="trailing" id="0JM-GQ-RxO"/>
+                            <constraint firstItem="l2J-ms-MUq" firstAttribute="top" secondItem="9DB-xD-b1R" secondAttribute="bottom" id="6ce-mJ-EP3"/>
                             <constraint firstItem="xLg-vn-vKH" firstAttribute="top" secondItem="5cf-K3-ztF" secondAttribute="bottom" id="AaO-mv-9XM"/>
                             <constraint firstItem="xLg-vn-vKH" firstAttribute="trailing" secondItem="InC-NH-Mto" secondAttribute="trailing" id="Fev-Ip-wcg"/>
                             <constraint firstItem="xLg-vn-vKH" firstAttribute="leading" secondItem="InC-NH-Mto" secondAttribute="leading" id="KuY-iS-Ghn"/>
@@ -735,8 +737,6 @@
                             <constraint firstItem="5cf-K3-ztF" firstAttribute="top" secondItem="l2J-ms-MUq" secondAttribute="bottom" id="S8f-dw-VhP"/>
                             <constraint firstItem="9DB-xD-b1R" firstAttribute="top" secondItem="Ou8-v6-Lgq" secondAttribute="top" id="bo7-M8-cjv"/>
                             <constraint firstItem="9DB-xD-b1R" firstAttribute="trailing" secondItem="InC-NH-Mto" secondAttribute="trailing" id="nLS-tv-Itl"/>
-                            <constraint firstItem="l2J-ms-MUq" firstAttribute="centerX" secondItem="InC-NH-Mto" secondAttribute="centerX" id="qNE-od-bFN"/>
-                            <constraint firstItem="l2J-ms-MUq" firstAttribute="top" secondItem="9DB-xD-b1R" secondAttribute="bottom" constant="14" id="vzp-Fv-EfB"/>
                             <constraint firstAttribute="bottom" secondItem="xLg-vn-vKH" secondAttribute="bottom" id="w9V-xA-Vsa"/>
                             <constraint firstItem="5cf-K3-ztF" firstAttribute="leading" secondItem="InC-NH-Mto" secondAttribute="leading" id="zpa-3F-TNm"/>
                         </constraints>
