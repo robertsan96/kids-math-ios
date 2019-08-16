@@ -43,6 +43,16 @@ class HalvesResultTVC: UITableViewCell {
                 questionLabel.text = "\(Int(setNumberOne)) / \(Int(setNumberTwo)) is not \(Int(setUnknown))"
                 answerLabel.text = "Your answer: \(Int(setUnknown)) | Correct answer: \(Int(correctAnswer))"
             }
+        case .constrainedAddings:
+            questionLabel.text = "\(Int(setNumberOne)) + \(Int(setNumberTwo)) = \(Int(setUnknown))"
+            answerLabel.text = "Your answer: \(Int(setUnknown))"
+            if setNumberOne + setNumberTwo == setUnknown {
+                correct = true
+            } else {
+                let correctAnswer = setNumberOne + setNumberTwo
+                questionLabel.text = "\(Int(setNumberOne)) + \(Int(setNumberTwo)) is not \(Int(setUnknown))"
+                answerLabel.text = "Your answer: \(Int(setUnknown)) | Correct answer: \(Int(correctAnswer))"
+            }
         case .doubles:
             questionLabel.text = "\(Int(setNumberOne)) * \(Int(setNumberTwo)) = \(Int(setUnknown))"
             answerLabel.text = "Your answer: \(Int(setUnknown))"

@@ -15,6 +15,7 @@ class GamesVM {
     var games: BehaviorSubject<[Game]> = BehaviorSubject(value: [
         .numbersBond10,
         .numbersBond20,
+        .constrainedAddings,
         .halves,
         .doubles,
         .adding,

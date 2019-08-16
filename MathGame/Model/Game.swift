@@ -20,6 +20,7 @@ enum Game {
 
     case numbersBond10
     case numbersBond20
+    case constrainedAddings
     case halves
     case doubles
     case adding
@@ -38,6 +39,7 @@ enum Game {
         switch self {
         case .numbersBond10: return "Number bonds to 10"
         case .numbersBond20: return "Number bonds to 20"
+        case .constrainedAddings: return "Constrained addings"
         case .halves: return "Halves"
         case .doubles: return "Doubles"
         case .adding: return "Adding"

@@ -58,6 +58,8 @@ class GenericGameOne: UIViewController {
         switch vm.game {
         case .doubles:
             mathLabel.text = "How much is the double of \(Int(set.numberOne))?"
+        case .constrainedAddings:
+            mathLabel.text = "What's the number? \(Int(set.numberOne)) + \(Int(set.numberTwo)) = ?"
         case .halves:
             mathLabel.text = "How much is the half of \(Int(set.numberOne))?"
         case .adding:
