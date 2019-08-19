@@ -1277,10 +1277,10 @@
                                     <constraint firstItem="Mhq-6z-bwh" firstAttribute="leading" secondItem="baM-nd-ZLv" secondAttribute="leading" constant="10" id="vcV-lW-hfI"/>
                                 </constraints>
                             </view>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="No game text" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gkZ-Ox-GJW">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="No game text" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gkZ-Ox-GJW">
                                 <rect key="frame" x="0.0" y="228" width="414" height="668"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="22"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
