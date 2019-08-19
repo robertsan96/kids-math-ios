@@ -90,13 +90,6 @@ class GenericGameOne: UIViewController {
         case .result:
             mathLabel.text = "\(left) \(set.op.getSymbol()) \(right)"
         }
-        
-        if viewModel?.countCorrectTimedMultiplying() ?? 0 == 20 {
-            studentName.textColor = UIColor.green
-            studentName.text = "Congrats! Level passed!"
-            
-            mathLabel.textColor = UIColor.green
-        }
     }
 }
 
@@ -124,7 +117,7 @@ extension GenericGameOne: NumberKeyboardDelegate {
     
     func didPress(number: Int) {
         guard let vm = viewModel else { return }
-
+        
         if var set = viewModel?.getCurrentSet() {
             
             switch vm.game {

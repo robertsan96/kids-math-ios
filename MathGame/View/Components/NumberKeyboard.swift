@@ -55,7 +55,7 @@ class NumberKeyboard: UIView {
     }
     
     @IBAction func onEnter(_ sender: Any) {
-        let number = Int(numberLabel.text ?? "0") ?? 0
+        guard let number = Int(numberLabel.text ?? "") else { return }
         delegate?.didPress(number: number)
         numberLabel.text = ""
     }
