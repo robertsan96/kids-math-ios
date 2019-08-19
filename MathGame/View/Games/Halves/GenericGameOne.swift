@@ -59,15 +59,15 @@ class GenericGameOne: UIViewController {
         case .doubles:
             mathLabel.text = "How much is the double of \(Int(set.numberOne))?"
         case .constrainedAddings:
-            mathLabel.text = "What's the number? \(Int(set.numberOne)) + \(Int(set.numberTwo)) = ?"
+            mathLabel.text = "How much is? \n\(Int(set.numberOne)) + \(Int(set.numberTwo)) = ?"
         case .halves:
-            mathLabel.text = "How much is the half of \(Int(set.numberOne))?"
+            mathLabel.text = "How much is half of \(Int(set.numberOne))?"
         case .adding:
-            mathLabel.text = "What's the number? \(Int(set.numberOne)) + \(Int(set.numberTwo)) = ?"
+            mathLabel.text = "How much is? \n\(Int(set.numberOne)) + \(Int(set.numberTwo)) = ?"
         case .takeAways:
-            mathLabel.text = "What's the number? \(Int(set.numberOne)) - \(Int(set.numberTwo)) = ?"
+            mathLabel.text = "How much is? \n\(Int(set.numberOne)) - \(Int(set.numberTwo)) = ?"
         case .timesTable:
-            mathLabel.text = "What's the number? \(Int(set.numberOne)) * \(Int(set.numberTwo)) = ?"
+            mathLabel.text = "How much is? \n\(Int(set.numberOne)) * \(Int(set.numberTwo)) = ?"
         case .dividing:
             mathLabel.text = "What's is \(Int(set.numberOne)) / \(Int(set.numberTwo))?"
             

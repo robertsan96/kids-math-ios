@@ -130,6 +130,9 @@ class HalvesVM {
             
             while gameWasGeneratedBeforeOne(game: gameTypeOne) {
                 numberOne = Int.random(in: gameLevel.getHalvesInterval().min ..< gameLevel.getHalvesInterval().max)
+                while numberOne%2 != 0 {
+                    numberOne = Int.random(in: gameLevel.getHalvesInterval().min ..< gameLevel.getHalvesInterval().max)
+                }
                 gameTypeOne = (numberOne: Float(numberOne), operator: "+", unknown: Constants.UnknownDefault, numberTwo: 2)
             }
             gamesGenerated.append(gameTypeOne)
