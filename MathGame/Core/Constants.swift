@@ -41,9 +41,9 @@ struct Constants {
         
         func getHalvesInterval() -> (min: Int, max: Int) {
             switch self {
-            case .beginner: return (1, 12)
-            case .medium: return (12, 20)
-            case .advanced: return (20,30)
+            case .beginner: return (0, 20)
+            case .medium: return (22, 50)
+            case .advanced: return (52, 100)
             }
         }
         
@@ -56,25 +56,25 @@ struct Constants {
         
         func getDoublesInterval() -> (min: Int, max: Int) {
             switch self {
-            case .beginner: return (0, 12)
-            case .medium: return (12, 20)
-            case .advanced: return (20,50)
+            case .beginner: return (0, 10)
+            case .medium: return (11, 25)
+            case .advanced: return (26,50)
             }
         }
         
         func getAddingInterval() -> (min: Int, max: Int) {
             switch self {
-            case .beginner: return (0, 20)
-            case .medium: return (20, 50)
-            case .advanced: return (50,100)
+            case .beginner: return (0, 10)
+            case .medium: return (11, 25)
+            case .advanced: return (26,50)
             }
         }
         
         func getTakeAwaysInterval() -> (min: Int, max: Int) {
             switch self {
             case .beginner: return (0, 20)
-            case .medium: return (20, 50)
-            case .advanced: return (50,100)
+            case .medium: return (21, 50)
+            case .advanced: return (51,100)
             }
         }
         
