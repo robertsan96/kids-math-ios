@@ -416,6 +416,7 @@ extension GamesVC: UIPickerViewDataSource, UIPickerViewDelegate {
         case GamesVCPickers.timeTablesCategoryPicker.rawValue: return 2
         case GamesVCPickers.timedMultiplyingLevelPicker.rawValue: return 1
         case GamesVCPickers.doublesCategoryPicker.rawValue: return 1
+        case GamesVCPickers.takeAwaysCategoryPicker.rawValue: return 1
         default: break
         }
         return 0
