@@ -50,8 +50,7 @@ struct Constants {
         func getConstrainedAddingsInterval() -> (min: Int, max: Int) {
             switch self {
             case .beginner: return (11, 18)
-            case .medium: return (18, 34)
-            case .advanced: return (34, 50)
+            default: return (11, 18)
             }
         }
         

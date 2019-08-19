@@ -111,6 +111,8 @@ class HalvesResultsVM {
         switch self.game {
         case .halves:
             return numberOne / numberTwo == unknown
+        case .constrainedAddings:
+            return numberOne + numberTwo == unknown
         case .doubles:
             return numberOne * numberTwo == unknown
         case .adding:

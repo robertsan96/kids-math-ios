@@ -110,9 +110,12 @@ class HalvesVM {
     func getSet() -> GameTypeOne {
         switch game {
         case .constrainedAddings:
-            let result = Int.random(in: gameLevel.getConstrainedAddingsInterval().min ..< gameLevel.getConstrainedAddingsInterval().max)
-            let numberOne = Int.random(in: 0 ..< result)
-            let numberThree = result - numberOne
+            var numberOne: Int
+            var numberThree: Int
+            repeat {
+                numberOne = Int.random(in: 2 ..< 10)
+                numberThree = Int.random(in: 2 ..< 10)
+            } while numberOne + numberThree < 10
             let gameTypeOne = (numberOne: Float(numberOne), operator: "+", unknown: Constants.UnknownDefault, numberTwo: Float(numberThree))
             
             gamesGenerated.append(gameTypeOne)
