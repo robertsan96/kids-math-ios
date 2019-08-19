@@ -324,8 +324,9 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="GHU-en-BYn"/>
                                 </constraints>
-                                <state key="normal" title="Stats" backgroundImage="black">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                                <state key="normal" title="Stats">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                     <color key="titleShadowColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -350,6 +351,7 @@
                     </view>
                     <connections>
                         <outlet property="gamesTable" destination="Syn-aY-LCA" id="CtU-Ui-2wT"/>
+                        <outlet property="statsButton" destination="ZSN-V4-Pfh" id="Vo1-qK-cnL"/>
                         <outlet property="studentLabel" destination="xKs-fp-yM6" id="A5s-gS-tuU"/>
                     </connections>
                 </viewController>
@@ -1319,7 +1321,6 @@
     </scenes>
     <resources>
         <image name="arrow_left" width="50" height="50"/>
-        <image name="black" width="122" height="82"/>
         <image name="settings" width="500" height="500"/>
     </resources>
 </document>

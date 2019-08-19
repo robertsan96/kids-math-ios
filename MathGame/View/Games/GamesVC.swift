@@ -25,6 +25,7 @@ class GamesVC: UIViewController {
     
     @IBOutlet weak var gamesTable: UITableView!
     @IBOutlet weak var studentLabel: UILabel!
+    @IBOutlet weak var statsButton: UIButton!
     
     var viewModel: GamesVM?
     
@@ -36,6 +37,9 @@ class GamesVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        statsButton.backgroundColor = UIColor.black.withAlphaComponent(0.7)
+        statsButton.setTitleColor(.white, for: .normal)
         
         customizeTable()
         rxStart()
@@ -92,6 +96,7 @@ class GamesVC: UIViewController {
         let lastName = student.lastName ?? ""
         let fullName = firstName + " " + lastName
         studentLabel.text = fullName
+        statsButton.setTitle("Reports for \(fullName)", for: .normal)
     }
     
     @IBAction func onStats(_ sender: Any) {
