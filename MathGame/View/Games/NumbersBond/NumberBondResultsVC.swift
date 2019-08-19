@@ -19,6 +19,9 @@ class NumberBondResultsVC: UIViewController {
     @IBOutlet weak var gameName: UILabel!
     @IBOutlet weak var studentName: UILabel!
     @IBOutlet weak var resultsTable: UITableView!
+    @IBOutlet weak var answersLabel: UILabel!
+    @IBOutlet weak var correctsLabel: UILabel!
+    @IBOutlet weak var incorrectsLabel: UILabel!
     
     weak var delegate: NumberBondResultsVCDelegate?
     
@@ -40,6 +43,22 @@ class NumberBondResultsVC: UIViewController {
             .bind(to: resultsTable.rx.items(cellIdentifier: "ResultCell", cellType: NumberBondsResultTVC.self)) { row, model, cell in
                 cell.load(with: model)
         }.disposed(by: disposeBag)
+        
+        viewModel?.gamesGenerated.subscribe(onNext: { [weak self] games in
+            var corrects: Int = 0
+            var incorrects: Int = 0
+            guard let vm = self?.viewModel else { return }
+            for game in games {
+                if vm.isCorrect(game: game) {
+                    corrects += 1
+                } else {
+                    incorrects += 1
+                }
+            }
+            self?.correctsLabel.text = "Corrects: \(corrects)"
+            self?.incorrectsLabel.text = "Incorrects: \(incorrects)"
+            self?.answersLabel.text = "Answers: \(games.count)"
+        }).disposed(by: disposeBag)
     }
     
     func reloadViews() {

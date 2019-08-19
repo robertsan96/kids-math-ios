@@ -18,6 +18,9 @@ class HalvesResultsVC: UIViewController {
     @IBOutlet weak var gameName: UILabel!
     @IBOutlet weak var studentName: UILabel!
     @IBOutlet weak var resultsTable: UITableView!
+    @IBOutlet weak var correctGamesLabel: UILabel!
+    @IBOutlet weak var incorrectGamesLabel: UILabel!
+    @IBOutlet weak var answersCountLabel: UILabel!
     
     weak var delegate: HalvesResultsVCDelegate?
     
@@ -43,11 +46,41 @@ class HalvesResultsVC: UIViewController {
                 .bind(to: resultsTable.rx.items(cellIdentifier: "TimedCell", cellType: TimedMultiplyingTVC.self)) { row, model, cell in
                     cell.load(with: model, for: vm.game)
                 }.disposed(by: disposeBag)
+            viewModel?.timedMultiplyingGames.subscribe(onNext: { [weak self] games in
+                var corrects: Int = 0
+                var incorrects: Int = 0
+                for game in games {
+                    if vm.isTimedCorrect(game: game) {
+                        corrects += 1
+                    } else {
+                        incorrects += 1
+                    }
+                }
+                self?.correctGamesLabel.text = "Corrects: \(corrects)"
+                self?.incorrectGamesLabel.text = "Incorrects: \(incorrects)"
+                self?.answersCountLabel.text = "Answers: \(games.count)"
+            }).disposed(by: disposeBag)
         default:
             viewModel?.gamesGenerated
                 .bind(to: resultsTable.rx.items(cellIdentifier: "ResultCell", cellType: HalvesResultTVC.self)) { row, model, cell in
                     cell.load(with: model, for: vm.game)
                 }.disposed(by: disposeBag)
+            
+            viewModel?.gamesGenerated.subscribe(onNext: { [weak self] games in
+                var corrects: Int = 0
+                var incorrects: Int = 0
+                guard let vm = self?.viewModel else { return }
+                for game in games {
+                    if vm.isCorrect(game: game) {
+                        corrects += 1
+                    } else {
+                        incorrects += 1
+                    }
+                }
+                self?.correctGamesLabel.text = "Corrects: \(corrects)"
+                self?.incorrectGamesLabel.text = "Incorrects: \(incorrects)"
+                self?.answersCountLabel.text = "Answers: \(games.count)"
+            }).disposed(by: disposeBag)
         }
     }
     
