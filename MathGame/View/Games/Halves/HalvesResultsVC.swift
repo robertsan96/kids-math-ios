@@ -27,8 +27,8 @@ class HalvesResultsVC: UIViewController {
     var viewModel: HalvesResultsVM?
     var disposeBag: DisposeBag = DisposeBag()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
         customizeTable()
     }
@@ -59,6 +59,16 @@ class HalvesResultsVC: UIViewController {
                 self?.correctGamesLabel.text = "Corrects: \(corrects)"
                 self?.incorrectGamesLabel.text = "Incorrects: \(incorrects)"
                 self?.answersCountLabel.text = "Answers: \(games.count)"
+                
+                if corrects >= 20 {
+                    let alert = UIAlertController(title: "Congrats!", message: "You passed this level and unlocked the next one!" , preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+                    self?.present(alert, animated: true, completion: nil)
+                } else {
+                    let alert = UIAlertController(title: "Oops!", message: "You were at \(20-corrects) correct answers away from the next level! Good luck next time!" , preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+                    self?.present(alert, animated: true, completion: nil)
+                }
             }).disposed(by: disposeBag)
         default:
             viewModel?.gamesGenerated
