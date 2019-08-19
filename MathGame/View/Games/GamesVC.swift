@@ -308,13 +308,12 @@ extension GamesVC: SelectModeViewDelegate {
                                                         preferredStyle: UIAlertController.Style.alert)
                 editRadiusAlert.setValue(categoryVC, forKey: "contentViewController")
                 editRadiusAlert.addAction(UIAlertAction(title: "Done", style: .default, handler: { [weak self] action in
-                    let selectedLevel = Constants.GameLevels.getLevel(by: pickerView.selectedRow(inComponent: 0))
-                    let selectedCategory = selectedLevel.getCategory(by: pickerView.selectedRow(inComponent: 1))
+                    let selectedCategory = Constants.GameLevels.beginner.getCategory(by: pickerView.selectedRow(inComponent: 0))
                     let halvesVC: GenericGameOne = Storyboard.shared.getViewController(by: .genericGameOne)
                     let halvesVM: HalvesVM = HalvesVM(with: game,
                                                       and: 20,
                                                       and: student,
-                                                      and: selectedLevel,
+                                                      and: .beginner,
                                                       and: selectedCategory)
                     halvesVC.viewModel = halvesVM
                     halvesVC.delegate = self
@@ -325,7 +324,7 @@ extension GamesVC: SelectModeViewDelegate {
                 }))
                 editRadiusAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
                 self.present(editRadiusAlert, animated: true) {
-                    pickerView.selectRow(0, inComponent: 1, animated: true)
+                    pickerView.selectRow(0, inComponent: 0, animated: true)
                 }
             }
         case .timedMultiplying:
@@ -413,7 +412,7 @@ extension GamesVC: UIPickerViewDataSource, UIPickerViewDelegate {
         case GamesVCPickers.dividingCategoryPicker.rawValue: return 2
         case GamesVCPickers.addingsCategoryPicker.rawValue: return 1
         case GamesVCPickers.halvesCategoryPicker.rawValue: return 1
-        case GamesVCPickers.timeTablesCategoryPicker.rawValue: return 2
+        case GamesVCPickers.timeTablesCategoryPicker.rawValue: return 1
         case GamesVCPickers.timedMultiplyingLevelPicker.rawValue: return 1
         case GamesVCPickers.doublesCategoryPicker.rawValue: return 1
         case GamesVCPickers.takeAwaysCategoryPicker.rawValue: return 1
@@ -440,16 +439,7 @@ extension GamesVC: UIPickerViewDataSource, UIPickerViewDelegate {
             return 0
         case GamesVCPickers.timeTablesCategoryPicker.rawValue:
             if component == 0 {
-                return 3
-            }
-            if component == 1 {
-                let selectedRow = pickerView.selectedRow(inComponent: 0)
-                switch selectedRow {
-                case Constants.GameLevels.beginner.rawValue: return Constants.GameLevels.beginner.getTimesTableCategory().count
-                case Constants.GameLevels.medium.rawValue: return Constants.GameLevels.medium.getTimesTableCategory().count
-                case Constants.GameLevels.advanced.rawValue: return Constants.GameLevels.advanced.getTimesTableCategory().count
-                default: return 0
-                }
+                return Constants.GameLevels.beginner.getTimesTableCategory().count
             }
             return 0
         case GamesVCPickers.halvesCategoryPicker.rawValue,
@@ -492,30 +482,7 @@ extension GamesVC: UIPickerViewDataSource, UIPickerViewDelegate {
             }
             return nil
         case GamesVCPickers.timeTablesCategoryPicker.rawValue:
-            if component == 0 {
-                switch row {
-                case Constants.GameLevels.beginner.rawValue: return "Beginner"
-                case Constants.GameLevels.medium.rawValue: return "Medium"
-                case Constants.GameLevels.advanced.rawValue: return "Advanced"
-                default: return nil
-                }
-            }
-            if component == 1 {
-                let selectedRow = pickerView.selectedRow(inComponent: 0)
-                var categories: [Int] = []
-                switch selectedRow {
-                case Constants.GameLevels.beginner.rawValue:
-                    categories = Array(Constants.GameLevels.beginner.getTimesTableCategory())
-                case Constants.GameLevels.medium.rawValue:
-                    categories = Array(Constants.GameLevels.medium.getTimesTableCategory())
-                case Constants.GameLevels.advanced.rawValue:
-                    categories = Array(Constants.GameLevels.advanced.getTimesTableCategory())
-                default: return ""
-                }
-                
-                return "By \(categories[row])"
-            }
-            return nil
+                return "By \(row + 1)"
         case GamesVCPickers.halvesCategoryPicker.rawValue,
              GamesVCPickers.addingsCategoryPicker.rawValue,
              GamesVCPickers.takeAwaysCategoryPicker.rawValue,
@@ -540,7 +507,7 @@ extension GamesVC: UIPickerViewDataSource, UIPickerViewDelegate {
             }
         case GamesVCPickers.timeTablesCategoryPicker.rawValue:
             if component == 0 {
-                pickerView.reloadComponent(1)
+                pickerView.reloadComponent(0)
             }
         case GamesVCPickers.timedMultiplyingLevelPicker.rawValue:
             let level = viewModel?.getTimedMultiplyingLevel() ?? 1
