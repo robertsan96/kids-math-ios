@@ -938,14 +938,23 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No reports available for this day. Please switch to a different date." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cih-Jq-EDT">
+                                <rect key="frame" x="20" y="235" width="374" height="527"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="Rnx-2h-ThT" firstAttribute="leading" secondItem="feM-Xj-TNf" secondAttribute="leading" id="3aK-bs-tX9"/>
+                            <constraint firstItem="Cih-Jq-EDT" firstAttribute="leading" secondItem="feM-Xj-TNf" secondAttribute="leading" constant="20" id="5Lr-ZZ-H5H"/>
                             <constraint firstItem="eEm-D1-svO" firstAttribute="top" secondItem="Rnx-2h-ThT" secondAttribute="bottom" id="6vU-Cs-Qei"/>
                             <constraint firstItem="Rnx-2h-ThT" firstAttribute="trailing" secondItem="feM-Xj-TNf" secondAttribute="trailing" id="Abb-yH-17A"/>
+                            <constraint firstItem="Cih-Jq-EDT" firstAttribute="top" secondItem="Rnx-2h-ThT" secondAttribute="bottom" constant="15" id="BQK-20-EEe"/>
                             <constraint firstItem="Rnx-2h-ThT" firstAttribute="top" secondItem="9Xv-Tj-nHn" secondAttribute="top" id="DqH-jF-fqR"/>
+                            <constraint firstItem="feM-Xj-TNf" firstAttribute="trailing" secondItem="Cih-Jq-EDT" secondAttribute="trailing" constant="20" id="M83-xA-MpS"/>
                             <constraint firstItem="vOO-R4-oIW" firstAttribute="top" secondItem="eEm-D1-svO" secondAttribute="bottom" id="NI1-yn-WMh"/>
                             <constraint firstItem="vOO-R4-oIW" firstAttribute="trailing" secondItem="feM-Xj-TNf" secondAttribute="trailing" id="TLl-H6-vU9"/>
                             <constraint firstAttribute="bottom" secondItem="vOO-R4-oIW" secondAttribute="bottom" id="bLp-0y-NKE"/>
@@ -954,6 +963,7 @@
                             <constraint firstItem="vOO-R4-oIW" firstAttribute="leading" secondItem="feM-Xj-TNf" secondAttribute="leading" id="qCN-Ue-s6o"/>
                             <constraint firstItem="feM-Xj-TNf" firstAttribute="trailing" secondItem="eEm-D1-svO" secondAttribute="trailing" id="xyl-T6-nMR"/>
                             <constraint firstItem="eEm-D1-svO" firstAttribute="leading" secondItem="feM-Xj-TNf" secondAttribute="leading" id="ycG-dg-0aJ"/>
+                            <constraint firstItem="feM-Xj-TNf" firstAttribute="bottom" secondItem="Cih-Jq-EDT" secondAttribute="bottom" constant="100" id="zlK-t6-eww"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="feM-Xj-TNf"/>
                         <connections>
@@ -963,6 +973,7 @@
                     <navigationItem key="navigationItem" id="Kas-rY-K3v"/>
                     <connections>
                         <outlet property="dateTextField" destination="eEm-D1-svO" id="dfe-mz-vPq"/>
+                        <outlet property="noReportsLabel" destination="Cih-Jq-EDT" id="hd2-bp-8IV"/>
                         <outlet property="studentGameSessionTable" destination="vOO-R4-oIW" id="LJa-qU-9rz"/>
                         <outlet property="studentName" destination="v87-ih-Kdl" id="ijp-Zj-xsJ"/>
                     </connections>

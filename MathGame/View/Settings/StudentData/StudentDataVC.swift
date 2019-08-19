@@ -14,6 +14,7 @@ class StudentDataVC: UIViewController {
 
     @IBOutlet weak var studentGameSessionTable: UITableView!
     @IBOutlet weak var studentName: UILabel!
+    @IBOutlet weak var noReportsLabel: UILabel!
     
     @IBOutlet weak var dateTextField: UITextField!
 
@@ -36,6 +37,10 @@ class StudentDataVC: UIViewController {
             .items(cellIdentifier: "GameSessionCell", cellType: GameSessionTVC.self)) { row, model, cell in
                 cell.load(with: model)
         }.disposed(by: disposeBag)
+        
+        viewModel?.games.subscribe(onNext: { [weak self] games in
+            self?.noReportsLabel.isHidden = games.count > 0
+        }).disposed(by: disposeBag)
         
         viewModel?.date.subscribe(onNext: { [weak self] date in
             self?.viewModel?.setGamesFor(date: date)
