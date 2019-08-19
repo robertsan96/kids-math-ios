@@ -31,10 +31,20 @@ class GenericGameOne: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        guard let vm = viewModel else { fatalError() }
+        
         keyboard.delegate = self
         timerView.delegate = self
         
-        viewModel?.uiTimer = timerView
+        switch vm.mode {
+        case .quiz, .learning:
+            vm.uiTimer = timerView
+        case .training:
+            vm.uiTimer = nil
+            timerView.isHidden = true
+            timerView.timer?.invalidate()
+        }
+        
         rxStart()
     }
     
@@ -166,7 +176,6 @@ extension GenericGameOne: NumberKeyboardDelegate {
                 answerTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(answerCorrect), userInfo: nil, repeats: false)
                 
             }
-            
         }
     }
     
@@ -174,6 +183,28 @@ extension GenericGameOne: NumberKeyboardDelegate {
         viewModel?.currentSet.onNext(viewModel?.getSet())
         answerTimer?.invalidate()
         keyboard.isUserInteractionEnabled = true
+        
+        guard let vm = viewModel else { return }
+        
+        switch vm.mode {
+        case .quiz, .learning: break
+        case .training:
+            var corrects: Int = 0
+            for game in vm.gamesGenerated {
+                if vm.isCorrect(game: game) {
+                    corrects += 1
+                }
+            }
+            if corrects == 20 {
+                let halvesResultsVC: HalvesResultsVC = Storyboard.shared.getViewController(by: .halvesResultsVC)
+                let halvesResultsVM = HalvesResultsVM(with: vm.game, with: vm.student, with: vm.gamesGenerated)
+                halvesResultsVC.viewModel = halvesResultsVM
+                halvesResultsVC.delegate = self
+                present(halvesResultsVC, animated: true, completion: {
+                    halvesResultsVC.reloadViews()
+                })
+            }
+        }
     }
 }
 

@@ -23,6 +23,7 @@ enum NumbersBondMode {
 class NumbersBondVM {
     
     var game: Game
+    var mode: Constants.GameModes = .quiz
     var gameLevel: Constants.GameLevels
     var numbersBondMode: NumbersBondMode
     var student: Student
@@ -32,10 +33,12 @@ class NumbersBondVM {
     var gamesGenerated: [GameTypeSix] = []
     
     init(with game: Game,
+         with gameMode: Constants.GameModes = .quiz,
          and bondMode: NumbersBondMode,
          and student: Student,
          and gameLevel: Constants.GameLevels) {
         self.game = game
+        self.mode = gameMode
         self.numbersBondMode = bondMode
         self.student = student
         self.gameLevel = gameLevel
@@ -109,5 +112,23 @@ class NumbersBondVM {
         let allButLast = Array(gamesGenerated.dropLast())
         gamesGenerated = allButLast
         gamesGenerated.append(set)
+    }
+    
+    func isCorrect(game: GameTypeSix) -> Bool {
+        if let four = game.gameTypeFour {
+            let numberOne = four.numberOne
+            let numberTwo = four.numberTwo
+            let unknown = four.unknown
+            
+            return numberTwo - numberOne == unknown
+        }
+        if let five = game.gameTypeFive {
+            let numberOne = five.numberOne
+            let numberTwo = five.numberTwo
+            let unknown = five.unknown
+            
+            return numberTwo - numberOne == unknown
+        }
+        return false
     }
 }

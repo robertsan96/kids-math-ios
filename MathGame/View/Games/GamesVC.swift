@@ -125,9 +125,10 @@ extension GamesVC: SelectModeViewDelegate {
         guard let student = viewModel?.getStudent() else { return }
         switch game {
         case .numbersBond10:
-            if mode == .quiz {
+            if mode == .quiz || mode == .training {
                 let numbersBondVC: NumbersBondVC = Storyboard.shared.getViewController(by: .numbersBondVC)
                 let numbersBondVM: NumbersBondVM = NumbersBondVM(with: game,
+                                                                 with: mode,
                                                                  and: .ten,
                                                                  and: student,
                                                                  and: .beginner)
@@ -138,9 +139,10 @@ extension GamesVC: SelectModeViewDelegate {
                 })
             }
         case .numbersBond20:
-            if mode == .quiz {
+            if mode == .quiz || mode == .training{
                 let numbersBondVC: NumbersBondVC = Storyboard.shared.getViewController(by: .numbersBondVC)
                 let numbersBondVM: NumbersBondVM = NumbersBondVM(with: game,
+                                                                 with: mode,
                                                                  and: .twenty,
                                                                  and: student,
                                                                  and: .beginner)
@@ -151,9 +153,10 @@ extension GamesVC: SelectModeViewDelegate {
                 })
             }
         case .constrainedAddings:
-            if mode == .quiz {
+            if mode == .quiz || mode == .training {
                 let halvesVC: GenericGameOne = Storyboard.shared.getViewController(by: .genericGameOne)
                 let halvesVM: HalvesVM = HalvesVM(with: game,
+                                                  with: mode,
                                                   and: 20,
                                                   and: student,
                                                   and: .beginner)
@@ -164,7 +167,7 @@ extension GamesVC: SelectModeViewDelegate {
                 })
             }
         case .halves:
-            if mode == .quiz {
+            if mode == .quiz || mode == .training {
                 
                 let pickerView = UIPickerView(frame: CGRect(x: 0, y: 0, width: 250, height: 300))
                 pickerView.delegate = self
@@ -182,6 +185,7 @@ extension GamesVC: SelectModeViewDelegate {
                     let selectedLevel = Constants.GameLevels.getLevel(by: pickerView.selectedRow(inComponent: 0))
                     let halvesVC: GenericGameOne = Storyboard.shared.getViewController(by: .genericGameOne)
                     let halvesVM: HalvesVM = HalvesVM(with: game,
+                                                      with: mode,
                                                       and: 20,
                                                       and: student,
                                                       and: selectedLevel)
@@ -197,7 +201,7 @@ extension GamesVC: SelectModeViewDelegate {
                 }
             }
         case .doubles:
-            if mode == .quiz {
+            if mode == .quiz || mode == .training {
                 let pickerView = UIPickerView(frame: CGRect(x: 0, y: 0, width: 250, height: 300))
                 pickerView.delegate = self
                 pickerView.dataSource = self
@@ -214,6 +218,7 @@ extension GamesVC: SelectModeViewDelegate {
                     let selectedLevel = Constants.GameLevels.getLevel(by: pickerView.selectedRow(inComponent: 0))
                     let halvesVC: GenericGameOne = Storyboard.shared.getViewController(by: .genericGameOne)
                     let halvesVM: HalvesVM = HalvesVM(with: game,
+                                                      with: mode,
                                                       and: 20,
                                                       and: student,
                                                       and: selectedLevel)
@@ -229,7 +234,7 @@ extension GamesVC: SelectModeViewDelegate {
                 }
             }
         case .adding:
-            if mode == .quiz {
+            if mode == .quiz || mode == .training {
                 let pickerView = UIPickerView(frame: CGRect(x: 0, y: 0, width: 250, height: 300))
                 pickerView.delegate = self
                 pickerView.dataSource = self
@@ -246,6 +251,7 @@ extension GamesVC: SelectModeViewDelegate {
                     let selectedLevel = Constants.GameLevels.getLevel(by: pickerView.selectedRow(inComponent: 0))
                     let halvesVC: GenericGameOne = Storyboard.shared.getViewController(by: .genericGameOne)
                     let halvesVM: HalvesVM = HalvesVM(with: game,
+                                                      with: mode,
                                                       and: 20,
                                                       and: student,
                                                       and: selectedLevel)
@@ -261,7 +267,7 @@ extension GamesVC: SelectModeViewDelegate {
                 }
             }
         case .takeAways:
-            if mode == .quiz {
+            if mode == .quiz || mode == .training {
                 
                 let pickerView = UIPickerView(frame: CGRect(x: 0, y: 0, width: 250, height: 300))
                 pickerView.delegate = self
@@ -279,6 +285,7 @@ extension GamesVC: SelectModeViewDelegate {
                     let selectedLevel = Constants.GameLevels.getLevel(by: pickerView.selectedRow(inComponent: 0))
                     let halvesVC: GenericGameOne = Storyboard.shared.getViewController(by: .genericGameOne)
                     let halvesVM: HalvesVM = HalvesVM(with: game,
+                                                      with: mode,
                                                       and: 20,
                                                       and: student,
                                                       and: selectedLevel)
@@ -294,7 +301,7 @@ extension GamesVC: SelectModeViewDelegate {
                 }
             }
         case .timesTable:
-            if mode == .quiz {
+            if mode == .quiz || mode == .training {
                 let pickerView = UIPickerView(frame: CGRect(x: 0, y: 0, width: 250, height: 300))
                 pickerView.delegate = self
                 pickerView.dataSource = self
@@ -311,6 +318,7 @@ extension GamesVC: SelectModeViewDelegate {
                     let selectedCategory = Constants.GameLevels.beginner.getCategory(by: pickerView.selectedRow(inComponent: 0))
                     let halvesVC: GenericGameOne = Storyboard.shared.getViewController(by: .genericGameOne)
                     let halvesVM: HalvesVM = HalvesVM(with: game,
+                                                      with: mode,
                                                       and: 20,
                                                       and: student,
                                                       and: .beginner,
@@ -328,7 +336,7 @@ extension GamesVC: SelectModeViewDelegate {
                 }
             }
         case .timedMultiplying:
-            if mode == .quiz {
+            if mode == .quiz || mode == .training {
                 // it can only be quiz anyway
                 let pickerView = UIPickerView(frame: CGRect(x: 0, y: 0, width: 250, height: 300))
                 pickerView.delegate = self
@@ -348,6 +356,7 @@ extension GamesVC: SelectModeViewDelegate {
                     let selectedLevel = pickerView.selectedRow(inComponent: 0) + 1
                     let halvesVC: GenericGameOne = Storyboard.shared.getViewController(by: .genericGameOne)
                     let halvesVM: HalvesVM = HalvesVM(with: game,
+                                                      with: mode,
                                                       and: 20,
                                                       and: student,
                                                       and: .beginner,
@@ -367,7 +376,7 @@ extension GamesVC: SelectModeViewDelegate {
                 
             }
         case .dividing:
-            if mode == .quiz {
+            if mode == .quiz || mode == .training {
                 let pickerView = UIPickerView(frame: CGRect(x: 0, y: 0, width: 250, height: 300))
                 pickerView.delegate = self
                 pickerView.dataSource = self
@@ -385,6 +394,7 @@ extension GamesVC: SelectModeViewDelegate {
                     let selectedCategory = selectedLevel.getCategory(by: pickerView.selectedRow(inComponent: 0))
                     let halvesVC: GenericGameOne = Storyboard.shared.getViewController(by: .genericGameOne)
                     let halvesVM: HalvesVM = HalvesVM(with: game,
+                                                      with: mode,
                                                       and: 20,
                                                       and: student,
                                                       and: selectedLevel,

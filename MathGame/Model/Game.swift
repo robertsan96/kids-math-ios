@@ -31,7 +31,7 @@ enum Game {
     
     func modes() -> [Constants.GameModes] {
         switch self {
-        default: return [.quiz]
+        default: return [.quiz, .training]
         }
     }
     

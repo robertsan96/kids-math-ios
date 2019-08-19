@@ -30,8 +30,18 @@ class NumbersBondVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        guard let vm = viewModel else { fatalError() }
+        
         keyboard.delegate = self
         timerView.delegate = self
+        
+        switch vm.mode {
+        case .quiz, .learning: break
+        case .training:
+            timerView.isHidden = true
+            timerView.timer?.invalidate()
+        }
         rxStart()
     }
     
@@ -88,6 +98,29 @@ extension NumbersBondVC: NumberKeyboardDelegate {
         viewModel?.currentSet.onNext(viewModel?.getSet())
         answerTimer?.invalidate()
         keyboard.isUserInteractionEnabled = true
+        
+        guard let vm = viewModel else { return }
+        
+        switch vm.mode {
+        case .quiz, .learning: break
+        case .training:
+            var corrects: Int = 0
+            for game in vm.gamesGenerated {
+                if vm.isCorrect(game: game) {
+                    corrects += 1
+                }
+            }
+            if corrects == 20 {
+                guard let vm = viewModel else { return }
+                let numberBondsResultsVC: NumberBondResultsVC = Storyboard.shared.getViewController(by: .numberBondResultsVC)
+                let numberBondsResultsVM = NumberBondsResultsVM(with: vm.game, with: vm.student, with: vm.gamesGenerated)
+                numberBondsResultsVC.viewModel = numberBondsResultsVM
+                numberBondsResultsVC.delegate = self
+                present(numberBondsResultsVC, animated: true, completion: {
+                    numberBondsResultsVC.reloadViews()
+                })
+            }
+        }
     }
 }
 

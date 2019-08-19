@@ -12,6 +12,7 @@ import RxSwift
 class HalvesVM {
     
     var game: Game
+    var mode: Constants.GameModes = .quiz
     var gameLevel: Constants.GameLevels
     var selectedCategory: Int = 1
     
@@ -29,6 +30,7 @@ class HalvesVM {
     var uiTimer: TimerView?
     
     init(with game: Game,
+         with mode: Constants.GameModes = .quiz,
          and maxNumber: Int,
          and student: Student,
          and gameLevel: Constants.GameLevels,
@@ -36,6 +38,7 @@ class HalvesVM {
          and timedMultiplyingLevel: Int = 0) {
         
         self.game = game
+        self.mode = mode
         self.student = student
         self.gameLevel = gameLevel
         self.selectedCategory = category
@@ -251,6 +254,31 @@ class HalvesVM {
         let allButLast = Array(gamesGenerated.dropLast())
         gamesGenerated = allButLast
         gamesGenerated.append(set)
+    }
+    
+    func isCorrect(game: GameTypeOne) -> Bool {
+        let numberOne = game.numberOne
+        let numberTwo = game.numberTwo
+        let unknown = game.unknown
+        
+        switch self.game {
+        case .halves:
+            return numberOne / numberTwo == unknown
+        case .constrainedAddings:
+            return numberOne + numberTwo == unknown
+        case .doubles:
+            return numberOne * numberTwo == unknown
+        case .adding:
+            return numberOne + unknown == numberTwo
+        case .takeAways:
+            return numberOne - unknown == numberTwo
+        case .timesTable:
+            return numberOne * numberTwo == unknown
+        case .dividing:
+            return numberOne / numberTwo == unknown
+        default:
+            return numberOne * numberTwo == unknown
+        }
     }
 }
 
