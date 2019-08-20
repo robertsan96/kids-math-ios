@@ -41,7 +41,11 @@ class GameSessionTVC: UITableViewCell {
     }
     
     func load(with game: GameSession) {
-        gameNameLabel.text = game.game
+        if let gameLevel = game.game_level {
+            gameNameLabel.text = (game.game ?? "") + " (" + gameLevel + ")"
+        } else {
+            gameNameLabel.text = game.game
+        }
         gameDateLabel.text = game.date?.humanized
         
         let allLogs = (game.logs?.allObjects as? [GameLog])

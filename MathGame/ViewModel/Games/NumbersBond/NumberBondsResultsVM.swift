@@ -45,7 +45,7 @@ class NumberBondsResultsVM {
     
     func storeData() {
         let cdh = CoreDataHelper()
-        let gameSession = cdh.createGameSession(for: student, and: game)
+        let gameSession = cdh.createGameSession(for: student, and: game, and: .beginner)
         if let unwrappedGameSession = gameSession {
             for gameGenerated in getGameGenerated() {
                 if let four = gameGenerated.gameTypeFour {

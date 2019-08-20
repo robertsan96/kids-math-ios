@@ -60,6 +60,10 @@ class StudentDataVC: UIViewController {
         view.endEditing(true)
     }
     
+    @IBAction func onClose(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
+    
     func reloadViews() {
         guard let student = viewModel?.student else { return }
         let firstName = student.firstName ?? ""

@@ -104,13 +104,7 @@ extension NumbersBondVC: NumberKeyboardDelegate {
         switch vm.mode {
         case .quiz, .learning: break
         case .training:
-            var corrects: Int = 0
-            for game in vm.gamesGenerated {
-                if vm.isCorrect(game: game) {
-                    corrects += 1
-                }
-            }
-            if corrects == 20 {
+            if vm.gamesGenerated.count == 20 {
                 guard let vm = viewModel else { return }
                 let numberBondsResultsVC: NumberBondResultsVC = Storyboard.shared.getViewController(by: .numberBondResultsVC)
                 let numberBondsResultsVM = NumberBondsResultsVM(with: vm.game, with: vm.student, with: vm.gamesGenerated)

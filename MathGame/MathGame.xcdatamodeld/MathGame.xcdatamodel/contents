@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14492.1" systemVersion="18G84" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14492.1" systemVersion="18G87" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="GameLog" representedClassName="GameLog" syncable="YES" codeGenerationType="class">
         <attribute name="answer" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="correct" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
@@ -10,6 +10,7 @@
     <entity name="GameSession" representedClassName="GameSession" syncable="YES" codeGenerationType="class">
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="game" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="game_level" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="timed_level" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="logs" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="GameLog" inverseName="gameSession" inverseEntity="GameLog" syncable="YES"/>
         <relationship name="student" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Student" inverseName="gameSessions" inverseEntity="Student" syncable="YES"/>
@@ -27,7 +28,7 @@
     </entity>
     <elements>
         <element name="GameLog" positionX="415.828125" positionY="97.09375" width="128" height="118"/>
-        <element name="GameSession" positionX="169.12109375" positionY="126.6328125" width="128" height="118"/>
+        <element name="GameSession" positionX="169.12109375" positionY="126.6328125" width="128" height="133"/>
         <element name="Stock" positionX="-188.77734375" positionY="121.64453125" width="128" height="75"/>
         <element name="Student" positionX="-180.10546875" positionY="-69.6640625" width="128" height="118"/>
     </elements>

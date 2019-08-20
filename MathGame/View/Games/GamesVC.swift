@@ -98,6 +98,10 @@ class GamesVC: UIViewController {
         statsButton.setTitle("Reports for \(fullName)", for: .normal)
     }
     
+    @IBAction func onBack(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
+    
     @IBAction func onStats(_ sender: Any) {
         guard let student = viewModel?.getStudent() else { return }
         let studentDataVC: StudentDataVC = Storyboard.shared.getViewController(by: .studentDataVC)
@@ -502,26 +506,12 @@ extension GamesVC: UIPickerViewDataSource, UIPickerViewDelegate {
         case GamesVCPickers.timedMultiplyingLevelPicker.rawValue:
             
             let level = viewModel?.getTimedMultiplyingLevel() ?? 0
-            if level != 0 {
-                if level < row {
-                    let color = UIColor.gray
-                    let attributes = [NSAttributedString.Key.foregroundColor: color]
-                    
-                    let disabledString = NSAttributedString(string: "Level \(row+1)", attributes: attributes)
-                    return disabledString
-                } else {
-                    return nil
-                }
+            
+            if level >= row {
+                return NSAttributedString(string: "\(row+1)", attributes: nil)
             } else {
-                if level < row+2 {
-                    let color = UIColor.gray
-                    let attributes = [NSAttributedString.Key.foregroundColor: color]
-                    
-                    let disabledString = NSAttributedString(string: "Level \(row+1)", attributes: attributes)
-                    return disabledString
-                } else {
-                    return nil
-                }
+                let attributes = [NSAttributedString.Key.foregroundColor: UIColor.gray]
+                return NSAttributedString(string: "\(row+1)", attributes: attributes)
             }
             
         default: return nil

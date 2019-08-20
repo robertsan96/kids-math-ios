@@ -19,7 +19,7 @@ class SelectModeView: UIView {
     @IBOutlet weak var modeView: UIView!
     @IBOutlet var containerView: UIView!
     
-    @IBOutlet weak var learningButton: LearningButton!
+//    @IBOutlet weak var learningButton: LearningButton!
     @IBOutlet weak var trainingButton: TrainingButton!
     @IBOutlet weak var quizButton: QuizButton!
     @IBOutlet weak var gameName: UILabel!
@@ -51,16 +51,16 @@ class SelectModeView: UIView {
     func load(with game: Game) {
         self.game = game
         self.gameName.text = game.getName()
-        learningButton.isUserInteractionEnabled = false
-        learningButton.alpha = 0.3
+//        learningButton.isUserInteractionEnabled = false
+//        learningButton.alpha = 0.3
         trainingButton.isUserInteractionEnabled = false
         trainingButton.alpha = 0.3
         quizButton.isUserInteractionEnabled = false
         quizButton.alpha = 0.3
         
         if game.modes().contains(.learning) {
-            learningButton.isUserInteractionEnabled = true
-            learningButton.alpha = 1
+//            learningButton.isUserInteractionEnabled = true
+//            learningButton.alpha = 1
         }
         if game.modes().contains(.training) {
             trainingButton.isUserInteractionEnabled = true

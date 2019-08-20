@@ -189,15 +189,9 @@ extension GenericGameOne: NumberKeyboardDelegate {
         switch vm.mode {
         case .quiz, .learning: break
         case .training:
-            var corrects: Int = 0
-            for game in vm.gamesGenerated {
-                if vm.isCorrect(game: game) {
-                    corrects += 1
-                }
-            }
-            if corrects == 20 {
+            if vm.gamesGenerated.count == 20 {
                 let halvesResultsVC: HalvesResultsVC = Storyboard.shared.getViewController(by: .halvesResultsVC)
-                let halvesResultsVM = HalvesResultsVM(with: vm.game, with: vm.student, with: vm.gamesGenerated)
+                let halvesResultsVM = HalvesResultsVM(with: vm.game, with: vm.gameLevel, with: vm.student, with: vm.gamesGenerated)
                 halvesResultsVC.viewModel = halvesResultsVM
                 halvesResultsVC.delegate = self
                 present(halvesResultsVC, animated: true, completion: {
@@ -217,7 +211,7 @@ extension GenericGameOne: TimerViewDelegate {
         switch vm.game {
         case .timedMultiplying:
             let halvesResultsVC: HalvesResultsVC = Storyboard.shared.getViewController(by: .halvesResultsVC)
-            let halvesResultsVM = HalvesResultsVM(with: vm.game, with: vm.student, with: vm.gamesGenerated, with: vm.timedMultiplyingGamesDone, with: vm.timedMultiplyingLevel)
+            let halvesResultsVM = HalvesResultsVM(with: vm.game, with: nil, with: vm.student, with: vm.gamesGenerated, with: vm.timedMultiplyingGamesDone, with: vm.timedMultiplyingLevel)
             halvesResultsVC.viewModel = halvesResultsVM
             halvesResultsVC.delegate = self
             present(halvesResultsVC, animated: true, completion: {
@@ -225,7 +219,7 @@ extension GenericGameOne: TimerViewDelegate {
             })
         default:
             let halvesResultsVC: HalvesResultsVC = Storyboard.shared.getViewController(by: .halvesResultsVC)
-            let halvesResultsVM = HalvesResultsVM(with: vm.game, with: vm.student, with: vm.gamesGenerated)
+            let halvesResultsVM = HalvesResultsVM(with: vm.game, with: vm.gameLevel, with: vm.student, with: vm.gamesGenerated)
             halvesResultsVC.viewModel = halvesResultsVM
             halvesResultsVC.delegate = self
             present(halvesResultsVC, animated: true, completion: {

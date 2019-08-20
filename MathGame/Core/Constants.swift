@@ -39,6 +39,14 @@ struct Constants {
     enum GameLevels: Int {
         case beginner, medium, advanced
         
+        func getDescription() -> String {
+            switch self {
+            case .beginner: return "Beginner"
+            case .medium: return "Medium"
+            case .advanced: return "Advanced"
+            }
+        }
+        
         func getHalvesInterval() -> (min: Int, max: Int) {
             switch self {
             case .beginner: return (0, 20)

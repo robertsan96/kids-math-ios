@@ -15,7 +15,6 @@
                 <outlet property="closeButton" destination="7gf-y5-aeB" id="2ep-rY-Tt6"/>
                 <outlet property="containerView" destination="iN0-l3-epB" id="ghF-Eh-MEl"/>
                 <outlet property="gameName" destination="y1F-MU-D2a" id="tuo-UJ-Sj7"/>
-                <outlet property="learningButton" destination="pV3-hx-Zt0" id="hj5-hC-b5G"/>
                 <outlet property="modeView" destination="mbu-Xp-oAQ" id="iWy-ek-bhf"/>
                 <outlet property="quizButton" destination="Aa4-u1-Amc" id="xle-Kf-Th6"/>
                 <outlet property="trainingButton" destination="thC-fo-O1u" id="FkQ-3g-aJG"/>
@@ -61,18 +60,8 @@
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="3OI-YS-IAN">
                             <rect key="frame" x="20" y="110" width="374" height="260"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pV3-hx-Zt0" customClass="LearningButton" customModule="MathGame" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="374" height="80"/>
-                                    <fontDescription key="fontDescription" type="system" weight="black" pointSize="18"/>
-                                    <state key="normal" title="Button">
-                                        <color key="titleColor" red="0.49019607840000001" green="0.0" blue="0.1215686275" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                    </state>
-                                    <connections>
-                                        <action selector="onLearning:" destination="-1" eventType="touchUpInside" id="G4Y-Gz-bsO"/>
-                                    </connections>
-                                </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="thC-fo-O1u" customClass="TrainingButton" customModule="MathGame" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="90" width="374" height="80"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="374" height="125"/>
                                     <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="18"/>
                                     <state key="normal" title="Button">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -82,7 +71,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aa4-u1-Amc" customClass="QuizButton" customModule="MathGame" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="180" width="374" height="80"/>
+                                    <rect key="frame" x="0.0" y="135" width="374" height="125"/>
                                     <fontDescription key="fontDescription" type="system" weight="black" pointSize="18"/>
                                     <state key="normal" title="Button">
                                         <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

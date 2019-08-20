@@ -118,6 +118,7 @@ extension CoreDataHelper {
     
     func createGameSession(for student: Student,
                            and game: Game,
+                           and level: Constants.GameLevels,
                            and timedLevel: String? = nil) -> GameSession? {
         let gameSession = GameSession(context: context)
         gameSession.date = Date()
@@ -125,6 +126,13 @@ extension CoreDataHelper {
         gameSession.timed_level = timedLevel
         student.addToGameSessions(gameSession)
         student.lastActivity = Date()
+        
+        switch game {
+        case .halves, .doubles, .adding, .takeAways:
+            gameSession.game_level = level.getDescription(); break
+        default: break
+        }
+        
         do {
             try context.save()
             return gameSession

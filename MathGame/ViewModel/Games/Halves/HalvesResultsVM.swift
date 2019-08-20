@@ -12,6 +12,7 @@ import RxSwift
 class HalvesResultsVM {
     
     var game: Game
+    var gameLevel: Constants.GameLevels?
     var student: Student
     var gamesGenerated: BehaviorSubject<[GameTypeOne]>
     
@@ -19,6 +20,7 @@ class HalvesResultsVM {
     var timedMultiplyingGames: BehaviorSubject<[TimedMultiplying]> = BehaviorSubject(value: [])
     
     init(with game: Game,
+         with gameLevel: Constants.GameLevels? = nil,
          with student: Student,
          with results: [GameTypeOne],
          with timedResults: [TimedMultiplying] = [],
@@ -27,6 +29,7 @@ class HalvesResultsVM {
             return gameTypeOne.unknown != Constants.UnknownDefault
         }
         self.game = game
+        self.gameLevel = gameLevel
         self.student = student
         self.gamesGenerated = BehaviorSubject(value: filteredResults)
         self.timedMultiplyingGames.onNext(timedResults)
@@ -59,8 +62,8 @@ class HalvesResultsVM {
         let cdh = CoreDataHelper()
         let gameSession: GameSession?
         if game == .timedMultiplying {
-            if countCorrectTimedMultiplying() == 20 {
-                gameSession = cdh.createGameSession(for: student, and: game, and: String(currentTimedMultiplyingLevel))
+            if countCorrectTimedMultiplying() >= 20 {
+                gameSession = cdh.createGameSession(for: student, and: game, and: gameLevel ?? .beginner, and: String(currentTimedMultiplyingLevel))
                 if let unwrappedGameSession = gameSession {
                     for gameGenerated in getTimedGameGenerated() {
                         let game = gameGenerated
@@ -76,7 +79,7 @@ class HalvesResultsVM {
                 }
             }
         } else {
-            gameSession = cdh.createGameSession(for: student, and: game)
+            gameSession = cdh.createGameSession(for: student, and: game, and: gameLevel ?? .beginner)
             if let unwrappedGameSession = gameSession {
                 for gameGenerated in getGameGenerated() {
                     let game = gameGenerated
