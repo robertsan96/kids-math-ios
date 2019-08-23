@@ -630,15 +630,134 @@ struct Constants {
                     TimedMultiplying(left: 9, op: .tim, right: 5, result: 45, unknown: .result),
                     TimedMultiplying(left: 10, op: .tim,right: 5, result: 50, unknown: .result),
                     TimedMultiplying(left: 11, op: .tim, right: 5, result: 55, unknown: .result),
-                    TimedMultiplying(left: 12, op: .tim, right: 5, result: 60, unknown: .result),
+                    TimedMultiplying(left: 12, op: .tim, right: 5, result: 60, unknown: .result)
                 ]
             case 50:
                 return [
                     TimedMultiplying(left: 5, op: .tim, right: 9, result: 45, unknown: .result),
                     TimedMultiplying(left: 5, op: .tim, right: 10, result: 50, unknown: .result),
                     TimedMultiplying(left: 5, op: .tim, right: 11, result: 55, unknown: .result),
-                    TimedMultiplying(left: 5, op: .tim, right: 12, result: 60, unknown: .result),
+                    TimedMultiplying(left: 5, op: .tim, right: 12, result: 60, unknown: .result)
+                    
                 ]
+            case 51:
+                return [
+                    TimedMultiplying(left: 9, op: .tim, right: 5, result: 45, unknown: .result),
+                    TimedMultiplying(left: 10, op: .tim, right: 5, result: 50, unknown: .result),
+                    TimedMultiplying(left: 11, op: .tim, right: 5, result: 55, unknown: .result),
+                    TimedMultiplying(left: 12, op: .tim, right: 5, result: 60, unknown: .result),
+                    TimedMultiplying(left: 5, op: .tim, right: 9, result: 45, unknown: .result),
+                    TimedMultiplying(left: 5, op: .tim, right: 10, result: 50, unknown: .result),
+                    TimedMultiplying(left: 5, op: .tim, right: 11, result: 55, unknown: .result),
+                    TimedMultiplying(left: 5, op: .tim, right: 12, result: 60, unknown: .result)
+                ]
+            case 52:
+                return [
+                    TimedMultiplying(left: 5, op: .tim, right: 9, result: 45, unknown: .right),
+                    TimedMultiplying(left: 5, op: .tim, right: 10, result: 50, unknown: .right),
+                    TimedMultiplying(left: 5, op: .tim, right: 11, result: 55, unknown: .right),
+                    TimedMultiplying(left: 5, op: .tim, right: 12, result: 60, unknown: .right)
+                ]
+            case 53:
+                return [
+                    TimedMultiplying(left: 9, op: .tim, right: 5, result: 45, unknown: .left),
+                    TimedMultiplying(left: 10, op: .tim, right: 5, result: 50, unknown: .left),
+                    TimedMultiplying(left: 11, op: .tim, right: 5, result: 55, unknown: .left),
+                    TimedMultiplying(left: 12, op: .tim, right: 5, result: 60, unknown: .left)
+                ]
+            case 54:
+                return [
+                    TimedMultiplying(left: 5, op: .tim, right: 9, result: 45, unknown: .right),
+                    TimedMultiplying(left: 5, op: .tim, right: 10, result: 50, unknown: .right),
+                    TimedMultiplying(left: 5, op: .tim, right: 11, result: 55, unknown: .right),
+                    TimedMultiplying(left: 5, op: .tim, right: 12, result: 60, unknown: .right),
+                    TimedMultiplying(left: 9, op: .tim, right: 5, result: 45, unknown: .left),
+                    TimedMultiplying(left: 10, op: .tim, right: 5, result: 50, unknown: .left),
+                    TimedMultiplying(left: 11, op: .tim, right: 5, result: 55, unknown: .left),
+                    TimedMultiplying(left: 12, op: .tim, right: 5, result: 60, unknown: .left)
+                ]
+            case 55:
+                return [
+                    TimedMultiplying(left: 45, op: .div, right: 5, result: 9, unknown: .result),
+                    TimedMultiplying(left: 50, op: .div, right: 5, result: 10, unknown: .result),
+                    TimedMultiplying(left: 55, op: .div, right: 5, result: 11, unknown: .result),
+                    TimedMultiplying(left: 60, op: .div, right: 5, result: 12, unknown: .result)
+                ]
+            case 56:
+                return [
+                    TimedMultiplying(left: 45, op: .div, right: 9, result: 5, unknown: .result),
+                    TimedMultiplying(left: 50, op: .div, right: 10, result: 5, unknown: .result),
+                    TimedMultiplying(left: 55, op: .div, right: 11, result: 5, unknown: .result),
+                    TimedMultiplying(left: 60, op: .div, right: 12, result: 5, unknown: .result)
+                ]
+            case 57:
+                return [
+                    TimedMultiplying(left: 45, op: .div, right: 5, result: 9, unknown: .result),
+                    TimedMultiplying(left: 50, op: .div, right: 5, result: 10, unknown: .result),
+                    TimedMultiplying(left: 55, op: .div, right: 5, result: 11, unknown: .result),
+                    TimedMultiplying(left: 60, op: .div, right: 5, result: 12, unknown: .result),
+                    TimedMultiplying(left: 45, op: .div, right: 9, result: 5, unknown: .result),
+                    TimedMultiplying(left: 50, op: .div, right: 10, result: 5, unknown: .result),
+                    TimedMultiplying(left: 55, op: .div, right: 11, result: 5, unknown: .result),
+                    TimedMultiplying(left: 60, op: .div, right: 12, result: 5, unknown: .result)
+                    
+                ]
+            case 58:
+                return [
+                    TimedMultiplying(left: 1, op: .tim, right: 5, result: 5, unknown: .result),
+                    TimedMultiplying(left: 2, op: .tim, right: 5, result: 10, unknown: .result),
+                    TimedMultiplying(left: 3, op: .tim, right: 5, result: 15, unknown: .result),
+                    TimedMultiplying(left: 4, op: .tim, right: 5, result: 20, unknown: .result),
+                    TimedMultiplying(left: 5, op: .tim, right: 5, result: 25, unknown: .result),
+                    TimedMultiplying(left: 6, op: .tim, right: 5, result: 30, unknown: .result),
+                    TimedMultiplying(left: 7, op: .tim, right: 5, result: 35, unknown: .result),
+                    TimedMultiplying(left: 8, op: .tim, right: 5, result: 40, unknown: .result),
+                    TimedMultiplying(left: 5, op: .tim, right: 1, result: 5, unknown: .result),
+                    TimedMultiplying(left: 5, op: .tim, right: 2, result: 10, unknown: .result),
+                    TimedMultiplying(left: 5, op: .tim, right: 3, result: 15, unknown: .result),
+                    TimedMultiplying(left: 5, op: .tim, right: 4, result: 20, unknown: .result),
+                    TimedMultiplying(left: 5, op: .tim, right: 5, result: 25, unknown: .result),
+                    TimedMultiplying(left: 5, op: .tim, right: 6, result: 30, unknown: .result),
+                    TimedMultiplying(left: 5, op: .tim, right: 7, result: 35, unknown: .result),
+                    TimedMultiplying(left: 5, op: .tim, right: 8, result: 40, unknown: .result),
+                    TimedMultiplying(left: 9, op: .tim, right: 5, result: 45, unknown: .result),
+                    TimedMultiplying(left: 10, op: .tim, right: 5, result: 50, unknown: .result),
+                    TimedMultiplying(left: 11, op: .tim, right: 5, result: 55, unknown: .result),
+                    TimedMultiplying(left: 12, op: .tim, right: 5, result: 60, unknown: .result),
+                    TimedMultiplying(left: 5, op: .tim, right: 9, result: 45, unknown: .result),
+                    TimedMultiplying(left: 5, op: .tim, right: 10, result: 50, unknown: .result),
+                    TimedMultiplying(left: 5, op: .tim, right: 11, result: 55, unknown: .result),
+                    TimedMultiplying(left: 5, op: .tim, right: 12, result: 60, unknown: .result)
+                    
+                ]
+            case 59:
+                return [
+                    TimedMultiplying(left: 5, op: .div, right: 5, result: 1, unknown: .result),
+                    TimedMultiplying(left: 10, op: .div, right: 5, result: 2, unknown: .result),
+                    TimedMultiplying(left: 15, op: .div, right: 5, result: 3, unknown: .result),
+                    TimedMultiplying(left: 20, op: .div, right: 5, result: 4, unknown: .result),
+                    TimedMultiplying(left: 25, op: .div, right: 5, result: 5, unknown: .result),
+                    TimedMultiplying(left: 30, op: .div, right: 5, result: 6, unknown: .result),
+                    TimedMultiplying(left: 35, op: .div, right: 5, result: 7, unknown: .result),
+                    TimedMultiplying(left: 40, op: .div, right: 5, result: 8, unknown: .result),
+                    TimedMultiplying(left: 45, op: .div, right: 5, result: 9, unknown: .result),
+                    TimedMultiplying(left: 50, op: .div, right: 5, result: 10, unknown: .result),
+                    TimedMultiplying(left: 55, op: .div, right: 5, result: 11, unknown: .result),
+                    TimedMultiplying(left: 60, op: .div, right: 5, result: 12, unknown: .result),
+                    TimedMultiplying(left: 5, op: .div, right: 1, result: 5, unknown: .result),
+                    TimedMultiplying(left: 10, op: .div, right: 2, result: 5, unknown: .result),
+                    TimedMultiplying(left: 15, op: .div, right: 3, result: 5, unknown: .result),
+                    TimedMultiplying(left: 20, op: .div, right: 4, result: 5, unknown: .result),
+                    TimedMultiplying(left: 25, op: .div, right: 5, result: 5, unknown: .result),
+                    TimedMultiplying(left: 30, op: .div, right: 6, result: 5, unknown: .result),
+                    TimedMultiplying(left: 35, op: .div, right: 7, result: 5, unknown: .result),
+                    TimedMultiplying(left: 40, op: .div, right: 8, result: 5, unknown: .result),
+                    TimedMultiplying(left: 45, op: .div, right: 9, result: 5, unknown: .result),
+                    TimedMultiplying(left: 50, op: .div, right: 10, result: 5, unknown: .result),
+                    TimedMultiplying(left: 55, op: .div, right: 11, result: 5, unknown: .result),
+                    TimedMultiplying(left: 60, op: .div, right: 12, result: 5, unknown: .result)
+            ]
+           
             default: break
             }
             return []
