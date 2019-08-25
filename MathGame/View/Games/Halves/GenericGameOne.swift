@@ -189,7 +189,7 @@ extension GenericGameOne: NumberKeyboardDelegate {
         switch vm.mode {
         case .quiz, .learning: break
         case .training:
-            if vm.gamesGenerated.count == 20 {
+            if vm.gamesGenerated.count == 21 {
                 let halvesResultsVC: HalvesResultsVC = Storyboard.shared.getViewController(by: .halvesResultsVC)
                 let halvesResultsVM = HalvesResultsVM(with: vm.game, with: vm.gameLevel, with: vm.student, with: vm.gamesGenerated)
                 halvesResultsVC.viewModel = halvesResultsVM
