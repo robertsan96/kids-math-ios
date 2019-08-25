@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import SwiftCSV
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

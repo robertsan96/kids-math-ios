@@ -28,6 +28,8 @@
 		466355EA22F128F80020FDEA /* HalvesVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466355E922F128F80020FDEA /* HalvesVM.swift */; };
 		466355EC22F132BA0020FDEA /* HalvesResultsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466355EB22F132BA0020FDEA /* HalvesResultsVC.swift */; };
 		466355EE22F136000020FDEA /* HalvesResultsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466355ED22F136000020FDEA /* HalvesResultsVM.swift */; };
+		4689DD84231289A5006817AE /* TimedMultiplyingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4689DD83231289A5006817AE /* TimedMultiplyingManager.swift */; };
+		4689DD8823128C1E006817AE /* multiplying_330_levels.csv in Resources */ = {isa = PBXBuildFile; fileRef = 4689DD8723128C1E006817AE /* multiplying_330_levels.csv */; };
 		469189B922E7358B0083B092 /* InitialVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469189B822E7358B0083B092 /* InitialVM.swift */; };
 		4697FC1322ED9FB5007EBAA6 /* GamesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4697FC1222ED9FB5007EBAA6 /* GamesVC.swift */; };
 		4697FC1622EDA090007EBAA6 /* GamesVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4697FC1522EDA090007EBAA6 /* GamesVM.swift */; };
@@ -125,6 +127,8 @@
 		466355E922F128F80020FDEA /* HalvesVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalvesVM.swift; sourceTree = "<group>"; };
 		466355EB22F132BA0020FDEA /* HalvesResultsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalvesResultsVC.swift; sourceTree = "<group>"; };
 		466355ED22F136000020FDEA /* HalvesResultsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalvesResultsVM.swift; sourceTree = "<group>"; };
+		4689DD83231289A5006817AE /* TimedMultiplyingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimedMultiplyingManager.swift; sourceTree = "<group>"; };
+		4689DD8723128C1E006817AE /* multiplying_330_levels.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = multiplying_330_levels.csv; path = "../../../../../Library/Mobile Documents/com~apple~CloudDocs/Clean/CodeContrive/Customers/BasicMathematics - Cristian Taune/multiplying_330_levels.csv"; sourceTree = "<group>"; };
 		469189B822E7358B0083B092 /* InitialVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialVM.swift; sourceTree = "<group>"; };
 		4697FC1222ED9FB5007EBAA6 /* GamesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesVC.swift; sourceTree = "<group>"; };
 		4697FC1522EDA090007EBAA6 /* GamesVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesVM.swift; sourceTree = "<group>"; };
@@ -257,6 +261,7 @@
 		461BB4A322E62E6B009EBD61 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				4689DD83231289A5006817AE /* TimedMultiplyingManager.swift */,
 				461BB4A422E62E76009EBD61 /* AppDaemon.swift */,
 				4630296522E63ADF00FB8C18 /* Constants.swift */,
 				461BB4A622E62F39009EBD61 /* CoreDataHelper.swift */,
@@ -340,6 +345,14 @@
 				466355ED22F136000020FDEA /* HalvesResultsVM.swift */,
 			);
 			path = Halves;
+			sourceTree = "<group>";
+		};
+		4689DD82231288AD006817AE /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				4689DD8723128C1E006817AE /* multiplying_330_levels.csv */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 		469189B622E7357A0083B092 /* Initial */ = {
@@ -430,6 +443,7 @@
 		46BF7B0222E62C1D00FAA757 /* MathGame */ = {
 			isa = PBXGroup;
 			children = (
+				4689DD82231288AD006817AE /* Data */,
 				46BF7B0322E62C1D00FAA757 /* AppDelegate.swift */,
 				461BB4A322E62E6B009EBD61 /* Core */,
 				461BB49D22E62C62009EBD61 /* Model */,
@@ -625,6 +639,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				46EEEE7D22EF6C56006F0AFE /* GameSessionTVC.xib in Resources */,
+				4689DD8823128C1E006817AE /* multiplying_330_levels.csv in Resources */,
 				46D3A95422F3E2ED00D16E11 /* BasicMathLogo.xib in Resources */,
 				4697FC4422EDF831007EBAA6 /* NumberBondsResultTVC.xib in Resources */,
 				4697FC3222EDC06C007EBAA6 /* NumberKeyboard.xib in Resources */,
@@ -778,6 +793,7 @@
 				4635276622E8AEAB00ACFA5A /* StudentsVM.swift in Sources */,
 				4697FC1922EDA28D007EBAA6 /* GameTVC.swift in Sources */,
 				4697FC3622EDE288007EBAA6 /* NumberButton.swift in Sources */,
+				4689DD84231289A5006817AE /* TimedMultiplyingManager.swift in Sources */,
 				46517E6622FD3D770025D665 /* TimedMultiplying.swift in Sources */,
 				46BF7B0C22E62C1D00FAA757 /* MathGame.xcdatamodeld in Sources */,
 				461BB4A522E62E76009EBD61 /* AppDaemon.swift in Sources */,

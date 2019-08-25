@@ -18,7 +18,7 @@ enum Operator {
         switch self {
         case .plus: return "+"
         case .minus: return "-"
-        case .tim: return "*"
+        case .tim: return "x"
         case .div: return "/"
         }
     }

@@ -8,6 +8,7 @@ target 'MathGame' do
   # Pods for MathGame
   pod 'RxSwift', '~> 5'
   pod 'RxCocoa', '~> 5'
+  pod "SwiftCSV"
  
   target 'MathGameTests' do
     inherit! :search_paths

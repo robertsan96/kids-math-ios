@@ -453,7 +453,7 @@ extension GamesVC: UIPickerViewDataSource, UIPickerViewDelegate {
              GamesVCPickers.doublesCategoryPicker.rawValue:
             return 3
         case GamesVCPickers.timedMultiplyingLevelPicker.rawValue:
-            return 30
+            return TimedMultiplyingManager.shared.getLevels()
         default: break
         }
         return 0
