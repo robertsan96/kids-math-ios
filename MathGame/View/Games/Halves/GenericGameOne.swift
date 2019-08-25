@@ -22,6 +22,8 @@ class GenericGameOne: UIViewController {
     @IBOutlet weak var timerView: TimerView!
     @IBOutlet weak var keyboard: NumberKeyboard!
     
+    var confirmalPopup: ExerciseConfirmalPopup?
+    
     weak var delegate: HalvesVCDelegate?
     
     var answerTimer: Timer?
@@ -135,45 +137,189 @@ extension GenericGameOne: NumberKeyboardDelegate {
                 set.unknown = Float(number)
                 viewModel?.updateLastSet(with: set)
                 keyboard.isUserInteractionEnabled = false
-                answerTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(answerCorrect), userInfo: nil, repeats: false)
+                if vm.mode == .training {
+                    
+                    timerView.timer?.invalidate()
+                    let popup = ExerciseConfirmalPopup(frame: CGRect(x: (view.frame.width / 2) - 75,
+                                                                     y: (view.frame.height / 2) - 75,
+                                                                     width: 150,
+                                                                     height: 150))
+                    view.addSubview(popup)
+                    if vm.isCorrect(game: set) {
+                        popup.set(to: .correct)
+                    } else {
+                        popup.set(to: .incorrect(butCorrect: 0))
+                    }
+                    self.confirmalPopup = popup
+                    
+                    answerTimer = Timer.scheduledTimer(timeInterval: 0.4, target: self, selector: #selector(answerCorrect), userInfo: nil, repeats: false)
+                } else {
+                    answerTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(answerCorrect), userInfo: nil, repeats: false)
+                }
             case .doubles:
                 set.unknown = Float(number)
                 viewModel?.updateLastSet(with: set)
                 keyboard.isUserInteractionEnabled = false
-                answerTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(answerCorrect), userInfo: nil, repeats: false)
+                if vm.mode == .training {
+                    
+                    timerView.timer?.invalidate()
+                    let popup = ExerciseConfirmalPopup(frame: CGRect(x: (view.frame.width / 2) - 75,
+                                                                     y: (view.frame.height / 2) - 75,
+                                                                     width: 150,
+                                                                     height: 150))
+                    view.addSubview(popup)
+                    if vm.isCorrect(game: set) {
+                        popup.set(to: .correct)
+                    } else {
+                        popup.set(to: .incorrect(butCorrect: 0))
+                    }
+                    self.confirmalPopup = popup
+                    
+                    answerTimer = Timer.scheduledTimer(timeInterval: 0.4, target: self, selector: #selector(answerCorrect), userInfo: nil, repeats: false)
+                } else {
+                    answerTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(answerCorrect), userInfo: nil, repeats: false)
+                }
             case .adding:
                 set.unknown = Float(number)
                 viewModel?.updateLastSet(with: set)
                 keyboard.isUserInteractionEnabled = false
-                answerTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(answerCorrect), userInfo: nil, repeats: false)
+                if vm.mode == .training {
+                    
+                    timerView.timer?.invalidate()
+                    let popup = ExerciseConfirmalPopup(frame: CGRect(x: (view.frame.width / 2) - 75,
+                                                                     y: (view.frame.height / 2) - 75,
+                                                                     width: 150,
+                                                                     height: 150))
+                    view.addSubview(popup)
+                    if vm.isCorrect(game: set) {
+                        popup.set(to: .correct)
+                    } else {
+                        popup.set(to: .incorrect(butCorrect: 0))
+                    }
+                    self.confirmalPopup = popup
+                    
+                    answerTimer = Timer.scheduledTimer(timeInterval: 0.4, target: self, selector: #selector(answerCorrect), userInfo: nil, repeats: false)
+                } else {
+                    answerTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(answerCorrect), userInfo: nil, repeats: false)
+                }
             case .takeAways:
             
                 set.unknown = Float(number)
                 viewModel?.updateLastSet(with: set)
                 keyboard.isUserInteractionEnabled = false
-                answerTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(answerCorrect), userInfo: nil, repeats: false)
+                if vm.mode == .training {
+                    
+                    timerView.timer?.invalidate()
+                    let popup = ExerciseConfirmalPopup(frame: CGRect(x: (view.frame.width / 2) - 75,
+                                                                     y: (view.frame.height / 2) - 75,
+                                                                     width: 150,
+                                                                     height: 150))
+                    view.addSubview(popup)
+                    if vm.isCorrect(game: set) {
+                        popup.set(to: .correct)
+                    } else {
+                        popup.set(to: .incorrect(butCorrect: 0))
+                    }
+                    self.confirmalPopup = popup
+                    
+                    answerTimer = Timer.scheduledTimer(timeInterval: 0.4, target: self, selector: #selector(answerCorrect), userInfo: nil, repeats: false)
+                } else {
+                    answerTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(answerCorrect), userInfo: nil, repeats: false)
+                }
                 
             case .timesTable:
                 set.unknown = Float(number)
                 viewModel?.updateLastSet(with: set)
                 keyboard.isUserInteractionEnabled = false
-                answerTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(answerCorrect), userInfo: nil, repeats: false)
+                if vm.mode == .training {
+                    
+                    timerView.timer?.invalidate()
+                    let popup = ExerciseConfirmalPopup(frame: CGRect(x: (view.frame.width / 2) - 75,
+                                                                     y: (view.frame.height / 2) - 75,
+                                                                     width: 150,
+                                                                     height: 150))
+                    view.addSubview(popup)
+                    if vm.isCorrect(game: set) {
+                        popup.set(to: .correct)
+                    } else {
+                        popup.set(to: .incorrect(butCorrect: 0))
+                    }
+                    self.confirmalPopup = popup
+                    
+                    answerTimer = Timer.scheduledTimer(timeInterval: 0.4, target: self, selector: #selector(answerCorrect), userInfo: nil, repeats: false)
+                } else {
+                    answerTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(answerCorrect), userInfo: nil, repeats: false)
+                }
             case .dividing:
                 set.unknown = Float(number)
                 viewModel?.updateLastSet(with: set)
                 keyboard.isUserInteractionEnabled = false
-                answerTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(answerCorrect), userInfo: nil, repeats: false)
+                if vm.mode == .training {
+                    
+                    timerView.timer?.invalidate()
+                    let popup = ExerciseConfirmalPopup(frame: CGRect(x: (view.frame.width / 2) - 75,
+                                                                     y: (view.frame.height / 2) - 75,
+                                                                     width: 150,
+                                                                     height: 150))
+                    view.addSubview(popup)
+                    if vm.isCorrect(game: set) {
+                        popup.set(to: .correct)
+                    } else {
+                        popup.set(to: .incorrect(butCorrect: 0))
+                    }
+                    self.confirmalPopup = popup
+                    
+                    answerTimer = Timer.scheduledTimer(timeInterval: 0.4, target: self, selector: #selector(answerCorrect), userInfo: nil, repeats: false)
+                } else {
+                    answerTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(answerCorrect), userInfo: nil, repeats: false)
+                }
             case .timedMultiplying:
                 viewModel?.doneCurrentTimedMultiplyingGame(with: number)
                 viewModel?.setTimedMultiplying()
                 keyboard.isUserInteractionEnabled = false
-                answerTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(answerCorrect), userInfo: nil, repeats: false)
+                if vm.mode == .training {
+                    
+                    timerView.timer?.invalidate()
+                    let popup = ExerciseConfirmalPopup(frame: CGRect(x: (view.frame.width / 2) - 75,
+                                                                     y: (view.frame.height / 2) - 75,
+                                                                     width: 150,
+                                                                     height: 150))
+                    view.addSubview(popup)
+                    if vm.isCorrect(game: set) {
+                        popup.set(to: .correct)
+                    } else {
+                        popup.set(to: .incorrect(butCorrect: 0))
+                    }
+                    self.confirmalPopup = popup
+                    
+                    answerTimer = Timer.scheduledTimer(timeInterval: 0.4, target: self, selector: #selector(answerCorrect), userInfo: nil, repeats: false)
+                } else {
+                    answerTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(answerCorrect), userInfo: nil, repeats: false)
+                }
                 
             default:
                 set.unknown = Float(number)
                 viewModel?.updateLastSet(with: set)
                 keyboard.isUserInteractionEnabled = false
-                answerTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(answerCorrect), userInfo: nil, repeats: false)
+                if vm.mode == .training {
+                    
+                    timerView.timer?.invalidate()
+                    let popup = ExerciseConfirmalPopup(frame: CGRect(x: (view.frame.width / 2) - 75,
+                                                                     y: (view.frame.height / 2) - 75,
+                                                                     width: 150,
+                                                                     height: 150))
+                    view.addSubview(popup)
+                    if vm.isCorrect(game: set) {
+                        popup.set(to: .correct)
+                    } else {
+                        popup.set(to: .incorrect(butCorrect: 0))
+                    }
+                    self.confirmalPopup = popup
+                    
+                    answerTimer = Timer.scheduledTimer(timeInterval: 0.4, target: self, selector: #selector(answerCorrect), userInfo: nil, repeats: false)
+                } else {
+                    answerTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(answerCorrect), userInfo: nil, repeats: false)
+                }
                 
             }
         }
@@ -189,6 +335,8 @@ extension GenericGameOne: NumberKeyboardDelegate {
         switch vm.mode {
         case .quiz, .learning: break
         case .training:
+            self.confirmalPopup?.removeFromSuperview()
+            timerView.startTimer()
             if vm.gamesGenerated.count == 21 {
                 let halvesResultsVC: HalvesResultsVC = Storyboard.shared.getViewController(by: .halvesResultsVC)
                 let halvesResultsVM = HalvesResultsVM(with: vm.game, with: vm.gameLevel, with: vm.student, with: vm.gamesGenerated)

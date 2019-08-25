@@ -30,6 +30,8 @@
 		466355EE22F136000020FDEA /* HalvesResultsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466355ED22F136000020FDEA /* HalvesResultsVM.swift */; };
 		4689DD84231289A5006817AE /* TimedMultiplyingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4689DD83231289A5006817AE /* TimedMultiplyingManager.swift */; };
 		4689DD8823128C1E006817AE /* multiplying_330_levels.csv in Resources */ = {isa = PBXBuildFile; fileRef = 4689DD8723128C1E006817AE /* multiplying_330_levels.csv */; };
+		4689DD8A23129D20006817AE /* ExerciseConfirmalPopup.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4689DD8923129D20006817AE /* ExerciseConfirmalPopup.xib */; };
+		4689DD8C23129D73006817AE /* ExerciseConfirmalPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4689DD8B23129D73006817AE /* ExerciseConfirmalPopup.swift */; };
 		469189B922E7358B0083B092 /* InitialVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469189B822E7358B0083B092 /* InitialVM.swift */; };
 		4697FC1322ED9FB5007EBAA6 /* GamesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4697FC1222ED9FB5007EBAA6 /* GamesVC.swift */; };
 		4697FC1622EDA090007EBAA6 /* GamesVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4697FC1522EDA090007EBAA6 /* GamesVM.swift */; };
@@ -129,6 +131,8 @@
 		466355ED22F136000020FDEA /* HalvesResultsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalvesResultsVM.swift; sourceTree = "<group>"; };
 		4689DD83231289A5006817AE /* TimedMultiplyingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimedMultiplyingManager.swift; sourceTree = "<group>"; };
 		4689DD8723128C1E006817AE /* multiplying_330_levels.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = multiplying_330_levels.csv; path = "../../../../../Library/Mobile Documents/com~apple~CloudDocs/Clean/CodeContrive/Customers/BasicMathematics - Cristian Taune/multiplying_330_levels.csv"; sourceTree = "<group>"; };
+		4689DD8923129D20006817AE /* ExerciseConfirmalPopup.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExerciseConfirmalPopup.xib; sourceTree = "<group>"; };
+		4689DD8B23129D73006817AE /* ExerciseConfirmalPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseConfirmalPopup.swift; sourceTree = "<group>"; };
 		469189B822E7358B0083B092 /* InitialVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialVM.swift; sourceTree = "<group>"; };
 		4697FC1222ED9FB5007EBAA6 /* GamesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesVC.swift; sourceTree = "<group>"; };
 		4697FC1522EDA090007EBAA6 /* GamesVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesVM.swift; sourceTree = "<group>"; };
@@ -289,6 +293,8 @@
 				46D3A95322F3E2ED00D16E11 /* BasicMathLogo.xib */,
 				46D3A95522F3E2F600D16E11 /* BasicMathLogo.swift */,
 				46E3599122F4693E004B378D /* RectangleButton.swift */,
+				4689DD8923129D20006817AE /* ExerciseConfirmalPopup.xib */,
+				4689DD8B23129D73006817AE /* ExerciseConfirmalPopup.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -640,6 +646,7 @@
 			files = (
 				46EEEE7D22EF6C56006F0AFE /* GameSessionTVC.xib in Resources */,
 				4689DD8823128C1E006817AE /* multiplying_330_levels.csv in Resources */,
+				4689DD8A23129D20006817AE /* ExerciseConfirmalPopup.xib in Resources */,
 				46D3A95422F3E2ED00D16E11 /* BasicMathLogo.xib in Resources */,
 				4697FC4422EDF831007EBAA6 /* NumberBondsResultTVC.xib in Resources */,
 				4697FC3222EDC06C007EBAA6 /* NumberKeyboard.xib in Resources */,
@@ -801,6 +808,7 @@
 				46EEEE7922EF6A96006F0AFE /* StudentDataVM.swift in Sources */,
 				4635277222E8BA3900ACFA5A /* StudentsNVC.swift in Sources */,
 				46A8F28123071B3300473018 /* GameInfoVM.swift in Sources */,
+				4689DD8C23129D73006817AE /* ExerciseConfirmalPopup.swift in Sources */,
 				4630296622E63ADF00FB8C18 /* Constants.swift in Sources */,
 				46EEEE7622EF69A5006F0AFE /* StudentDataVC.swift in Sources */,
 				4697FC2C22EDB7F1007EBAA6 /* NumbersBondVM.swift in Sources */,
