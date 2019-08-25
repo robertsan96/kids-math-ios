@@ -67,19 +67,19 @@ class GenericGameOne: UIViewController {
         guard let vm = viewModel else { return }
         switch vm.game {
         case .doubles:
-            mathLabel.text = "How much is the double of \(Int(set.numberOne))?"
+            mathLabel.text = "Double of \(Int(set.numberOne))"
         case .constrainedAddings:
-            mathLabel.text = "How much is? \n\(Int(set.numberOne)) + \(Int(set.numberTwo)) = ?"
+            mathLabel.text = "\(Int(set.numberOne)) + \(Int(set.numberTwo)) = ?"
         case .halves:
-            mathLabel.text = "How much is half of \(Int(set.numberOne))?"
+            mathLabel.text = "Half of \(Int(set.numberOne))"
         case .adding:
-            mathLabel.text = "How much is? \n\(Int(set.numberOne)) + \(Int(set.numberTwo)) = ?"
+            mathLabel.text = "\(Int(set.numberOne)) + \(Int(set.numberTwo)) = ?"
         case .takeAways:
-            mathLabel.text = "How much is? \n\(Int(set.numberOne)) - \(Int(set.numberTwo)) = ?"
+            mathLabel.text = "\(Int(set.numberOne)) - \(Int(set.numberTwo)) = ?"
         case .timesTable:
-            mathLabel.text = "How much is? \n\(Int(set.numberOne)) * \(Int(set.numberTwo)) = ?"
+            mathLabel.text = "\(Int(set.numberOne)) * \(Int(set.numberTwo)) = ?"
         case .dividing:
-            mathLabel.text = "What's is \(Int(set.numberOne)) / \(Int(set.numberTwo))?"
+            mathLabel.text = "\(Int(set.numberOne)) / \(Int(set.numberTwo)) = ?"
             
         default: break
         }
