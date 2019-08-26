@@ -93,7 +93,7 @@
                                     <constraint firstAttribute="trailing" secondItem="h9a-Gz-Oj7" secondAttribute="trailing" id="wgf-Dd-rWU"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="students" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uwV-DB-Ax1">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select a student" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uwV-DB-Ax1">
                                 <rect key="frame" x="10" y="196" width="394" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="ciR-MX-hqG"/>
@@ -270,7 +270,7 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.044358703989999998" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BASIC MATHEMATICS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LrP-Wc-Itp">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="kidsmath" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LrP-Wc-Itp">
                                         <rect key="frame" x="10" y="69" width="394" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="fGd-cb-5Nl"/>
@@ -675,7 +675,7 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.044358703989999998" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BASIC MATHEMATICS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YuE-Iy-34N">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="kidsmath" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YuE-Iy-34N">
                                         <rect key="frame" x="10" y="69" width="394" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="ScQ-pB-SjF"/>
@@ -803,7 +803,7 @@
                                             <action selector="onClose:" destination="Fs5-RG-Dgw" eventType="touchUpInside" id="BWp-xA-vns"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BASIC MATHEMATICS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="feQ-yb-3yw">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="kidsmath" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="feQ-yb-3yw">
                                         <rect key="frame" x="10" y="69" width="394" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="nuE-Pl-ZTX"/>
@@ -931,7 +931,7 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.044358703989999998" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BASIC MATHEMATICS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OQB-tn-lNa">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="kidsmath" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OQB-tn-lNa">
                                         <rect key="frame" x="10" y="69" width="394" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="Xlu-j7-g2X"/>
@@ -1080,7 +1080,7 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.044358703989999998" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BASIC MATHEMATICS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j8v-lP-VX9">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="kidsmath" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j8v-lP-VX9">
                                         <rect key="frame" x="10" y="69" width="394" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="EXk-aB-vyt"/>
@@ -1209,7 +1209,7 @@
                                             <action selector="onClose:" destination="Ehr-fo-mHE" eventType="touchUpInside" id="Qga-6W-gyW"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BASIC MATHEMATICS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S5w-B7-7n3">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="kidsmath" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S5w-B7-7n3">
                                         <rect key="frame" x="10" y="69" width="394" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="Raf-9B-2ec"/>
@@ -1348,7 +1348,7 @@
                                             <action selector="onClose:" destination="1W2-zJ-cRh" eventType="touchUpInside" id="QIv-DK-aKa"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BASIC MATHEMATICS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mhq-6z-bwh">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="kidsmath" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mhq-6z-bwh">
                                         <rect key="frame" x="10" y="69" width="394" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="Usa-el-L7f"/>

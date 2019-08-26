@@ -154,7 +154,9 @@ class StudentsVC: UIViewController {
         alertVC.addAction(login)
         alertVC.addAction(cancel)
         
-        present(alertVC, animated: true, completion: nil)
+        CATransaction.setCompletionBlock { [weak self] in
+            self?.present(alertVC, animated: true, completion: nil)
+        }
     }
 }
 

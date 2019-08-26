@@ -53,8 +53,7 @@ enum Game {
     func getDescription() -> String {
         switch self {
         case .numbersBond10:
-            return "Learning - in development \n" +
-                "Training - 20 questions with unlimited time to answer \n" +
+            return "Training - 20 questions with unlimited time to answer \n" +
                 "Quiz - 60 seconds timed test to improve speed\n\n" +
                 
                 "In this test the student will learn Number bonds to 10. \n" +
@@ -64,8 +63,7 @@ enum Game {
             "We can consider that this quiz is mastered when the student can give at least 20 correct answers in 60 seconds."
             
         case .numbersBond20:
-            return "Learning - in development \n" +
-                "Training - 20 questions with unlimited time to answer \n" +
+            return "Training - 20 questions with unlimited time to answer \n" +
                 "Quiz - 60 seconds timed test to improve speed \n\n" +
                 
                 "In this test the student will learn Number bonds to 20.\n" +
@@ -75,8 +73,7 @@ enum Game {
             "We can consider that this quiz is mastered when the student can give at least 20 correct answers in 60 seconds"
             
         case .constrainedAddings:
-            return "Learning - in development\n" +
-                "Training - 20 questions with unlimited time to answer \n" +
+            return "Training - 20 questions with unlimited time to answer \n" +
                 "Quiz - 60 seconds timed test to improve speed \n\n" +
                 
                 "In this test the student will learn to add 2 numbers (one digit numbers) with answers over 10: \n" +
@@ -87,8 +84,7 @@ enum Game {
                 
             "We can consider that this quiz is mastered when the student can give at least 20 correct answers in 60 seconds."
         case .halves:
-            return "Learning - in development \n " +
-                "Training - 20 questions with unlimited time to answer \n" +
+            return "Training - 20 questions with unlimited time to answer \n" +
                 "Quiz - 60 seconds timed test to improve speed \n\n" +
                 
                 "The categories: \n" +
@@ -103,8 +99,7 @@ enum Game {
             "We can consider that this quiz is mastered when the student can give at least 20 correct answers in 60 seconds."
             
         case .doubles:
-            return "Learning - in development \n" +
-                "Training - 20 questions with unlimited time to answer \n" +
+            return "Training - 20 questions with unlimited time to answer \n" +
                 "Quiz - 60 seconds timed test to improve speed \n\n" +
                 
                 "The categories:\n" +
@@ -119,8 +114,7 @@ enum Game {
             "We can consider that this quiz is mastered when the student can give at least 20 correct answers in 60 seconds."
             
         case .adding:
-            return "Learning - in development \n" +
-                "Training - 20 questions with unlimited time to answer \n" +
+            return "Training - 20 questions with unlimited time to answer \n" +
                 "Quiz - 60 seconds timed test to improve speed\n\n" +
                 
                 "The categories: \n" +
@@ -135,8 +129,7 @@ enum Game {
             "We can consider that this quiz is mastered when the student can give at least 20 correct answers in 60 seconds."
             
         case .takeAways:
-            return "Learning - in development \n" +
-                "Training - 20 questions with unlimited time to answer \n" +
+            return "Training - 20 questions with unlimited time to answer \n" +
                 "Quiz - 60 seconds timed test to improve speed\n" +
                 
                 "The categories: \n" +
@@ -151,8 +144,7 @@ enum Game {
             "We can consider that this quiz is mastered when the student can give at least 20 correct answers in 60 seconds."
             
         case .timesTable:
-            return "Learning - in development \n" +
-                "Training - 20 questions with unlimited time to answer \n" +
+            return "Training - 20 questions with unlimited time to answer \n" +
                 "Quiz - 60 seconds timed test to improve speed \n\n" +
                 
                 
@@ -163,8 +155,7 @@ enum Game {
             "We can consider that the quiz is mastered when the studend can give at least 20 correct answers in 60 seconds."
             
         case .dividing:
-            return "Learning - in development \n" +
-                "Training - 20 questions with unlimited time to answer \n" +
+            return "Training - 20 questions with unlimited time to answer \n" +
                 "Quiz - 60 seconds timed test to improve speed \n\n" +
                 
                 
