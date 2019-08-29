@@ -35,7 +35,7 @@ class TimedMultiplyingTVC: UITableViewCell {
         
         switch result.unknown {
         case .left:
-            questionLabel.text = "? \(result.op.getSymbol()) \(right) = \(result)"
+            questionLabel.text = "? \(result.op.getSymbol()) \(right) = \(operationResult)"
             answerLabel.text = "Your answer: \(userInput)"
             
             correct = left == userInput
