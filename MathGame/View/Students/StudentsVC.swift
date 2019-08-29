@@ -139,7 +139,10 @@ class StudentsVC: UIViewController {
                 let cdh = CoreDataHelper()
                 let enteredPin = pinTextField.text
                 let masterPin = cdh.getStockValue(for: CoreDataStockKeys.masterPin.rawValue)
-                let studentPin = "\(Int(student.pin))"
+                var studentPin = "\(Int(student.pin))"
+                if studentPin == "0" {
+                    studentPin = "0000"
+                }
                 if enteredPin == studentPin || enteredPin == masterPin {
                     let gamesVC: GamesVC = Storyboard.shared.getViewController(by: .gamesVC)
                     let gamesVM: GamesVM = GamesVM(with: student)
