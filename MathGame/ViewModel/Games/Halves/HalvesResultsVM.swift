@@ -12,6 +12,7 @@ import RxSwift
 class HalvesResultsVM {
     
     var game: Game
+    var gameMode: Constants.GameModes?
     var gameLevel: Constants.GameLevels?
     var student: Student
     var gamesGenerated: BehaviorSubject<[GameTypeOne]>
@@ -20,6 +21,7 @@ class HalvesResultsVM {
     var timedMultiplyingGames: BehaviorSubject<[TimedMultiplying]> = BehaviorSubject(value: [])
     
     init(with game: Game,
+         with gameMode: Constants.GameModes? = .quiz,
          with gameLevel: Constants.GameLevels? = nil,
          with student: Student,
          with results: [GameTypeOne],
@@ -63,7 +65,11 @@ class HalvesResultsVM {
         let gameSession: GameSession?
         if game == .timedMultiplying {
             if countCorrectTimedMultiplying() >= 20 {
-                gameSession = cdh.createGameSession(for: student, and: game, and: gameLevel ?? .beginner, and: String(currentTimedMultiplyingLevel))
+                gameSession = cdh.createGameSession(for: student,
+                                                    and: game,
+                                                    with: gameMode ?? .quiz,
+                                                    and: gameLevel ?? .beginner,
+                                                    and: String(currentTimedMultiplyingLevel))
                 if let unwrappedGameSession = gameSession {
                     for gameGenerated in getTimedGameGenerated() {
                         let game = gameGenerated
@@ -119,7 +125,7 @@ class HalvesResultsVM {
         case .doubles:
             return numberOne * numberTwo == unknown
         case .adding:
-            return numberOne + unknown == numberTwo
+            return numberOne + numberTwo == unknown
         case .takeAways:
             return numberOne - unknown == numberTwo
         case .timesTable:

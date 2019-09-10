@@ -20,7 +20,7 @@ class TimerView: UIView {
     
     weak var delegate: TimerViewDelegate?
     
-    var seconds: Int = 5
+    var seconds: Int = 60
     var timer: Timer?
     
     required init?(coder aDecoder: NSCoder) {

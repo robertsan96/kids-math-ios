@@ -34,6 +34,14 @@ struct Constants {
     
     enum GameModes {
         case learning, quiz, training
+        
+        func getName() -> String {
+            switch self {
+            case .quiz: return "Quiz"
+            case .learning: return "Learning"
+            case .training: return "Training"
+            }
+        }
     }
     
     enum GameLevels: Int {

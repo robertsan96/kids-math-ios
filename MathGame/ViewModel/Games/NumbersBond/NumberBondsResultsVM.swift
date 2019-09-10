@@ -12,10 +12,12 @@ import RxSwift
 class NumberBondsResultsVM {
     
     var game: Game
+    var gameMode: Constants.GameModes = .quiz
     var student: Student
     var gamesGenerated: BehaviorSubject<[GameTypeSix]>
     
     init(with game: Game,
+         with gameMode: Constants.GameModes = .quiz,
          with student: Student,
          with results: [GameTypeSix]) {
         let filteredResults = results.filter { gameTypeSix -> Bool in
@@ -45,7 +47,7 @@ class NumberBondsResultsVM {
     
     func storeData() {
         let cdh = CoreDataHelper()
-        let gameSession = cdh.createGameSession(for: student, and: game, and: .beginner)
+        let gameSession = cdh.createGameSession(for: student, and: game, with: gameMode, and: .beginner)
         if let unwrappedGameSession = gameSession {
             for gameGenerated in getGameGenerated() {
                 if let four = gameGenerated.gameTypeFour {

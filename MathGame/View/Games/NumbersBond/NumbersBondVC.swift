@@ -107,7 +107,7 @@ extension NumbersBondVC: NumberKeyboardDelegate {
             if vm.gamesGenerated.count == 21 {
                 guard let vm = viewModel else { return }
                 let numberBondsResultsVC: NumberBondResultsVC = Storyboard.shared.getViewController(by: .numberBondResultsVC)
-                let numberBondsResultsVM = NumberBondsResultsVM(with: vm.game, with: vm.student, with: vm.gamesGenerated)
+                let numberBondsResultsVM = NumberBondsResultsVM(with: vm.game, with: vm.mode, with: vm.student, with: vm.gamesGenerated)
                 numberBondsResultsVC.viewModel = numberBondsResultsVM
                 numberBondsResultsVC.delegate = self
                 present(numberBondsResultsVC, animated: true, completion: {
@@ -124,7 +124,7 @@ extension NumbersBondVC: TimerViewDelegate {
         view.isUserInteractionEnabled = false
         guard let vm = viewModel else { return }
         let numberBondsResultsVC: NumberBondResultsVC = Storyboard.shared.getViewController(by: .numberBondResultsVC)
-        let numberBondsResultsVM = NumberBondsResultsVM(with: vm.game, with: vm.student, with: vm.gamesGenerated)
+        let numberBondsResultsVM = NumberBondsResultsVM(with: vm.game, with: vm.mode, with: vm.student, with: vm.gamesGenerated)
         numberBondsResultsVC.viewModel = numberBondsResultsVM
         numberBondsResultsVC.delegate = self
         present(numberBondsResultsVC, animated: true, completion: {
